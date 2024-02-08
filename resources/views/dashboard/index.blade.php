@@ -4,11 +4,12 @@
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+            <!-- small box -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $users_count }}</h3>
 
                         <p>New Orders</p>
                     </div>
@@ -23,7 +24,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>{{ $users_count }}</h3>
 
                         <p>Bounce Rate</p>
                     </div>
@@ -33,7 +34,7 @@
                     <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <!-- ./col -->
+            <!-- small box -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-warning">
@@ -53,7 +54,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>65</h3>
+                        <h3>{{ $users_count }}</h3>
 
                         <p>Unique Visitors</p>
                     </div>
@@ -63,13 +64,6 @@
                     <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <!-- ./col -->
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-
-        </div>
         <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->
 @endsection
