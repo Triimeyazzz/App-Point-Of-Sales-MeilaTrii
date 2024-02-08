@@ -1,0 +1,24 @@
+@csrf itu fungsi yang digunakan untuk mengaktifkan fitur Cross Site Request Forgery (klo gasalah -_-) 
+gunanya untuk mengamankan form ketika ingin mengirim data ke server (intinya biar ga ke hek -_-) 
+
+ada banyak hal yang bisa digunakan untuk menulis @ di file blablabla.blade.php
+
+simbol @ disebut dengan directive .. kamu bisa baca2 ada apa aja fiturnya di web laravel bagian 
+blade directive 
+
+yang nanti bakal kepakai tuh
+
+@php @endphp
+@extend()
+@section() @endsection
+@yield
+@if @elseif @endelse @else @endif
+
+itu...
+
+(NGARUH KE PROJECT, KALO GAK DI BACA BAKAL ERROR)
+KALO DIBACA YA BIKIN GA ERROR -_-
+
+
+Naya cantik naya pinter kaya kakaknyaaaaaaa
+fiks no	 debat

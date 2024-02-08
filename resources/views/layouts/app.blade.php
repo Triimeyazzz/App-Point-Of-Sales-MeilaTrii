@@ -49,7 +49,10 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
+        {{-- @if (Auth::check()) --}}
         @include('layouts.sidebar')
+        {{-- @endif --}}
+
         <!-- Content Wrapper. Contains page content -->
 
         <div class="content-wrapper">

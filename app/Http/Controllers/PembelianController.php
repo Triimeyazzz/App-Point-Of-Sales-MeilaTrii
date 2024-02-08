@@ -13,6 +13,7 @@ class PembelianController extends Controller
     public function index()
     {
         //
+        return view('content.pembelian');
     }
 
     /**

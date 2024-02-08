@@ -13,6 +13,7 @@ class UnitController extends Controller
     public function index()
     {
         //
+        return view('content.unit');
     }
 
     /**
