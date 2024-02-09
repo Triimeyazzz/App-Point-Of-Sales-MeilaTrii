@@ -10,12 +10,12 @@ class BrandController extends Controller
     public function index()
     {
         $brands = Brand::all();
-        return view('content.brand.index', compact('brands'));
+        return view('content.brand', compact('brands'));
     }
 
     public function create()
     {
-        return view('content.brand.create');
+        return view('content.brand');
     }
 
     public function store(Request $request)
@@ -26,12 +26,12 @@ class BrandController extends Controller
 
         Brand::create($request->all());
 
-        return redirect()->route('brands.index')->with('success', 'Brand created successfully.');
+        return redirect()->route('content.brand')->with('success', 'Brand created successfully.');
     }
 
     public function show(Brand $brand)
     {
-        return view('content.brand.show', compact('brand'));
+        return view('content.brand', compact('brand'));
     }
 
     public function edit(Brand $brand)

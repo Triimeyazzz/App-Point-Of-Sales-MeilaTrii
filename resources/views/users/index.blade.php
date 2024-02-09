@@ -24,8 +24,7 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Pengguna</h3>
-                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah-pengguna">Tambah
-                                Pengguna</button>
+                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah-pengguna">Tambah Pengguna</button>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -59,8 +58,7 @@
                                             <button class="btn btn-sm btn-danger"
                                                 onclick="if(confirm('Anda Yakin ingin menghapus?')) document.getElementById('delete-form-{{ $pengguna->id }}').submit()">Hapus</button>
 
-                                            <form action="{{ route('users.destroy', $pengguna->id) }}" method="post"
-                                                id="delete-form-{{ $pengguna->id }}">
+                                            <form action="{{ route('users.destroy', $pengguna->id) }}" method="post" id="delete-form-{{ $pengguna->id }}">
                                                 @csrf
                                                 @method('DELETE')
                                             </form>
@@ -97,23 +95,19 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Nama Lengkap</label>
-                                <input type="text" class="form-control" name="name" id="name"
-                                    placeholder="Masukkan Nama" required>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                    placeholder="Enter email" required>
+                                <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Enter email" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" name="password" id="exampleInputPassword1"
-                                    placeholder="Password" required>
+                                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword2">Konfirmasi Password</label>
-                                <input type="password" class="form-control" name="confirm-password"
-                                    id="exampleInputPassword2" placeholder="Password" required>
+                                <input type="password" class="form-control" name="confirm-password" id="exampleInputPassword2" placeholder="Password" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Role</label>
