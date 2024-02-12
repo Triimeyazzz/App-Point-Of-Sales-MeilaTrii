@@ -46,13 +46,18 @@ class MemberController extends Controller
         if ($request->hasFile('photo')) {
             $input['photo'] = $request->file('photo')->store('users', 'public');
         }
-        $input['password'] = bcrypt($input['password']);
-        $user = User::create([
+
+        $userUpdateData = [
             'name' => $input['name'],
             'email' => $input['email'],
-            'password' => $input['password'],
-            'photo' => $input['photo']
-        ]);
+            'password' => bcrypt($input['password']),
+        ];
+
+        if (isset($input['photo'])) {
+            $userUpdateData['photo'] = $input['photo'];
+        }
+
+        $user = User::create($userUpdateData);
 
         $user->assignRole('Member');
 
