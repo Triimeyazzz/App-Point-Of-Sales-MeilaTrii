@@ -43,7 +43,7 @@ class MemberController extends Controller
             'confirm-password' => 'required|same:password',
         ]);
 
-        if($request->hasFile('photo')){
+        if ($request->hasFile('photo')) {
             $input['photo'] = $request->file('photo')->store('users', 'public');
         }
         $input['password'] = bcrypt($input['password']);
@@ -80,6 +80,7 @@ class MemberController extends Controller
     public function edit(Member $member)
     {
         //
+        return view('members.edit', compact('member'));
     }
 
     /**
@@ -88,6 +89,38 @@ class MemberController extends Controller
     public function update(Request $request, Member $member)
     {
         //
+        $input = $request->all();
+
+        if ($request->hasFile('photo')) {
+            $input['photo'] = $request->file('photo')->store('users', 'public');
+        } else {
+            unset($input['photo']);
+        }
+
+        if ($input['password'] == null) {
+            unset($input['password']);
+        } else {
+            $input['password'] = bcrypt($input['password']);
+        }
+
+        $userUpdateData = [
+            'name' => $input['name'],
+            'email' => $input['email'],
+        ];
+
+        if (isset($input['photo'])) {
+            $userUpdateData['photo'] = $input['photo'];
+        }
+
+        $member->user->update($userUpdateData);
+
+        $member->update([
+            'kode' => $input['kode'],
+            'no_hp' => $input['no_hp'],
+            'alamat' => $input['alamat']
+        ]);
+
+        return redirect()->route('members.index')->with('success', 'Member berhasil di ubah');
     }
 
     /**
@@ -96,5 +129,9 @@ class MemberController extends Controller
     public function destroy(Member $member)
     {
         //
+        $member->user->delete();
+        $member->delete();
+
+        return redirect()->back()->with('success', 'Member berhasil di hapus');
     }
 }
