@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Pengguna
+    Member
 @endsection
 
 @section('content')
@@ -27,8 +27,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Pengguna</h3>
-                            <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">Tambah Pengguna</a>
+                            <h3 class="card-title">Member</h3>
+                            <a href="{{ route('members.create') }}" class="btn btn-primary btn-sm">Tambah Member</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -39,7 +39,7 @@
                                     <th width="7%">No</th>
                                     <th>Nama</th>
                                     <th>Email</th>
-                                    <th width="10%">Role</th>
+                                    <th width="15%">Kode</th>
                                     <th width="15%">Aksi</th>
                                 </tr>
                             </thead>
@@ -47,32 +47,27 @@
                                 @php
                                     $i = 1;
                                 @endphp
-                                @foreach ($users as $pengguna)
+                                @foreach ($members as $member)
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>
-                                            <img src="{{ Storage::url($pengguna->photo ?? '../../dist/img/default-150x150.png') }}"
-                                                alt="Product 1" class="img-circle img-size-32 mr-2">{{ $pengguna->name }}
+                                            <img src="{{ Storage::url($member->user->photo ?? '../../dist/img/default-150x150.png') }}"
+                                                alt="Product 1"
+                                                class="img-circle img-size-32 mr-2">{{ $member->user->name }}
                                         </td>
-                                        <td>{{ $pengguna->email }}</td>
+                                        <td>{{ $member->user->email }}</td>
+                                        <td>{{ $member->kode }}</td>
                                         <td>
-                                            @foreach ($pengguna->getRoleNames() as $val)
-                                                <span class="badge badge-primary">{{ $val }}</span>
-                                            @endforeach
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('users.edit', $pengguna->id) }}"
+                                            <a href="{{ route('members.edit', $member->id) }}"
                                                 class="btn btn-sm btn-primary">Ubah</a>
-                                            @if ($pengguna->id != 1)
-                                                <button class="btn btn-sm btn-danger"
-                                                    onclick="if(confirm('Anda Yakin ingin menghapus?')) document.getElementById('delete-form-{{ $pengguna->id }}').submit()">Hapus</button>
+                                            <button class="btn btn-sm btn-danger"
+                                                onclick="if(confirm('Anda Yakin ingin menghapus?')) document.getElementById('delete-form-{{ $member->id }}').submit()">Hapus</button>
 
-                                                <form action="{{ route('users.destroy', $pengguna->id) }}" method="post"
-                                                    id="delete-form-{{ $pengguna->id }}">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                </form>
-                                            @endif
+                                            <form action="{{ route('members.destroy', $member->id) }}" method="post"
+                                                id="delete-form-{{ $member->id }}">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -82,7 +77,7 @@
                     <!-- /.card-body -->
                     <div class="card-footer clearfix">
                         <ul class="pagination pagination-sm m-0 float-right">
-                            {{ $users->links() }}
+                            {{ $members->links() }}
                         </ul>
                     </div>
                 </div>

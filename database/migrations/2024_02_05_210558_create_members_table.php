@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('member', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('nama');
-            $table->string('email')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('kode');
             $table->string('no_hp');
             $table->string('alamat');

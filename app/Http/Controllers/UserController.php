@@ -16,9 +16,8 @@ class UserController extends Controller
     {
         //
         $users = User::paginate(10);
-        $roles = Role::pluck('name', 'name')->all();
 
-        return view('users.index', compact('users', 'roles'));
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -27,6 +26,9 @@ class UserController extends Controller
     public function create()
     {
         //
+        $roles = Role::pluck('name', 'name')->all();
+
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -45,15 +47,16 @@ class UserController extends Controller
             'roles' => 'required',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
+        if($request->hasFile('photo')){
+            $input['photo'] = $request->file('photo')->store('users', 'public');
+        }
+
+        $input['password'] = Hash::make($input['password']);
+        $user = User::create($input);
 
         $user->assignRole($request->roles);
 
-        return redirect()->back()->with('success', 'Pengguna berhasil dibuat');
+        return redirect()->route('users.index')->with('success', 'Pengguna berhasil dibuat');
     }
 
     /**
@@ -70,6 +73,11 @@ class UserController extends Controller
     public function edit(string $id)
     {
         //
+        $user = User::find($id);
+
+        $roles = Role::pluck('name', 'name')->all();
+
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -78,6 +86,22 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $input = $request->all();
+
+        $user = User::find($id);
+
+        if($request->hasFile('photo')){
+            $input['photo'] = $request->file('photo')->store('users', 'public');
+        }
+
+        if($input['password'] == null){
+            unset($input['password']);
+        }else{
+            $input['password'] = Hash::make($input['password']);
+        }
+        $user->update($input);
+
+        return redirect()->route('users.index')->with('success', 'Pengguna berhasil di ubah');
     }
 
     /**

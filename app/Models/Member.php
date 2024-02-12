@@ -11,4 +11,9 @@ class Member extends Model
 
     protected $table = 'member';
     protected $guarded = ['id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
