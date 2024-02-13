@@ -15,12 +15,12 @@
                 <img src="{{ Storage::url(Auth::user()->photo ?? '../../dist/img/default-150x150.png') }}" class="img-circle elevation-2" alt ="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ Auth::user()->name ?? '' }}</a>
+                <a href="#" class="d-block">{{ Auth::user()->name ?? '' }} ({{ Auth::user()->getRoleNames()->first() }})</a>
             </div>
         </div>
 
         <!-- SidebarSearch Form -->
-        <div class="form-inline">
+        {{-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
                 <input class="form-control form-control-sidebar" type="search" placeholder="Search"
                     aria-label="Search">
@@ -30,7 +30,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -47,71 +47,71 @@
                 <li class="nav-header">Master</li>
                 <li class="nav-item">
                     <a href="{{ route('members.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>Member</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <a href="{{ route('suppliers.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
                         <p>Supplier</p>
                     </a>
                 </li>
                 <li class="nav-header">Produk</li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-list-ul"></i>
                         <p>Kategori</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-archive"></i>
                         <p>Produk</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-suitcase"></i>
                         <p>Brand</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-cubes"></i>
                         <p>Unit</p>
                     </a>
                 </li>
                 <li class="nav-header">Laporan</li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-list-alt"></i>
                         <p>Pembelian</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-list-alt"></i>
                         <p>Pengeluaran</p>
                     </a>
                 </li>
                 <li class="nav-header">Administrasi</li>
                 <li class="nav-item">
                     <a href="{{ route('users.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>Pengguna</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('roles.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Role</p>
                     </a>
-                </li>
-                <li class="nav-header">Misc</li>
+                </li> --}}
+                {{-- <li class="nav-header">Misc</li> --}}
                 <li class="nav-item">
                     <a href="/" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-cog"></i>
                         <p>Pengaturan</p>
                     </a>
                 </li>
@@ -119,7 +119,7 @@
                     <a href="{{ route('logout') }}" class="nav-link"
                         onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>Keluar</p>
                     </a>
                 </li>

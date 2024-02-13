@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('supplier', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('nama');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('email')->nullable();
             $table->string('no_hp');
             $table->string('alamat');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

@@ -28,7 +28,7 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Role</h3>
-                            <a href="{{ route('roles.create') }}" class="btn btn-primary btn-sm">Tambah Role</a>
+                            {{-- <a href="{{ route('roles.create') }}" class="btn btn-primary btn-sm">Tambah Role</a> --}}
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -39,7 +39,7 @@
                                     <th width="7%">No.</th>
                                     <th width="25%">Nama Role</th>
                                     <th>Pengguna</th>
-                                    <th width="10%">Aksi</th>
+                                    {{-- <th width="10%">Aksi</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,7 +55,7 @@
                                                 <span class="badge bg-primary">{{ $pengguna->name }}</span>
                                             @endforeach
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             <a href="{{ route('roles.edit', $role->id) }}"
                                                 class="btn btn-sm btn-primary">Ubah</a>
                                             <a href="javascript:void(0)"
@@ -66,7 +66,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                             </form>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>

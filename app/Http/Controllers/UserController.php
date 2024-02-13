@@ -54,7 +54,7 @@ class UserController extends Controller
         $input['password'] = Hash::make($input['password']);
         $user = User::create($input);
 
-        $user->assignRole($request->roles);
+        $user->assignRole('Admin');
 
         return redirect()->route('users.index')->with('success', 'Pengguna berhasil dibuat');
     }

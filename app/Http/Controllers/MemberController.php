@@ -63,7 +63,6 @@ class MemberController extends Controller
 
         $member = Member::create([
             'user_id' => $user->id,
-            'kode' => $input['kode'],
             'no_hp' => $input['no_hp'],
             'alamat' => $input['alamat']
         ]);
@@ -120,7 +119,6 @@ class MemberController extends Controller
         $member->user->update($userUpdateData);
 
         $member->update([
-            'kode' => $input['kode'],
             'no_hp' => $input['no_hp'],
             'alamat' => $input['alamat']
         ]);

@@ -29,6 +29,8 @@ class AdminSeeder extends Seeder
         //contoh seperti kode paling bawah $user->assignRole(['0' => 'Admin']);
         //atau $user->assignRole(['1' => 'Member']);
         $role = Role::create(['name' => 'Admin']);
+        Role::create(['name' => 'Supplier']);
+        Role::create(['name' => 'Member']);
 
         //Sebenernya permission ini tidak perlu karena cuma membutuhkan role
         $permissions = Permission::pluck('id', 'id')->all();

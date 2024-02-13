@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Member
+    Supplier
 @endsection
 
 @section('content')
@@ -27,8 +27,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Member</h3>
-                            <a href="{{ route('members.create') }}" class="btn btn-primary btn-sm">Tambah Member</a>
+                            <h3 class="card-title">Supplier</h3>
+                            <a href="{{ route('suppliers.create') }}" class="btn btn-primary btn-sm">Tambah Supplier</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -47,24 +47,24 @@
                                 @php
                                     $i = 1;
                                 @endphp
-                                @foreach ($members as $member)
+                                @foreach ($suppliers as $supplier)
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>
-                                            <img src="{{ Storage::url($member->user->photo ?? '../../dist/img/default-150x150.png') }}"
+                                            <img src="{{ Storage::url($supplier->user->photo ?? '../../dist/img/default-150x150.png') }}"
                                                 alt="Product 1"
-                                                class="img-circle img-size-32 mr-2">{{ $member->user->name }}
+                                                class="img-circle img-size-32 mr-2">{{ $supplier->user->name }}
                                         </td>
-                                        <td>{{ $member->user->email }}</td>
-                                        <td>{{ $member->no_hp }}</td>
+                                        <td>{{ $supplier->user->email }}</td>
+                                        <td>{{ $supplier->no_hp }}</td>
                                         <td>
-                                            <a href="{{ route('members.edit', $member->id) }}"
+                                            <a href="{{ route('suppliers.edit', $supplier->id) }}"
                                                 class="btn btn-sm btn-primary">Ubah</a>
                                             <button class="btn btn-sm btn-danger"
-                                                onclick="if(confirm('Anda Yakin ingin menghapus?')) document.getElementById('delete-form-{{ $member->id }}').submit()">Hapus</button>
+                                                onclick="if(confirm('Anda Yakin ingin menghapus?')) document.getElementById('delete-form-{{ $supplier->id }}').submit()">Hapus</button>
 
-                                            <form action="{{ route('members.destroy', $member->id) }}" method="post"
-                                                id="delete-form-{{ $member->id }}">
+                                            <form action="{{ route('suppliers.destroy', $supplier->id) }}" method="post"
+                                                id="delete-form-{{ $supplier->id }}">
                                                 @csrf
                                                 @method('DELETE')
                                             </form>
@@ -77,7 +77,7 @@
                     <!-- /.card-body -->
                     <div class="card-footer clearfix">
                         <ul class="pagination pagination-sm m-0 float-right">
-                            {{ $members->links() }}
+                            {{ $suppliers->links() }}
                         </ul>
                     </div>
                 </div>

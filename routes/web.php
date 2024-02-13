@@ -50,4 +50,7 @@ Route::middleware('auth', 'role:Admin')->group(function () {
 
     //Member
     Route::resource('/members', MemberController::class);
+
+    //Supplier
+    Route::resource('/suppliers', SupplierController::class);
 });

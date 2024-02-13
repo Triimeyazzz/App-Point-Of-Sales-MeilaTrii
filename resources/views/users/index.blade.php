@@ -39,7 +39,7 @@
                                     <th width="7%">No</th>
                                     <th>Nama</th>
                                     <th>Email</th>
-                                    <th width="10%">Role</th>
+                                    <th width="10%">Sebagai</th>
                                     <th width="15%">Aksi</th>
                                 </tr>
                             </thead>

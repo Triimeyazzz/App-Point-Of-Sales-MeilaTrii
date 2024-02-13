@@ -46,11 +46,6 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="kode">Kode</label>
-                                        <input type="text" class="form-control" name="kode" id="kode"
-                                            placeholder="Masukkan Kode" value="{{ $member->kode }}" required>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="no_hp">Nomor HP</label>
                                         <input type="text" class="form-control" name="no_hp" id="no_hp"
                                             placeholder="Masukkan Nomor" value="{{ $member->no_hp }}" required>
@@ -65,7 +60,7 @@
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="photo" class="custom-file-input"
-                                                    id="userphoto">
+                                                    id="userphoto" accept="image/*">
                                                 <label class="custom-file-label" for="exampleInputFile">Pilih photo</label>
                                             </div>
                                         </div>
@@ -75,7 +70,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
                 </div>

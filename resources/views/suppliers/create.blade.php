@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Ubah Pengguna
+    Tambah Supplier
 @endsection
 
 @section('content')
@@ -12,57 +12,55 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Ubah Pengguna {{ $user->name }}</h3>
+                        <h3 class="card-title">Tambah Subplier</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('suppliers.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
                         <div class="card-body">
                             <div class="row">
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Nama Lengkap</label>
+                                        <label for="name">Nama Supplier</label>
                                         <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Masukkan Nama" value="{{ $user->name }}" required>
+                                            placeholder="Masukkan Nama" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
+                                        <label for="exampleInputEmail1">Alamat Email</label>
                                         <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                            placeholder="Enter email" value="{{ $user->email }}" required>
+                                            placeholder="Enter email" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
                                         <input type="password" class="form-control" name="password"
-                                            id="exampleInputPassword1" placeholder="Password">
+                                            id="exampleInputPassword1" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword2">Konfirmasi Password</label>
+                                        <input type="password" class="form-control" name="confirm-password"
+                                            id="exampleInputPassword2" placeholder="Password" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputPassword2">Konfirmasi Password</label>
-                                        <input type="password" class="form-control" name="confirm-password"
-                                            id="exampleInputPassword2" placeholder="Password">
+                                        <label for="no_hp">Nomor HP</label>
+                                        <input type="text" class="form-control" name="no_hp" id="no_hp"
+                                            placeholder="Masukkan Nomor" required>
                                     </div>
-                                    {{-- <div class="form-group">
-                                        <label for="exampleInputPassword1">Role</label>
-                                        <select class="form-control" name="roles[]" required>
-                                            <option value="">Pilih Role</option>
-                                            @foreach ($roles as $role)
-                                                <option value="{{ $role }}"
-                                                    {{ $user->hasRole($role) ? 'selected' : '' }}>{{ $role }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div> --}}
                                     <div class="form-group">
-                                        <label for="userphoto">Photo</label>
+                                        <label for="alamat">Alamat</label>
+                                        <input type="text" class="form-control" name="alamat" id="alamat"
+                                            placeholder="Masukkan Alamat" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="userphoto">Photo/Logo</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="photo" class="custom-file-input"
                                                     id="userphoto" accept="image/*">
-                                                <label class="custom-file-label" for="exampleInputFile">Pilih photo</label>
+                                                <label class="custom-file-label" for="exampleInputFile">Pilih file</label>
                                             </div>
                                         </div>
                                     </div>
@@ -71,7 +69,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
                 </div>
