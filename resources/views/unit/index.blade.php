@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Pengguna
+    Unit
 @endsection
 
 @section('content')
@@ -19,19 +19,19 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Pengguna</h3>
-                            <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">Tambah Pengguna</a>
+                            <h3 class="card-title">Unit</h3>
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#tambah-unit"
+                                class="btn btn-primary btn-sm">Tambah Unit</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-bordered users-table">
+                        <table class="table table-bordered unit-table">
                             <thead>
                                 <tr>
                                     <th width="7%">No</th>
                                     <th>Nama</th>
-                                    <th>Email</th>
-                                    <th width="10%">Sebagai</th>
+                                    <th>Singkatan</th>
                                     <th width="15%">Aksi</th>
                                 </tr>
                             </thead>
@@ -45,6 +45,41 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="tambah-unit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Unit</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('unit.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="name">Nama Unit</label>
+                            <input type="text" class="form-control" name="nama" id="name"
+                                placeholder="Masukkan Nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="singkatan">Nama Singkatan</label>
+                            <input type="text" class="form-control" name="singkatan" id="singkatan"
+                                placeholder="Masukkan Singkatan" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 @endsection
 
 @push('scripts')
@@ -55,7 +90,7 @@
     <script src="../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
     <script>
-        var userTable = $('.users-table').DataTable({
+        var Unit = $('.unit-table').DataTable({
             processing: true,
             serverSide: true,
             language: {
@@ -64,7 +99,7 @@
                 searchPlaceholder: 'Cari'
             },
             ajax: {
-                url: '{{ route('users.index') }}',
+                url: '{{ route('unit.index') }}',
                 type: 'GET'
             },
             columns: [{
@@ -74,16 +109,12 @@
                     searchable: false
                 },
                 {
-                    data: 'name',
-                    name: 'name'
+                    data: 'nama',
+                    name: 'nama'
                 },
                 {
-                    data: 'email',
-                    name: 'email'
-                },
-                {
-                    data: 'role',
-                    name: 'role'
+                    data: 'singkatan',
+                    name: 'singkatan'
                 },
                 {
                     data: 'actions',

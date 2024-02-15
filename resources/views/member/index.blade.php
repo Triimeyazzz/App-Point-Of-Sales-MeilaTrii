@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Pengguna
+    Member
 @endsection
 
 @section('content')
@@ -19,19 +19,19 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Pengguna</h3>
-                            <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">Tambah Pengguna</a>
+                            <h3 class="card-title">Member</h3>
+                            <a href="{{ route('member.create') }}" class="btn btn-primary btn-sm">Tambah Member</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-bordered users-table">
+                        <table class="table table-bordered member-table">
                             <thead>
                                 <tr>
                                     <th width="7%">No</th>
                                     <th>Nama</th>
                                     <th>Email</th>
-                                    <th width="10%">Sebagai</th>
+                                    <th width="20%">No. HP</th>
                                     <th width="15%">Aksi</th>
                                 </tr>
                             </thead>
@@ -55,7 +55,7 @@
     <script src="../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
     <script>
-        var userTable = $('.users-table').DataTable({
+        var memberTable = $('.member-table').DataTable({
             processing: true,
             serverSide: true,
             language: {
@@ -64,7 +64,7 @@
                 searchPlaceholder: 'Cari'
             },
             ajax: {
-                url: '{{ route('users.index') }}',
+                url: '{{ route('member.index') }}',
                 type: 'GET'
             },
             columns: [{
@@ -82,8 +82,8 @@
                     name: 'email'
                 },
                 {
-                    data: 'role',
-                    name: 'role'
+                    data: 'no_hp',
+                    name: 'no_hp'
                 },
                 {
                     data: 'actions',

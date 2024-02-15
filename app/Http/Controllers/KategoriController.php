@@ -13,7 +13,19 @@ class KategoriController extends Controller
     public function index()
     {
         //
-        return view('content.kategori');
+        $datas = Kategori::orderBy('created_at', 'desc');
+
+        if (request()->ajax()) {
+            return datatables()->of($datas)
+                ->addIndexColumn()
+                ->addColumn('actions', function ($data) {
+                    return view('kategori._actions', compact('data'));
+                })
+                ->rawColumns(['actions'])
+                ->make(true);
+        }
+
+        return view('kategori.index');
     }
 
     /**
@@ -30,6 +42,11 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+
+        Kategori::create($input);
+
+        return redirect()->back()->with('success', 'Kategori Berhasil ditambahkan');
     }
 
     /**
@@ -54,6 +71,11 @@ class KategoriController extends Controller
     public function update(Request $request, Kategori $kategori)
     {
         //
+        $input = $request->all();
+
+        $kategori->update($input);
+
+        return redirect()->back()->with('success', 'Kategori Berhasil diedit');
     }
 
     /**
@@ -62,5 +84,8 @@ class KategoriController extends Controller
     public function destroy(Kategori $kategori)
     {
         //
+        $kategori->delete();
+
+        return redirect()->back()->with('success', 'Kategori Berhasil dihapus');
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Ubah Member
+    Tambah Member
 @endsection
 
 @section('content')
@@ -9,16 +9,16 @@
         <div class="row">
             <!-- left column -->
             <div class="col-md-12">
+                @include('layouts.session_messages')
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Ubah Member</h3>
+                        <h3 class="card-title">Tambah Member</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('members.update', $member->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('member.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('put')
                         <div class="card-body">
                             <div class="row">
                                 <!-- left column -->
@@ -26,34 +26,34 @@
                                     <div class="form-group">
                                         <label for="name">Nama Lengkap</label>
                                         <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Masukkan Nama" value="{{ $member->user->name }}" required>
+                                            placeholder="Masukkan Nama" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Alamat Email</label>
                                         <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                            placeholder="Enter email" value="{{ $member->user->email }}" required>
+                                            placeholder="Enter email" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
                                         <input type="password" class="form-control" name="password"
-                                            id="exampleInputPassword1" placeholder="Password">
+                                            id="exampleInputPassword1" placeholder="Password" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword2">Konfirmasi Password</label>
                                         <input type="password" class="form-control" name="confirm-password"
-                                            id="exampleInputPassword2" placeholder="Password">
+                                            id="exampleInputPassword2" placeholder="Password" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="no_hp">Nomor HP</label>
                                         <input type="text" class="form-control" name="no_hp" id="no_hp"
-                                            placeholder="Masukkan Nomor" value="{{ $member->no_hp }}" required>
+                                            placeholder="Masukkan Nomor" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <input type="text" class="form-control" name="alamat" id="alamat"
-                                            placeholder="Masukkan Alamat" value="{{ $member->alamat }}" required>
+                                            placeholder="Masukkan Alamat" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="userphoto">Photo</label>

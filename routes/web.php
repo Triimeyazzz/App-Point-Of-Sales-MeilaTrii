@@ -2,18 +2,15 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
-
-use App\Http\Controllers\SupplierController; //kalau ditulis disini
-
-use App\Http\Controllers;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MemberController;
-use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UnitController;
 // use itu artinya menggunakan,
 // jadi apapun isi di dalam folder itu,
 // bisa digunakan semuanya
 
-use App\Models\Kategori;
-use App\Models\Supplier;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -45,12 +42,18 @@ Route::middleware('auth', 'role:Admin')->group(function () {
     //User
     Route::resource('/users', UserController::class);
 
-    //Role
-    Route::resource('/roles', RoleController::class);
-
     //Member
-    Route::resource('/members', MemberController::class);
+    Route::resource('/member', MemberController::class);
 
     //Supplier
-    Route::resource('/suppliers', SupplierController::class);
+    Route::resource('/supplier', SupplierController::class);
+
+    //Kategori
+    Route::resource('/kategori', KategoriController::class);
+
+    //Brand
+    Route::resource('/brand', BrandController::class);
+
+    //Unit
+    Route::resource('/unit', UnitController::class);
 });

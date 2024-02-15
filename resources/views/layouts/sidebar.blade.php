@@ -46,20 +46,20 @@
                 </li>
                 <li class="nav-header">Master</li>
                 <li class="nav-item">
-                    <a href="{{ route('members.index') }}" class="nav-link">
+                    <a href="{{ route('member.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Member</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('suppliers.index') }}" class="nav-link">
+                    <a href="{{ route('supplier.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Supplier</p>
                     </a>
                 </li>
                 <li class="nav-header">Produk</li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('kategori.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-list-ul"></i>
                         <p>Kategori</p>
                     </a>
@@ -71,13 +71,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('brand.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-suitcase"></i>
                         <p>Brand</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('unit.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-cubes"></i>
                         <p>Unit</p>
                     </a>

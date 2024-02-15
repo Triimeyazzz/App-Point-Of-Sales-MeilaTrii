@@ -14,9 +14,25 @@ class SupplierController extends Controller
     public function index()
     {
         //
-        $suppliers = Supplier::paginate(10);
+        $suppliers = Supplier::with('user');
 
-        return view('suppliers.index', compact('suppliers'));
+        if (request()->ajax()) {
+            return datatables()->of($suppliers)
+                ->addIndexColumn()
+                ->addColumn('name', function ($data) {
+                    return view('supplier._namefiled', compact('data'));
+                })
+                ->addColumn('email', function ($data) {
+                    return $data->user->email;
+                })
+                ->addColumn('actions', function ($data) {
+                    return view('supplier._actions', compact('data'));
+                })
+                ->rawColumns(['actions'])
+                ->make(true);
+        }
+
+        return view('supplier.index');
     }
 
     /**
@@ -25,7 +41,7 @@ class SupplierController extends Controller
     public function create()
     {
         //
-        return view('suppliers.create');
+        return view('supplier.create');
     }
 
     /**
@@ -67,7 +83,7 @@ class SupplierController extends Controller
             'alamat' => $input['alamat']
         ]);
 
-        return redirect()->route('suppliers.index')->with('success', 'Member berhasil di tambahkan');
+        return redirect()->route('supplier.index')->with('success', 'Member berhasil di tambahkan');
     }
 
     /**
@@ -84,7 +100,7 @@ class SupplierController extends Controller
     public function edit(Supplier $supplier)
     {
         //
-        return view('suppliers.edit', compact('supplier'));
+        return view('supplier.edit', compact('supplier'));
     }
 
     /**
@@ -123,7 +139,7 @@ class SupplierController extends Controller
             'alamat' => $input['alamat']
         ]);
 
-        return redirect()->route('suppliers.index')->with('success', 'Member berhasil di ubah');
+        return redirect()->route('supplier.index')->with('success', 'Member berhasil di ubah');
     }
 
     /**

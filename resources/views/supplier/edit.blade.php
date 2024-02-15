@@ -9,6 +9,7 @@
         <div class="row">
             <!-- left column -->
             <div class="col-md-12">
+                @include('layouts.session_messages')
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
@@ -16,7 +17,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('suppliers.update', $supplier->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('supplier.update', $supplier->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="card-body">

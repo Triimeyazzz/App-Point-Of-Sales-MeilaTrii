@@ -9,6 +9,7 @@
         <div class="row">
             <!-- left column -->
             <div class="col-md-12">
+                @include('layouts.session_messages')
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
@@ -45,17 +46,6 @@
                                         <input type="password" class="form-control" name="confirm-password"
                                             id="exampleInputPassword2" placeholder="Password">
                                     </div>
-                                    {{-- <div class="form-group">
-                                        <label for="exampleInputPassword1">Role</label>
-                                        <select class="form-control" name="roles[]" required>
-                                            <option value="">Pilih Role</option>
-                                            @foreach ($roles as $role)
-                                                <option value="{{ $role }}"
-                                                    {{ $user->hasRole($role) ? 'selected' : '' }}>{{ $role }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div> --}}
                                     <div class="form-group">
                                         <label for="userphoto">Photo</label>
                                         <div class="input-group">

@@ -13,7 +13,19 @@ class UnitController extends Controller
     public function index()
     {
         //
-        return view('content.unit');
+        $datas = Unit::orderBy('created_at', 'desc');
+
+        if (request()->ajax()) {
+            return datatables()->of($datas)
+                ->addIndexColumn()
+                ->addColumn('actions', function ($data) {
+                    return view('unit._actions', compact('data'));
+                })
+                ->rawColumns(['actions'])
+                ->make(true);
+        }
+
+        return view('unit.index');
     }
 
     /**
@@ -30,6 +42,11 @@ class UnitController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+
+        Unit::create($input);
+
+        return redirect()->back()->with('success', 'Unit Berhasil disimpan');
     }
 
     /**
@@ -54,6 +71,11 @@ class UnitController extends Controller
     public function update(Request $request, Unit $unit)
     {
         //
+        $input = $request->all();
+
+        $unit->update($input);
+
+        return redirect()->back()->with('success', 'Unit Berhasil diupdate');
     }
 
     /**
@@ -62,5 +84,8 @@ class UnitController extends Controller
     public function destroy(Unit $unit)
     {
         //
+        $unit->delete();
+
+        return redirect()->back()->with('success', 'Unit Berhasil dihapus');
     }
 }

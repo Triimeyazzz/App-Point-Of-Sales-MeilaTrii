@@ -14,9 +14,25 @@ class MemberController extends Controller
     public function index()
     {
         //
-        $members = Member::with('user')->paginate(10);
+        $members = Member::with('user');
 
-        return view('members.index', compact('members'));
+        if (request()->ajax()) {
+            return datatables()->of($members)
+                ->addIndexColumn()
+                ->addColumn('name', function ($data) {
+                    return view('member._namefield', compact('data'));
+                })
+                ->addColumn('email', function ($data) {
+                    return $data->user->email;
+                })
+                ->addColumn('actions', function ($data) {
+                    return view('member._actions', compact('data'));
+                })
+                ->rawColumns(['actions'])
+                ->make(true);
+        }
+
+        return view('member.index');
     }
 
     /**
@@ -25,7 +41,7 @@ class MemberController extends Controller
     public function create()
     {
         //
-        return view('members.create');
+        return view('member.create');
     }
 
     /**
@@ -67,7 +83,7 @@ class MemberController extends Controller
             'alamat' => $input['alamat']
         ]);
 
-        return redirect()->route('members.index')->with('success', 'Member berhasil di tambahkan');
+        return redirect()->route('member.index')->with('success', 'Member berhasil di tambahkan');
     }
 
     /**
@@ -84,7 +100,7 @@ class MemberController extends Controller
     public function edit(Member $member)
     {
         //
-        return view('members.edit', compact('member'));
+        return view('member.edit', compact('member'));
     }
 
     /**
@@ -123,7 +139,7 @@ class MemberController extends Controller
             'alamat' => $input['alamat']
         ]);
 
-        return redirect()->route('members.index')->with('success', 'Member berhasil di ubah');
+        return redirect()->route('member.index')->with('success', 'Member berhasil di ubah');
     }
 
     /**
