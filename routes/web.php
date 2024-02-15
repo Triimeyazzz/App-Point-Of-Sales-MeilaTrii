@@ -10,6 +10,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UnitController;
 // use itu artinya menggunakan,
 // jadi apapun isi di dalam folder itu,
 // bisa digunakan semuanya
@@ -58,4 +59,7 @@ Route::middleware('auth', 'role:Admin')->group(function () {
 
     //Brand
     Route::resource('/brand', BrandController::class);
+
+    //Unit
+    Route::resource('/unit', UnitController::class);
 });
