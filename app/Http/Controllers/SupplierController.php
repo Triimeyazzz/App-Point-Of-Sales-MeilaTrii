@@ -20,13 +20,13 @@ class SupplierController extends Controller
             return datatables()->of($suppliers)
                 ->addIndexColumn()
                 ->addColumn('name', function ($data) {
-                    return view('supplier.supplier_namefiled', compact('data'));
+                    return view('supplier._namefiled', compact('data'));
                 })
                 ->addColumn('email', function ($data) {
                     return $data->user->email;
                 })
                 ->addColumn('actions', function ($data) {
-                    return view('supplier.supplier_actions', compact('data'));
+                    return view('supplier._actions', compact('data'));
                 })
                 ->rawColumns(['actions', 'name', 'role'])
                 ->make(true);

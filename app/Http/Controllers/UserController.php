@@ -21,13 +21,13 @@ class UserController extends Controller
             return datatables()->of($users)
                 ->addIndexColumn()
                 ->addColumn('name', function ($data) {
-                    return view('users.user_namefield', compact('data'));
+                    return view('users._namefield', compact('data'));
                 })
                 ->addColumn('role', function ($data) {
-                    return view('users.user_role', compact('data'));
+                    return view('users._role', compact('data'));
                 })
                 ->addColumn('actions', function ($data) {
-                    return view('users.user_actions', compact('data'));
+                    return view('users._actions', compact('data'));
                 })
                 ->rawColumns(['actions', 'name', 'role'])
                 ->make(true);

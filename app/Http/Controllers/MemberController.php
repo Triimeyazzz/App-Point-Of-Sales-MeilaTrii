@@ -20,13 +20,13 @@ class MemberController extends Controller
             return datatables()->of($members)
                 ->addIndexColumn()
                 ->addColumn('name', function ($data) {
-                    return view('member.member_namefield', compact('data'));
+                    return view('member._namefield', compact('data'));
                 })
                 ->addColumn('email', function ($data) {
                     return $data->user->email;
                 })
                 ->addColumn('actions', function ($data) {
-                    return view('member.member_actions', compact('data'));
+                    return view('member._actions', compact('data'));
                 })
                 ->rawColumns(['actions', 'name', 'role'])
                 ->make(true);

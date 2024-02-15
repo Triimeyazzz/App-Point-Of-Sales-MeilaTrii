@@ -59,7 +59,7 @@
                 </li>
                 <li class="nav-header">Produk</li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('kategori.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-list-ul"></i>
                         <p>Kategori</p>
                     </a>
