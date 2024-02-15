@@ -29,7 +29,7 @@ class UserController extends Controller
                 ->addColumn('actions', function ($data) {
                     return view('users._actions', compact('data'));
                 })
-                ->rawColumns(['actions', 'name', 'role'])
+                ->rawColumns(['actions'])
                 ->make(true);
         }
 

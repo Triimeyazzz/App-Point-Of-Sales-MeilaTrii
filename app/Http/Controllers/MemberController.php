@@ -28,7 +28,7 @@ class MemberController extends Controller
                 ->addColumn('actions', function ($data) {
                     return view('member._actions', compact('data'));
                 })
-                ->rawColumns(['actions', 'name', 'role'])
+                ->rawColumns(['actions'])
                 ->make(true);
         }
 

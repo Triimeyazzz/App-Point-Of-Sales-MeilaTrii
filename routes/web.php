@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SupplierController; //kalau ditulis disini
 
 use App\Http\Controllers;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RoleController;
@@ -54,4 +55,7 @@ Route::middleware('auth', 'role:Admin')->group(function () {
 
     //Kategori
     Route::resource('/kategori', KategoriController::class);
+
+    //Brand
+    Route::resource('/brand', BrandController::class);
 });

@@ -21,7 +21,7 @@ class KategoriController extends Controller
                 ->addColumn('actions', function ($data) {
                     return view('kategori._actions', compact('data'));
                 })
-                ->rawColumns(['actions', 'name', 'role'])
+                ->rawColumns(['actions'])
                 ->make(true);
         }
 

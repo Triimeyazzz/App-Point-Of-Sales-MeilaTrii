@@ -9,51 +9,58 @@ class BrandController extends Controller
 {
     public function index()
     {
-        $brands = Brand::paginate(10);
-        return view('content.brand', compact('brands'));
+        $datas = Brand::orderBy('created_at', 'desc');
+
+        if (request()->ajax()) {
+            return datatables()->of($datas)
+                ->addIndexColumn()
+                ->addColumn('actions', function ($data) {
+                    return view('brand._actions', compact('data'));
+                })
+                ->rawColumns(['actions'])
+                ->make(true);
+        }
+
+        return view('brand.index');
     }
 
     public function create()
     {
-        return view('content.brand');
+        //
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:brands,name'
-        ]);
+        $input = $request->all();
 
-        Brand::create($request->all());
+        Brand::create($input);
 
-        return redirect()->route('content.brand')->with('success', 'Brand created successfully.');
+        return redirect()->back()->with('success', 'Brand berhasil ditambah.');
     }
 
     public function show(Brand $brand)
     {
-        return view('content.brand', compact('brand'));
+        //
     }
 
     public function edit(Brand $brand)
     {
-        return view('content.brand.edit', compact('brand'));
+        //
     }
 
     public function update(Request $request, Brand $brand)
     {
-        $request->validate([
-            'name' => 'required|unique:brands,name,'.$brand->id
-        ]);
+        $input = $request->all();
 
-        $brand->update($request->all());
+        $brand->update($input);
 
-        return redirect()->route('brands.index')->with('success', 'Brand updated successfully.');
+        return redirect()->back()->with('success', 'Brand berhasil diubah.');
     }
 
     public function destroy(Brand $brand)
     {
         $brand->delete();
 
-        return redirect()->route('brands.index')->with('success', 'Brand deleted successfully.');
+        return redirect()->back()->with('success', 'Brand berhasil dihapus.');
     }
 }
