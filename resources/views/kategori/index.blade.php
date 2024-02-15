@@ -95,7 +95,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Search'
+                searchPlaceholder: 'Cari'
             },
             ajax: {
                 url: '{{ route('kategori.index') }}',
