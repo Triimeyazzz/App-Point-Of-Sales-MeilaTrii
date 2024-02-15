@@ -2,21 +2,15 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
-
-use App\Http\Controllers\SupplierController; //kalau ditulis disini
-
-use App\Http\Controllers;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MemberController;
-use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UnitController;
 // use itu artinya menggunakan,
 // jadi apapun isi di dalam folder itu,
 // bisa digunakan semuanya
 
-use App\Models\Kategori;
-use App\Models\Supplier;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
