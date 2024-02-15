@@ -45,9 +45,6 @@ Route::middleware('auth', 'role:Admin')->group(function () {
     //User
     Route::resource('/users', UserController::class);
 
-    //Role
-    Route::resource('/roles', RoleController::class);
-
     //Member
     Route::resource('/members', MemberController::class);
 

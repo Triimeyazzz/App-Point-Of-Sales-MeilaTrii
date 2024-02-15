@@ -9,6 +9,7 @@
         <div class="row">
             <!-- left column -->
             <div class="col-md-12">
+                @include('layouts.session_messages')
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">

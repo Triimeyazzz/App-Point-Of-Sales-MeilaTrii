@@ -14,9 +14,25 @@ class MemberController extends Controller
     public function index()
     {
         //
-        $members = Member::with('user')->paginate(10);
+        $members = Member::with('user');
 
-        return view('members.index', compact('members'));
+        if (request()->ajax()) {
+            return datatables()->of($members)
+                ->addIndexColumn()
+                ->addColumn('name', function ($data) {
+                    return view('members.member_namefield', compact('data'));
+                })
+                ->addColumn('email', function ($data) {
+                    return $data->user->email;
+                })
+                ->addColumn('actions', function ($data) {
+                    return view('members.member_actions', compact('data'));
+                })
+                ->rawColumns(['actions', 'name', 'role'])
+                ->make(true);
+        }
+
+        return view('members.index');
     }
 
     /**

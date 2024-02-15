@@ -15,9 +15,25 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users = User::paginate(10);
+        $users = User::orderBy('id', 'asc');
 
-        return view('users.index', compact('users'));
+        if (request()->ajax()) {
+            return datatables()->of($users)
+                ->addIndexColumn()
+                ->addColumn('name', function ($data) {
+                    return view('users.user_namefield', compact('data'));
+                })
+                ->addColumn('role', function ($data) {
+                    return view('users.user_role', compact('data'));
+                })
+                ->addColumn('actions', function ($data) {
+                    return view('users.user_actions', compact('data'));
+                })
+                ->rawColumns(['actions', 'name', 'role'])
+                ->make(true);
+        }
+
+        return view('users.index');
     }
 
     /**
@@ -44,7 +60,6 @@ class UserController extends Controller
             'email' => 'required|unique:users,email',
             'password' => 'required',
             'confirm-password' => 'required|same:password',
-            'roles' => 'required',
         ]);
 
         if($request->hasFile('photo')){

@@ -14,9 +14,25 @@ class SupplierController extends Controller
     public function index()
     {
         //
-        $suppliers = Supplier::paginate(10);
+        $suppliers = Supplier::with('user');
 
-        return view('suppliers.index', compact('suppliers'));
+        if (request()->ajax()) {
+            return datatables()->of($suppliers)
+                ->addIndexColumn()
+                ->addColumn('name', function ($data) {
+                    return view('suppliers.supplier_namefiled', compact('data'));
+                })
+                ->addColumn('email', function ($data) {
+                    return $data->user->email;
+                })
+                ->addColumn('actions', function ($data) {
+                    return view('suppliers.supplier_actions', compact('data'));
+                })
+                ->rawColumns(['actions', 'name', 'role'])
+                ->make(true);
+        }
+
+        return view('suppliers.index');
     }
 
     /**
