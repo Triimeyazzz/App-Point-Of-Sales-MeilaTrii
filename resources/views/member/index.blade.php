@@ -20,12 +20,12 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Member</h3>
-                            <a href="{{ route('members.create') }}" class="btn btn-primary btn-sm">Tambah Member</a>
+                            <a href="{{ route('member.create') }}" class="btn btn-primary btn-sm">Tambah Member</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-bordered members-table">
+                        <table class="table table-bordered member-table">
                             <thead>
                                 <tr>
                                     <th width="7%">No</th>
@@ -55,7 +55,7 @@
     <script src="../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
     <script>
-        var memberTable = $('.members-table').DataTable({
+        var memberTable = $('.member-table').DataTable({
             processing: true,
             serverSide: true,
             language: {
@@ -64,7 +64,7 @@
                 searchPlaceholder: 'Search'
             },
             ajax: {
-                url: '{{ route('members.index') }}',
+                url: '{{ route('member.index') }}',
                 type: 'GET'
             },
             columns: [{

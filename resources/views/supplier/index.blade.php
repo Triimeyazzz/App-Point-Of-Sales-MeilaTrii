@@ -20,12 +20,12 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Supplier</h3>
-                            <a href="{{ route('suppliers.create') }}" class="btn btn-primary btn-sm">Tambah Supplier</a>
+                            <a href="{{ route('supplier.create') }}" class="btn btn-primary btn-sm">Tambah Supplier</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-bordered suppliers-table">
+                        <table class="table table-bordered supplier-table">
                             <thead>
                                 <tr>
                                     <th width="7%">No</th>
@@ -55,7 +55,7 @@
     <script src="../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
     <script>
-        var supplierTable = $('.suppliers-table').DataTable({
+        var supplierTable = $('.supplier-table').DataTable({
             processing: true,
             serverSide: true,
             language: {
@@ -64,7 +64,7 @@
                 searchPlaceholder: 'Search'
             },
             ajax: {
-                url: '{{ route('suppliers.index') }}',
+                url: '{{ route('supplier.index') }}',
                 type: 'GET'
             },
             columns: [{

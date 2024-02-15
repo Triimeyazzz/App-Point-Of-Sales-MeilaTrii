@@ -20,19 +20,19 @@ class MemberController extends Controller
             return datatables()->of($members)
                 ->addIndexColumn()
                 ->addColumn('name', function ($data) {
-                    return view('members.member_namefield', compact('data'));
+                    return view('member.member_namefield', compact('data'));
                 })
                 ->addColumn('email', function ($data) {
                     return $data->user->email;
                 })
                 ->addColumn('actions', function ($data) {
-                    return view('members.member_actions', compact('data'));
+                    return view('member.member_actions', compact('data'));
                 })
                 ->rawColumns(['actions', 'name', 'role'])
                 ->make(true);
         }
 
-        return view('members.index');
+        return view('member.index');
     }
 
     /**
@@ -41,7 +41,7 @@ class MemberController extends Controller
     public function create()
     {
         //
-        return view('members.create');
+        return view('member.create');
     }
 
     /**
@@ -83,7 +83,7 @@ class MemberController extends Controller
             'alamat' => $input['alamat']
         ]);
 
-        return redirect()->route('members.index')->with('success', 'Member berhasil di tambahkan');
+        return redirect()->route('member.index')->with('success', 'Member berhasil di tambahkan');
     }
 
     /**
@@ -100,7 +100,7 @@ class MemberController extends Controller
     public function edit(Member $member)
     {
         //
-        return view('members.edit', compact('member'));
+        return view('member.edit', compact('member'));
     }
 
     /**
@@ -139,7 +139,7 @@ class MemberController extends Controller
             'alamat' => $input['alamat']
         ]);
 
-        return redirect()->route('members.index')->with('success', 'Member berhasil di ubah');
+        return redirect()->route('member.index')->with('success', 'Member berhasil di ubah');
     }
 
     /**

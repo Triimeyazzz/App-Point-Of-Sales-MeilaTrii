@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Tambah Supplier
+    Tambah Member
 @endsection
 
 @section('content')
@@ -13,18 +13,18 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah Subplier</h3>
+                        <h3 class="card-title">Tambah Member</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('suppliers.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('member.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="row">
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Nama Supplier</label>
+                                        <label for="name">Nama Lengkap</label>
                                         <input type="text" class="form-control" name="name" id="name"
                                             placeholder="Masukkan Nama" required>
                                     </div>
@@ -56,12 +56,12 @@
                                             placeholder="Masukkan Alamat" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="userphoto">Photo/Logo</label>
+                                        <label for="userphoto">Photo</label>
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="photo" class="custom-file-input"
                                                     id="userphoto" accept="image/*">
-                                                <label class="custom-file-label" for="exampleInputFile">Pilih file</label>
+                                                <label class="custom-file-label" for="exampleInputFile">Pilih photo</label>
                                             </div>
                                         </div>
                                     </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SupplierController; //kalau ditulis disini
 
 use App\Http\Controllers;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RoleController;
 // use itu artinya menggunakan,
@@ -46,8 +47,11 @@ Route::middleware('auth', 'role:Admin')->group(function () {
     Route::resource('/users', UserController::class);
 
     //Member
-    Route::resource('/members', MemberController::class);
+    Route::resource('/member', MemberController::class);
 
     //Supplier
-    Route::resource('/suppliers', SupplierController::class);
+    Route::resource('/supplier', SupplierController::class);
+
+    //Kategori
+    Route::resource('/kategori', KategoriController::class);
 });

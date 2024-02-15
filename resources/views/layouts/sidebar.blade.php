@@ -46,13 +46,13 @@
                 </li>
                 <li class="nav-header">Master</li>
                 <li class="nav-item">
-                    <a href="{{ route('members.index') }}" class="nav-link">
+                    <a href="{{ route('member.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Member</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('suppliers.index') }}" class="nav-link">
+                    <a href="{{ route('supplier.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Supplier</p>
                     </a>

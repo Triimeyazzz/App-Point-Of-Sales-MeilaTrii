@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Tambah Member
+    Ubah supplier
 @endsection
 
 @section('content')
@@ -13,12 +13,13 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah Member</h3>
+                        <h3 class="card-title">Ubah supplier</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('members.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('supplier.update', $supplier->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('put')
                         <div class="card-body">
                             <div class="row">
                                 <!-- left column -->
@@ -26,34 +27,34 @@
                                     <div class="form-group">
                                         <label for="name">Nama Lengkap</label>
                                         <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Masukkan Nama" required>
+                                            placeholder="Masukkan Nama" value="{{ $supplier->user->name }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Alamat Email</label>
                                         <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                            placeholder="Enter email" required>
+                                            placeholder="Enter email" value="{{ $supplier->user->email }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
                                         <input type="password" class="form-control" name="password"
-                                            id="exampleInputPassword1" placeholder="Password" required>
+                                            id="exampleInputPassword1" placeholder="Password">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword2">Konfirmasi Password</label>
                                         <input type="password" class="form-control" name="confirm-password"
-                                            id="exampleInputPassword2" placeholder="Password" required>
+                                            id="exampleInputPassword2" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="no_hp">Nomor HP</label>
                                         <input type="text" class="form-control" name="no_hp" id="no_hp"
-                                            placeholder="Masukkan Nomor" required>
+                                            placeholder="Masukkan Nomor" value="{{ $supplier->no_hp }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <input type="text" class="form-control" name="alamat" id="alamat"
-                                            placeholder="Masukkan Alamat" required>
+                                            placeholder="Masukkan Alamat" value="{{ $supplier->alamat }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="userphoto">Photo</label>

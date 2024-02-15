@@ -17,7 +17,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('members.update', $member->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('member.update', $member->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="card-body">
