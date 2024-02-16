@@ -15,8 +15,8 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        //Buat User
-        $user = User::create([
+        //Buat User Admin
+        $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345'),
@@ -26,17 +26,23 @@ class AdminSeeder extends Seeder
 
         //Membuat Role Admin
         //Semisal role sudah dibuat tinggal assign idnya
-        //contoh seperti kode paling bawah $user->assignRole(['0' => 'Admin']);
+        //contoh seperti kode paling bawah $user->assignRole('Admin');
         //atau $user->assignRole(['1' => 'Member']);
-        $role = Role::create(['name' => 'Admin']);
-        Role::create(['name' => 'Supplier']);
-        Role::create(['name' => 'Member']);
-
-        //Sebenernya permission ini tidak perlu karena cuma membutuhkan role
-        $permissions = Permission::pluck('id', 'id')->all();
-        $role->syncPermissions($permissions);
+        $roleAdmin = Role::create(['name' => 'Admin']);
 
         //Mengassign role admin ke user
-        $user->assignRole([$role->id]);
+        $admin->assignRole([$roleAdmin->id]);
+
+        //_________________________________________________________________//
+
+        //Role Petugas
+        $petugas = User::create([
+            'name' => 'Petugas',
+            'email' => 'petugas@gmail.com',
+            'password' => bcrypt('12345'),
+        ]);
+
+        $rolePetugas = Role::create(['name' => 'Petugas']);
+        $petugas->assignRole([$rolePetugas->id]);
     }
 }

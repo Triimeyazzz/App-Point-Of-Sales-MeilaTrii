@@ -25,24 +25,14 @@
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Nama Lengkap</label>
-                                        <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Masukkan Nama" value="{{ $supplier->user->name }}" required>
+                                        <label for="nama">Nama Lengkap</label>
+                                        <input type="text" class="form-control" name="nama" id="nama"
+                                            placeholder="Masukkan Nama" value="{{ $supplier->nama }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Alamat Email</label>
                                         <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                            placeholder="Enter email" value="{{ $supplier->user->email }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" name="password"
-                                            id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword2">Konfirmasi Password</label>
-                                        <input type="password" class="form-control" name="confirm-password"
-                                            id="exampleInputPassword2" placeholder="Password">
+                                            placeholder="Enter email" value="{{ $supplier->email }}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -55,16 +45,6 @@
                                         <label for="alamat">Alamat</label>
                                         <input type="text" class="form-control" name="alamat" id="alamat"
                                             placeholder="Masukkan Alamat" value="{{ $supplier->alamat }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="userphoto">Photo</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" name="photo" class="custom-file-input"
-                                                    id="userphoto" accept="image/*">
-                                                <label class="custom-file-label" for="exampleInputFile">Pilih photo</label>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

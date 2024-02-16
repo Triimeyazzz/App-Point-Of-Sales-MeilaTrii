@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\UnitController;
 // use itu artinya menggunakan,
 // jadi apapun isi di dalam folder itu,
@@ -43,7 +43,7 @@ Route::middleware('auth', 'role:Admin')->group(function () {
     Route::resource('/users', UserController::class);
 
     //Member
-    Route::resource('/member', MemberController::class);
+    Route::resource('/pelanggan', PelangganController::class);
 
     //Supplier
     Route::resource('/supplier', SupplierController::class);

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Supplier;
-use App\Models\User;
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 
-class SupplierController extends Controller
+class PelangganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,19 +13,19 @@ class SupplierController extends Controller
     public function index()
     {
         //
-        $suppliers = Supplier::orderBy('id', 'desc');
+        $datas = Pelanggan::orderBy('id', 'desc');
 
         if (request()->ajax()) {
-            return datatables()->of($suppliers)
+            return datatables()->of($datas)
                 ->addIndexColumn()
                 ->addColumn('actions', function ($data) {
-                    return view('supplier._actions', compact('data'));
+                    return view('pelanggan._actions', compact('data'));
                 })
                 ->rawColumns(['actions'])
                 ->make(true);
         }
 
-        return view('supplier.index');
+        return view('pelanggan.index');
     }
 
     /**
@@ -35,7 +34,7 @@ class SupplierController extends Controller
     public function create()
     {
         //
-        return view('supplier.create');
+        return view('pelanggan.create');
     }
 
     /**
@@ -44,15 +43,15 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         //
-        Supplier::create($request->all());
+        Pelanggan::create($request->all());
 
-        return redirect()->route('supplier.index')->with('success', 'Member berhasil di tambahkan');
+        return redirect()->route('pelanggan.index')->with('success', 'Pelanggan Berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Supplier $supplier)
+    public function show(Pelanggan $pelanggan)
     {
         //
     }
@@ -60,31 +59,31 @@ class SupplierController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Supplier $supplier)
+    public function edit(Pelanggan $pelanggan)
     {
         //
-        return view('supplier.edit', compact('supplier'));
+        return view('pelanggan.edit', compact('pelanggan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Supplier $supplier)
+    public function update(Request $request, Pelanggan $pelanggan)
     {
         //
-        $supplier->update($request->all());
+        $pelanggan->update($request->all());
 
-        return redirect()->route('supplier.index')->with('success', 'Member berhasil di ubah');
+        return redirect()->route('pelanggan.index')->with('success', 'Pelanggan Berhasil diedit');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Supplier $supplier)
+    public function destroy(Pelanggan $pelanggan)
     {
         //
-        $supplier->delete();
+        $pelanggan->delete();
 
-        return redirect()->back()->with('success', 'Member berhasil di hapus');
+        return redirect()->route('pelanggan.index')->with('success', 'Pelanggan Berhasil dihapus');
     }
 }

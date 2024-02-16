@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -42,9 +41,6 @@ class UserController extends Controller
     public function create()
     {
         //
-        $roles = Role::pluck('name', 'name')->all();
-
-        return view('users.create', compact('roles'));
     }
 
     /**
@@ -53,25 +49,6 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        $input = $request->all();
-
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users,email',
-            'password' => 'required',
-            'confirm-password' => 'required|same:password',
-        ]);
-
-        if($request->hasFile('photo')){
-            $input['photo'] = $request->file('photo')->store('users', 'public');
-        }
-
-        $input['password'] = Hash::make($input['password']);
-        $user = User::create($input);
-
-        $user->assignRole('Admin');
-
-        return redirect()->route('users.index')->with('success', 'Pengguna berhasil dibuat');
     }
 
     /**
@@ -88,11 +65,6 @@ class UserController extends Controller
     public function edit(string $id)
     {
         //
-        $user = User::find($id);
-
-        $roles = Role::pluck('name', 'name')->all();
-
-        return view('users.edit', compact('user', 'roles'));
     }
 
     /**

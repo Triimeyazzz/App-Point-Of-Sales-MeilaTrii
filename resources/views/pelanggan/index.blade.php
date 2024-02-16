@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Member
+    Pelanggan
 @endsection
 
 @section('content')
@@ -19,13 +19,13 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Member</h3>
-                            <a href="{{ route('member.create') }}" class="btn btn-primary btn-sm">Tambah Member</a>
+                            <h3 class="card-title">Pelanggan</h3>
+                            <a href="{{ route('pelanggan.create') }}" class="btn btn-primary btn-sm">Tambah Pelanggan</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-bordered member-table">
+                        <table class="table table-bordered pelanggan-table">
                             <thead>
                                 <tr>
                                     <th width="7%">No</th>
@@ -55,7 +55,7 @@
     <script src="../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
     <script>
-        var memberTable = $('.member-table').DataTable({
+        var pelangganTable = $('.pelanggan-table').DataTable({
             processing: true,
             serverSide: true,
             language: {
@@ -64,7 +64,7 @@
                 searchPlaceholder: 'Cari'
             },
             ajax: {
-                url: '{{ route('member.index') }}',
+                url: '{{ route('pelanggan.index') }}',
                 type: 'GET'
             },
             columns: [{
@@ -74,8 +74,8 @@
                     searchable: false
                 },
                 {
-                    data: 'name',
-                    name: 'name'
+                    data: 'nama',
+                    name: 'nama'
                 },
                 {
                     data: 'email',

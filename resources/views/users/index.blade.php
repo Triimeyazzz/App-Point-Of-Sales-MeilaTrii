@@ -17,12 +17,6 @@
             <div class="col-md-12">
                 @include('layouts.session_messages')
                 <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Pengguna</h3>
-                            <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">Tambah Pengguna</a>
-                        </div>
-                    </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table class="table table-bordered users-table">

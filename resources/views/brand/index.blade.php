@@ -26,17 +26,19 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-bordered brand-table">
-                            <thead>
-                                <tr>
-                                    <th width="7%">No</th>
-                                    <th>Nama</th>
-                                    <th width="15%">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        {{-- <div class="table-responsive"> --}}
+                            <table class="table table-bordered brand-table">
+                                <thead>
+                                    <tr>
+                                        <th width="7%">No</th>
+                                        <th>Nama</th>
+                                        <th width="15%">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        {{-- </div> --}}
                     </div>
                     <!-- /.card-body -->
                 </div>
