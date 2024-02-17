@@ -62,6 +62,7 @@ Route::middleware('auth', 'role:Admin')->group(function () {
 
     //Produk
     Route::resource('/produk', ProdukController::class);
+    Route::get('cari-produk', [ProdukController::class, 'cari'])->name('cari.produk');
 
     //Pembelian
     Route::resource('/pembelian', PembelianController::class);
