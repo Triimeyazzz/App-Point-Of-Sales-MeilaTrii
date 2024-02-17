@@ -92,7 +92,7 @@ class PembelianController extends Controller
 
             $stok_produk = Produk::find($item['product_id']);
             $stok_produk->update([
-                'stok' => $stok_produk->stok + $item['product_id'],
+                'stok' => $stok_produk->stok + $item['quantity'],
                 'harga_beli' => $item['price'],
             ]);
         }
