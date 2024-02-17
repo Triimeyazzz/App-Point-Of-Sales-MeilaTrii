@@ -58,12 +58,22 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi"
+                                            placeholder="Masukkan Deskripsi" required></textarea>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="sku">SKU</label>
                                         <input type="text" class="form-control" name="sku" id="sku"
                                             placeholder="Masukkan SKU" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="harga_beli">Harga Beli</label>
+                                        <input type="number" class="form-control" name="harga_beli" id="harga_beli"
+                                            placeholder="Masukkan Harga" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="harga_jual">Harga Jual</label>
@@ -79,11 +89,6 @@
                                                 <label class="custom-file-label" for="image">Pilih Gambar</label>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="deskripsi">Deskripsi</label>
-                                        <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi"
-                                            placeholder="Masukkan Deskripsi" required></textarea>
                                     </div>
                                 </div>
                             </div>
