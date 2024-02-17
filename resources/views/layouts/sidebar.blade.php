@@ -12,10 +12,12 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ Storage::url(Auth::user()->photo ?? '../../dist/img/default-150x150.png') }}" class="img-circle elevation-2" alt ="User Image">
+                <img src="{{ Storage::url(Auth::user()->photo ?? '../../dist/img/default-150x150.png') }}"
+                    class="img-circle elevation-2" alt ="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ Auth::user()->name ?? '' }} ({{ Auth::user()->getRoleNames()->first() }})</a>
+                <a href="#" class="d-block">{{ Auth::user()->name ?? '' }}
+                    ({{ Auth::user()->getRoleNames()->first() }})</a>
             </div>
         </div>
 
@@ -39,71 +41,92 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}" class="nav-link">
+                    <a href="{{ route('dashboard') }}"
+                        class="nav-link {{ Request::route()->getName() == 'dashboard' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-header">Master</li>
                 <li class="nav-item">
-                    <a href="{{ route('pelanggan.index') }}" class="nav-link">
+                    <a href="{{ route('pelanggan.index') }}"
+                        class="nav-link {{ Request::route()->getName() == 'pelanggan.index' || Request::route()->getName() == 'pelanggan.edit' || Request::route()->getName() == 'pelanggan.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Pelanggan</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('supplier.index') }}" class="nav-link">
+                    <a href="{{ route('supplier.index') }}"
+                        class="nav-link {{ Request::route()->getName() == 'supplier.index' || Request::route()->getName() == 'supplier.edit' || Request::route()->getName() == 'supplier.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Supplier</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('pembelian.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
+                    <a href="{{ route('pembelian.index') }}"
+                        class="nav-link {{ Request::route()->getName() == 'pembelian.index' || Request::route()->getName() == 'pembelian.edit' || Request::route()->getName() == 'pembelian.create' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cart-plus"></i>
                         <p>Pembelian</p>
                     </a>
                 </li>
-                <li class="nav-header">Produk</li>
-                <li class="nav-item">
-                    <a href="{{ route('kategori.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-list-ul"></i>
-                        <p>Kategori</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('produk.index') }}" class="nav-link">
+                <li
+                    class="nav-item {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'kategori.index' || Request::route()->getName() == 'brand.index' || Request::route()->getName() == 'unit.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'kategori.index' || Request::route()->getName() == 'brand.index' || Request::route()->getName() == 'unit.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-archive"></i>
-                        <p>Produk</p>
+                        <p>
+                            Produk
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('brand.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-suitcase"></i>
-                        <p>Brand</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('unit.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-cubes"></i>
-                        <p>Unit</p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('kategori.index') }}"
+                                class="nav-link {{ Request::route()->getName() == 'kategori.index' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-list-ul"></i>
+                                <p>Kategori</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('produk.index') }}"
+                                class="nav-link {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-archive"></i>
+                                <p>Produk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('brand.index') }}"
+                                class="nav-link {{ Request::route()->getName() == 'brand.index' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-suitcase"></i>
+                                <p>Brand</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('unit.index') }}"
+                                class="nav-link {{ Request::route()->getName() == 'unit.index' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-cubes"></i>
+                                <p>Unit</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-header">Laporan</li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>Pembelian</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>Pengeluaran</p>
                     </a>
                 </li>
                 <li class="nav-header">Administrasi</li>
                 <li class="nav-item">
-                    <a href="{{ route('users.index') }}" class="nav-link">
+                    <a href="{{ route('users.index') }}"
+                        class="nav-link {{ Request::route()->getName() == 'users.index' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>Pengguna</p>
                     </a>
@@ -116,7 +139,7 @@
                 </li> --}}
                 {{-- <li class="nav-header">Misc</li> --}}
                 <li class="nav-item">
-                    <a href="/" class="nav-link">
+                    <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>Pengaturan</p>
                     </a>

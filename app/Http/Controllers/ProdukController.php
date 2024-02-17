@@ -37,7 +37,7 @@ class ProdukController extends Controller
                     return 'Rp. ' . number_format($data->harga_jual, 0, ',', '.');
                 })
                 ->addColumn('actions', function ($data) {
-                    return view('brand._actions', compact('data'));
+                    return view('produk._actions', compact('data'));
                 })
                 ->rawColumns(['actions'])
                 ->make(true);
@@ -84,6 +84,7 @@ class ProdukController extends Controller
     public function edit(Produk $produk)
     {
         //
+        return view('produk.edit', compact('produk'));
     }
 
     /**
@@ -100,6 +101,9 @@ class ProdukController extends Controller
     public function destroy(Produk $produk)
     {
         //
+        $produk->delete();
+
+        return redirect()->route('produk.index')->with('success', 'Produk Berhasil dihapus');
     }
 
     //Custom
