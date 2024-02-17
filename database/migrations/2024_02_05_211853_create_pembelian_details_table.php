@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pembelian_id');
             $table->unsignedBigInteger('produk_id');
+            $table->integer('kuantitas');
             $table->integer('harga');
-            $table->integer('jumlah');
-            $table->integer('total');
             $table->timestamps();
         });
     }

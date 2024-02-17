@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Produk
+    Pembelian
 @endsection
 
 @section('content')
@@ -19,25 +19,22 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Produk</h3>
-                            <a href="{{ route('produk.create') }}" class="btn btn-primary btn-sm">Tambah Produk</a>
+                            <h3 class="card-title">Pembelian</h3>
+                            <a href="{{ route('pembelian.create') }}" class="btn btn-primary btn-sm">Tambah Pembelian</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         {{-- <div class="table-responsive"> --}}
-                            <table class="table table-bordered produk-table">
+                            <table class="table table-bordered pembelian-table">
                                 <thead>
                                     <tr>
                                         <th width="7%">No</th>
-                                        <th>Nama</th>
-                                        <th>SKU</th>
-                                        <th>Kategori</th>
-                                        <th>Brand</th>
-                                        <th>Unit</th>
-                                        <th>Stok</th>
-                                        <th>Harga Jual</th>
-                                        <th>Harga Beli</th>
+                                        <th>Nama Produk</th>
+                                        <th>Supplier</th>
+                                        <th>Kuantitas</th>
+                                        <th>Harga</th>
+                                        <th>Tanggal Pembelian</th>
                                         <th width="10%">Aksi</th>
                                     </tr>
                                 </thead>
@@ -62,7 +59,7 @@
     <script src="../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
     <script>
-        var produkTable = $('.produk-table').DataTable({
+        var pembelianTable = $('.pembelian-table').DataTable({
             processing: true,
             serverSide: true,
             language: {
@@ -71,7 +68,7 @@
                 searchPlaceholder: 'Cari'
             },
             ajax: {
-                url: '{{ route('produk.index') }}',
+                url: '{{ route('pembelian.index') }}',
                 type: 'GET'
             },
             columns: [{
@@ -81,36 +78,24 @@
                     searchable: false
                 },
                 {
-                    data: 'nama',
-                    name: 'nama'
+                    data: 'produk',
+                    name: 'produk'
                 },
                 {
-                    data: 'sku',
-                    name: 'sku'
+                    data: 'supplier',
+                    name: 'supplier'
                 },
                 {
-                    data: 'kategori',
-                    name: 'kategori'
+                    data: 'kuantitas',
+                    name: 'kuantitas'
                 },
                 {
-                    data: 'brand',
-                    name: 'brand'
+                    data: 'harga',
+                    name: 'harga'
                 },
                 {
-                    data: 'unit',
-                    name: 'unit'
-                },
-                {
-                    data: 'stok',
-                    name: 'stok'
-                },
-                {
-                    data: 'harga_jual',
-                    name: 'harga_jual'
-                },
-                {
-                    data: 'harga_beli',
-                    name: 'harga_beli'
+                    data: 'tanggal',
+                    name: 'tanggal'
                 },
                 {
                     data: 'actions',

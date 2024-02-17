@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pembelian;
+use App\Models\PembelianDetail;
+use App\Models\Produk;
+use App\Models\Supplier;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PembelianController extends Controller
@@ -14,11 +18,31 @@ class PembelianController extends Controller
      */
     public function index()
     {
-        // Mengambil semua data pembelian dari database
-        $pembelians = Pembelian::all();
+        $datas = Pembelian::orderBy('created_at', 'desc');
 
-        // Mengirim data pembelian ke view 'content.pembelian' menggunakan compact
-        return view('content.pembelian', compact('pembelians'));
+        if (request()->ajax()) {
+            return datatables()->of($datas)
+                ->addIndexColumn()
+                ->addColumn('produk', function ($data) {
+                    return $data->produk->nama;
+                })
+                ->addColumn('supplier', function ($data) {
+                    return $data->supplier->nama;
+                })
+                ->addColumn('harga', function ($data) {
+                    return 'Rp. ' . number_format($data->harga, 0, ',', '.');
+                })
+                ->addColumn('tanggal', function ($data) {
+                    return Carbon::parse($data->created_at)->isoFormat('D MMMM Y');
+                })
+                ->addColumn('actions', function ($data) {
+                    return view('brand._actions', compact('data'));
+                })
+                ->rawColumns(['actions'])
+                ->make(true);
+        }
+
+        return view('pembelian.index');
     }
 
     /**
@@ -29,6 +53,10 @@ class PembelianController extends Controller
     public function create()
     {
         // Menampilkan form untuk membuat pembelian baru (jika diperlukan)
+        $suppliers = Supplier::all();
+        $produks = Produk::all();
+
+        return view('pembelian.create', compact('suppliers', 'produks'));
     }
 
     /**
@@ -40,6 +68,25 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         // Menyimpan data pembelian baru ke dalam database (jika diperlukan)
+        $input = $request->all();
+
+        $input['harga'] = $request->kuantitas * $request->harga_satuan;
+        $pembelian = Pembelian::create($input);
+
+        $stok_produk = Produk::find($request->produk_id);
+        $stok_produk->update([
+            'stok' => $stok_produk->stok + $request->kuantitas,
+            'harga_beli' => $request->harga_satuan
+        ]);
+
+        PembelianDetail::create([
+            'pembelian_id' => $pembelian->id,
+            'produk_id' => $request->produk_id,
+            'kuantitas' => $request->kuantitas,
+            'harga' => $request->harga_satuan
+        ]);
+
+        return redirect()->route('pembelian.index')->with('success', 'Data pembelian berhasil ditambahkan');
     }
 
     /**

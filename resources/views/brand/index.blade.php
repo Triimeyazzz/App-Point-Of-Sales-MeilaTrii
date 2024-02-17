@@ -31,7 +31,8 @@
                                 <thead>
                                     <tr>
                                         <th width="7%">No</th>
-                                        <th>Nama</th>
+                                        <th width="20%">Nama</th>
+                                        <th>Deskripsi</th>
                                         <th width="15%">Aksi</th>
                                     </tr>
                                 </thead>
@@ -63,6 +64,10 @@
                             <label for="name">Nama Brand</label>
                             <input type="text" class="form-control" name="nama" id="name"
                                 placeholder="Masukkan Nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi</label>
+                            <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Masukkan Deskripsi"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -107,6 +112,10 @@
                 {
                     data: 'nama',
                     name: 'nama'
+                },
+                {
+                    data: 'deskripsi',
+                    name: 'deskripsi'
                 },
                 {
                     data: 'actions',

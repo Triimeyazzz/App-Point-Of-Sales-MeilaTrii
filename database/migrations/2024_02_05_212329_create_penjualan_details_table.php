@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('penjualan_id');
             $table->unsignedBigInteger('produk_id');
+            $table->integer('kuantitas');
             $table->integer('harga');
-            $table->integer('jumlah');
-            $table->tinyInteger('diskon')->default(0);
-            $table->integer('total');
             $table->timestamps();
         });
     }

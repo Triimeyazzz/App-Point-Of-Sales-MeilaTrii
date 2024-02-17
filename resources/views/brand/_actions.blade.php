@@ -28,6 +28,10 @@
                         <input type="text" class="form-control" name="nama" id="name"
                             placeholder="Masukkan Nama" value="{{ $data->nama }}" required>
                     </div>
+                    <div class="form-group">
+                        <label for="deskripsi">Deskripsi</label>
+                        <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Masukkan Deskripsi">{{ $data->deskripsi }}</textarea>
+                    </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>

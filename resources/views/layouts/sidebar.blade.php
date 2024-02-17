@@ -57,6 +57,12 @@
                         <p>Supplier</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('pembelian.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Pembelian</p>
+                    </a>
+                </li>
                 <li class="nav-header">Produk</li>
                 <li class="nav-item">
                     <a href="{{ route('kategori.index') }}" class="nav-link">
@@ -65,7 +71,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('produk.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-archive"></i>
                         <p>Produk</p>
                     </a>
