@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Tambah Supplier
+    Tambah Pelanggan
 @endsection
 
 @section('content')
@@ -13,18 +13,18 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah Subplier</h3>
+                        <h3 class="card-title">Tambah Pelanggan</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('supplier.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('pelanggan.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="row">
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="nama">Nama Supplier</label>
+                                        <label for="nama">Nama Lengkap</label>
                                         <input type="text" class="form-control" name="nama" id="nama"
                                             placeholder="Masukkan Nama" required>
                                     </div>

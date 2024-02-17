@@ -35,9 +35,14 @@
                                             placeholder="Enter email" value="{{ $user->email }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" name="password"
-                                            id="exampleInputPassword1" placeholder="Password">
+                                        <label for="userphoto">Photo</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" name="photo" class="custom-file-input"
+                                                    id="userphoto" accept="image/*">
+                                                <label class="custom-file-label" for="exampleInputFile">Pilih photo</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -47,14 +52,9 @@
                                             id="exampleInputPassword2" placeholder="Password">
                                     </div>
                                     <div class="form-group">
-                                        <label for="userphoto">Photo</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" name="photo" class="custom-file-input"
-                                                    id="userphoto" accept="image/*">
-                                                <label class="custom-file-label" for="exampleInputFile">Pilih photo</label>
-                                            </div>
-                                        </div>
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" name="password"
+                                            id="exampleInputPassword1" placeholder="Password">
                                     </div>
                                 </div>
                             </div>

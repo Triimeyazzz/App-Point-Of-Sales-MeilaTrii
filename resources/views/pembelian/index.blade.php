@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Pengguna
+    Pembelian
 @endsection
 
 @section('content')
@@ -17,21 +17,30 @@
             <div class="col-md-12">
                 @include('layouts.session_messages')
                 <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Pembelian</h3>
+                            <a href="{{ route('pembelian.create') }}" class="btn btn-primary btn-sm">Tambah Pembelian</a>
+                        </div>
+                    </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-bordered users-table">
-                            <thead>
-                                <tr>
-                                    <th width="7%">No</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th width="10%">Sebagai</th>
-                                    <th width="15%">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        {{-- <div class="table-responsive"> --}}
+                            <table class="table table-bordered pembelian-table">
+                                <thead>
+                                    <tr>
+                                        <th width="7%">No</th>
+                                        <th>Supplier</th>
+                                        <th>Kuantitas</th>
+                                        <th>Harga</th>
+                                        <th>Tanggal Pembelian</th>
+                                        <th width="10%">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        {{-- </div> --}}
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -49,7 +58,7 @@
     <script src="../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
     <script>
-        var userTable = $('.users-table').DataTable({
+        var pembelianTable = $('.pembelian-table').DataTable({
             processing: true,
             serverSide: true,
             language: {
@@ -58,7 +67,7 @@
                 searchPlaceholder: 'Cari'
             },
             ajax: {
-                url: '{{ route('users.index') }}',
+                url: '{{ route('pembelian.index') }}',
                 type: 'GET'
             },
             columns: [{
@@ -68,16 +77,20 @@
                     searchable: false
                 },
                 {
-                    data: 'name',
-                    name: 'name'
+                    data: 'supplier',
+                    name: 'supplier'
                 },
                 {
-                    data: 'email',
-                    name: 'email'
+                    data: 'kuantitas',
+                    name: 'kuantitas'
                 },
                 {
-                    data: 'role',
-                    name: 'role'
+                    data: 'harga',
+                    name: 'harga'
+                },
+                {
+                    data: 'tanggal',
+                    name: 'tanggal'
                 },
                 {
                     data: 'actions',

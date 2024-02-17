@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('penjualan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('pelanggan_id');
             $table->integer('kuantitas');
             $table->integer('harga');
-            $table->tinyInteger('diskon')->default(0);
-            $table->integer('bayar');
-            $table->integer('diterima');
             $table->timestamps();
         });
     }
