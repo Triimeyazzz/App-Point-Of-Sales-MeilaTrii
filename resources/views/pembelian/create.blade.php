@@ -148,6 +148,16 @@
                     productPrice + '</td><td class="total-price">' + productPrice +
                     '</td><td><span class="btn btn-sm btn-danger remove-from-cart">Hapus</span></td></tr>'
                 );
+
+                // Menyimpan data produk dalam hidden input
+                var hiddenInput = $('<input type="hidden" name="items[]" value="">');
+                hiddenInput.val(JSON.stringify({
+                    'product_id': productId,
+                    'quantity': 1, // default quantity, bisa diubah sesuai kebutuhan
+                    'price': productPrice
+                }));
+                newRow.append(hiddenInput);
+
                 $('.cart-table tbody').append(newRow);
                 updateTotal();
             });
@@ -183,6 +193,13 @@
                     var price = $(this).data('price');
                     var subtotal = quantity * price;
                     total += subtotal;
+
+                    // Update quantity di hidden input
+                    var hiddenInput = $(this).find('input[name="items[]"]');
+                    var itemData = JSON.parse(hiddenInput.val());
+                    itemData.quantity = quantity;
+                    hiddenInput.val(JSON.stringify(itemData));
+
                     $(this).find('.total-price').text(subtotal.toFixed(2));
                 });
                 $('.cart-table tfoot .total-amount').text(total.toFixed(2));

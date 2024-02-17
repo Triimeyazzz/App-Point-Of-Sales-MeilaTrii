@@ -16,9 +16,4 @@ class Pembelian extends Model
     {
         return $this->belongsTo(Supplier::class, 'supplier_id');
     }
-
-    public function produk()
-    {
-        return $this->belongsTo(Produk::class, 'produk_id');
-    }
 }

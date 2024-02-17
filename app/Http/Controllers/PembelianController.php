@@ -23,9 +23,6 @@ class PembelianController extends Controller
         if (request()->ajax()) {
             return datatables()->of($datas)
                 ->addIndexColumn()
-                ->addColumn('produk', function ($data) {
-                    return $data->produk->nama;
-                })
                 ->addColumn('supplier', function ($data) {
                     return $data->supplier->nama;
                 })
@@ -36,7 +33,7 @@ class PembelianController extends Controller
                     return Carbon::parse($data->created_at)->isoFormat('D MMMM Y');
                 })
                 ->addColumn('actions', function ($data) {
-                    return view('brand._actions', compact('data'));
+                    return view('pembelian._actions', compact('data'));
                 })
                 ->rawColumns(['actions'])
                 ->make(true);
@@ -70,21 +67,35 @@ class PembelianController extends Controller
         // Menyimpan data pembelian baru ke dalam database (jika diperlukan)
         $input = $request->all();
 
-        $input['harga'] = $request->kuantitas * $request->harga_satuan;
+        // Hitung jumlah kuantitas keseluruhan dan harga keseluruhan
+        $totalQuantity = 0;
+        $totalPrice = 0;
+
+        foreach ($request->input('items') as $itemJson) {
+            $item = json_decode($itemJson, true);
+            $totalQuantity += $item['quantity'];
+            $totalPrice += $item['quantity'] * $item['price'];
+        }
+
+        $input['kuantitas'] = $totalQuantity;
+        $input['harga'] = $totalPrice;
         $pembelian = Pembelian::create($input);
 
-        $stok_produk = Produk::find($request->produk_id);
-        $stok_produk->update([
-            'stok' => $stok_produk->stok + $request->kuantitas,
-            'harga_beli' => $request->harga_satuan
-        ]);
+        foreach ($request->input('items') as $itemJson) {
+            $item = json_decode($itemJson, true);
+            PembelianDetail::create([
+                'pembelian_id' => $pembelian->id,
+                'produk_id' => $item['product_id'],
+                'kuantitas' => $item['quantity'],
+                'harga' => $item['price'],
+            ]);
 
-        PembelianDetail::create([
-            'pembelian_id' => $pembelian->id,
-            'produk_id' => $request->produk_id,
-            'kuantitas' => $request->kuantitas,
-            'harga' => $request->harga_satuan
-        ]);
+            $stok_produk = Produk::find($item['product_id']);
+            $stok_produk->update([
+                'stok' => $stok_produk->stok + $item['product_id'],
+                'harga_beli' => $item['price'],
+            ]);
+        }
 
         return redirect()->route('pembelian.index')->with('success', 'Data pembelian berhasil ditambahkan');
     }
@@ -132,5 +143,8 @@ class PembelianController extends Controller
     public function destroy(Pembelian $pembelian)
     {
         // Menghapus data pembelian tertentu dari database (jika diperlukan)
+        $pembelian->delete();
+
+        return redirect()->route('pembelian.index')->with('success', 'Data pembelian berhasil dihapus');
     }
 }

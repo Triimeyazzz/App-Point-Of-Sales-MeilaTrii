@@ -30,7 +30,6 @@
                                 <thead>
                                     <tr>
                                         <th width="7%">No</th>
-                                        <th>Nama Produk</th>
                                         <th>Supplier</th>
                                         <th>Kuantitas</th>
                                         <th>Harga</th>
@@ -76,10 +75,6 @@
                     name: 'DT_RowIndex',
                     orderable: false,
                     searchable: false
-                },
-                {
-                    data: 'produk',
-                    name: 'produk'
                 },
                 {
                     data: 'supplier',
