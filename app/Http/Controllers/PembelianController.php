@@ -65,39 +65,39 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         // Menyimpan data pembelian baru ke dalam database (jika diperlukan)
-        $input = $request->all();
+        $input = $request->all();   // Menyimpan semua data input dari request
 
         // Hitung jumlah kuantitas keseluruhan dan harga keseluruhan
-        $totalQuantity = 0;
-        $totalPrice = 0;
+        $totalQuantity = 0;   // Menginisialisasi jumlah kuantitas keseluruhan
+        $totalPrice = 0;      // Menginisialisasi harga keseluruhan
 
         foreach ($request->input('items') as $itemJson) {
-            $item = json_decode($itemJson, true);
-            $totalQuantity += $item['quantity'];
-            $totalPrice += $item['quantity'] * $item['price'];
+            $item = json_decode($itemJson, true);   // Mendekode string JSON menjadi array asosiatif
+            $totalQuantity += $item['quantity'];    // Menambahkan kuantitas setiap item ke jumlah kuantitas keseluruhan
+            $totalPrice += $item['quantity'] * $item['price'];   // Menghitung harga keseluruhan dari semua item
         }
 
-        $input['kuantitas'] = $totalQuantity;
-        $input['harga'] = $totalPrice;
-        $pembelian = Pembelian::create($input);
+        $input['kuantitas'] = $totalQuantity;   // Menetapkan jumlah kuantitas keseluruhan ke dalam data input
+        $input['harga'] = $totalPrice;           // Menetapkan harga keseluruhan ke dalam data input
+        $pembelian = Pembelian::create($input);  // Membuat entri pembelian baru dalam database
 
         foreach ($request->input('items') as $itemJson) {
-            $item = json_decode($itemJson, true);
-            PembelianDetail::create([
+            $item = json_decode($itemJson, true);   // Mendekode string JSON menjadi array asosiatif
+            PembelianDetail::create([   // Membuat entri detail pembelian baru dalam database
                 'pembelian_id' => $pembelian->id,
                 'produk_id' => $item['product_id'],
                 'kuantitas' => $item['quantity'],
                 'harga' => $item['price'],
             ]);
 
-            $stok_produk = Produk::find($item['product_id']);
-            $stok_produk->update([
+            $stok_produk = Produk::find($item['product_id']);   // Mencari produk berdasarkan ID
+            $stok_produk->update([   // Memperbarui stok produk dan harga beli
                 'stok' => $stok_produk->stok + $item['quantity'],
                 'harga_beli' => $item['price'],
             ]);
         }
 
-        return redirect()->route('pembelian.index')->with('success', 'Data pembelian berhasil ditambahkan');
+        return redirect()->route('pembelian.index')->with('success', 'Data pembelian berhasil ditambahkan');   // Mengalihkan ke halaman indeks pembelian dengan pesan sukses
     }
 
     /**
