@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Tambah Pembelian
+    Add Purchase
 @endsection
 
 @push('styles')
@@ -45,7 +45,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah Pembelian</h3>
+                        <h3 class="card-title">Add Purchase</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -58,7 +58,7 @@
                                     <div class="form-group">
                                         <label for="supplier_id">Supplier</label>
                                         <select name="supplier_id" id="supplier_id" class="form-control" required>
-                                            <option value="">Pilih Supplier</option>
+                                            <option value="">Select Supplier</option>
                                             @foreach ($suppliers as $supplier)
                                                 <option value="{{ $supplier->id }}">{{ $supplier->nama }}</option>
                                             @endforeach
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="produk_id">Produk</label>
+                                        <label for="produk_id">Product</label>
                                         <input type="text" class="form-control" id="search" placeholder="Cari Produk">
                                         <ul id="product-list" class="list-group">
                                             {{-- Daftar produk akan ditampilkan di sini --}}
@@ -79,18 +79,18 @@
                             <table class="table table-bordered cart-table">
                                 <thead>
                                     <tr>
-                                        <th>Nama Produk</th>
-                                        <th width="10%">Kuantitas</th>
-                                        <th>Harga</th>
-                                        <th>Total</th>
-                                        <th width="10%">Aksi</th>
+                                        <th class="navbar-purple">Product Name</th>
+                                        <th width="10%" class="navbar-purple">Quantity</th>
+                                        <th class="navbar-purple">Price</th>
+                                        <th class="navbar-purple">Total</th>
+                                        <th width="10%" class="navbar-purple">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="3" align="right">Jumlah Total:</td>
+                                        <td colspan="3" align="right">Total Amount:</td>
                                         <td class="total-amount">0.00</td>
                                         <td></td>
                                     </tr>
@@ -99,7 +99,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>

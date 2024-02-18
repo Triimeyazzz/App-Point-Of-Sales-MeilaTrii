@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Kategori
+    Category
 @endsection
 
 @section('content')
@@ -19,9 +19,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Kategori</h3>
+                            <h3 class="card-title">Category Data</h3>
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#tambah-kategori"
-                                class="btn btn-primary btn-sm">Tambah Kategori</a>
+                                class="btn btn-primary btn-sm">Add Category</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -30,10 +30,10 @@
                             <table class="table table-bordered kategori-table">
                                 <thead>
                                     <tr>
-                                        <th width="7%">No</th>
-                                        <th width="20%">Nama</th>
-                                        <th>Deskripsi</th>
-                                        <th width="15%">Aksi</th>
+                                        <th width="7%" class="navbar-purple">No.</th>
+                                        <th width="20%" class="navbar-purple">Category Name</th>
+                                        <th class="navbar-purple">Description</th>
+                                        <th width="15%" class="navbar-purple">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +52,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Kategori</h4>
+                    <h4 class="modal-title">Add Category</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -61,18 +61,18 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="name">Nama Kategori</label>
+                            <label for="name">Category Name</label>
                             <input type="text" class="form-control" name="nama" id="name"
-                                placeholder="Masukkan Nama" required>
+                                placeholder="Enter Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="deskripsi">Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Masukkan Deskripsi"></textarea>
+                            <label for="deskripsi">Description</label>
+                            <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Enter Description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
@@ -97,7 +97,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Cari'
+                searchPlaceholder: 'Search'
             },
             ajax: {
                 url: '{{ route('kategori.index') }}',

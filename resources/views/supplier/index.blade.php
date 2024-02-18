@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Supplier
+    Suppliers
 @endsection
 
 @section('content')
@@ -19,8 +19,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Supplier</h3>
-                            <a href="{{ route('supplier.create') }}" class="btn btn-primary btn-sm">Tambah Supplier</a>
+                            <h3 class="card-title">Suppliers Data</h3>
+                            <a href="{{ route('supplier.create') }}" class="btn btn-primary btn-sm">Add Suppliers</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -28,11 +28,12 @@
                         <table class="table table-bordered supplier-table">
                             <thead>
                                 <tr>
-                                    <th width="7%">No</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th width="20%">No. HP</th>
-                                    <th width="15%">Aksi</th>
+                                    <th width="7%" class="navbar-purple">No.</th>
+                                    <th class="navbar-purple">Suppliers Name</th>
+                                    <th class="navbar-purple">Email</th>
+                                    <th width="20%" class="navbar-purple">Phone Number</th>
+                                    <th class="navbar-purple">Address</th>
+                                    <th width="15%" class="navbar-purple">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,7 +62,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Cari'
+                searchPlaceholder: 'Search'
             },
             ajax: {
                 url: '{{ route('supplier.index') }}',
@@ -84,6 +85,10 @@
                 {
                     data: 'no_hp',
                     name: 'no_hp'
+                },
+                {
+                    data: 'alamat',
+                    name: 'alamat'
                 },
                 {
                     data: 'actions',

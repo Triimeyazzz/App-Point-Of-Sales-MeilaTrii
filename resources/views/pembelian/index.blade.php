@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Pembelian
+    Purchase
 @endsection
 
 @section('content')
@@ -19,8 +19,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Pembelian</h3>
-                            <a href="{{ route('pembelian.create') }}" class="btn btn-primary btn-sm">Tambah Pembelian</a>
+                            <h3 class="card-title">Purchase Data</h3>
+                            <a href="{{ route('pembelian.create') }}" class="btn btn-primary btn-sm">Add Purchase</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -29,12 +29,12 @@
                             <table class="table table-bordered pembelian-table">
                                 <thead>
                                     <tr>
-                                        <th width="7%">No</th>
-                                        <th>Supplier</th>
-                                        <th>Kuantitas</th>
-                                        <th>Harga</th>
-                                        <th>Tanggal Pembelian</th>
-                                        <th width="10%">Aksi</th>
+                                        <th width="7%" class="navbar-purple">No.</th>
+                                        <th class="navbar-purple">Suppliers</th>
+                                        <th class="navbar-purple">Quantity</th>
+                                        <th class="navbar-purple">Price</th>
+                                        <th class="navbar-purple">Purchase Date</th>
+                                        <th width="10%" class="navbar-purple">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -64,7 +64,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Cari'
+                searchPlaceholder: 'Search'
             },
             ajax: {
                 url: '{{ route('pembelian.index') }}',

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Tambah Supplier
+    Suppliers
 @endsection
 
 @section('content')
@@ -11,9 +11,9 @@
             <div class="col-md-12">
                 @include('layouts.session_messages')
                 <!-- general form elements -->
-                <div class="card card-primary">
+                <div class="card card-purple">
                     <div class="card-header">
-                        <h3 class="card-title">Tambah Subplier</h3>
+                        <h3 class="card-title">Add Suppliers</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -24,24 +24,24 @@
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="nama">Nama Supplier</label>
+                                        <label for="nama">Suppliers Name</label>
                                         <input type="text" class="form-control" name="nama" id="nama"
                                             placeholder="Masukkan Nama" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Alamat Email</label>
+                                        <label for="exampleInputEmail1">Email</label>
                                         <input type="email" class="form-control" name="email" id="exampleInputEmail1"
                                             placeholder="Enter email" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="no_hp">Nomor HP</label>
+                                        <label for="no_hp">Phone Number</label>
                                         <input type="text" class="form-control" name="no_hp" id="no_hp"
                                             placeholder="Masukkan Nomor" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="alamat">Alamat</label>
+                                        <label for="alamat">Address</label>
                                         <input type="text" class="form-control" name="alamat" id="alamat"
                                             placeholder="Masukkan Alamat" required>
                                     </div>
@@ -50,7 +50,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>

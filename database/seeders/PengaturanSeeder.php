@@ -16,7 +16,7 @@ class PengaturanSeeder extends Seeder
         //
         Pengaturan::create([
             'key' => 'nama_perusahaan',
-            'value' => 'Laravel POS',
+            'value' => 'Point Of Sales',
         ]);
 
         Pengaturan::create([

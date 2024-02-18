@@ -1,6 +1,6 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-cyan elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link navbar-indigo">
         <img src="{{ asset('dist/img/4a.jpeg') }}" alt="4a" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span
@@ -8,7 +8,7 @@
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar navbar-purple">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -35,7 +35,7 @@
         </div> --}}
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
+        <nav class="mt-2 navbar-primary navbar-light">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
@@ -52,7 +52,7 @@
                     <a href="{{ route('pelanggan.index') }}"
                         class="nav-link {{ Request::route()->getName() == 'pelanggan.index' || Request::route()->getName() == 'pelanggan.edit' || Request::route()->getName() == 'pelanggan.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
-                        <p>Pelanggan</p>
+                        <p>Customer</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -66,7 +66,7 @@
                     <a href="{{ route('pembelian.index') }}"
                         class="nav-link {{ Request::route()->getName() == 'pembelian.index' || Request::route()->getName() == 'pembelian.edit' || Request::route()->getName() == 'pembelian.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-cart-plus"></i>
-                        <p>Pembelian</p>
+                        <p>Purchase</p>
                     </a>
                 </li>
                 <li
@@ -75,7 +75,7 @@
                         class="nav-link {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'kategori.index' || Request::route()->getName() == 'brand.index' || Request::route()->getName() == 'unit.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-archive"></i>
                         <p>
-                            Produk
+                            Navigation
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -84,14 +84,14 @@
                             <a href="{{ route('kategori.index') }}"
                                 class="nav-link {{ Request::route()->getName() == 'kategori.index' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-list-ul"></i>
-                                <p>Kategori</p>
+                                <p>Category</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('produk.index') }}"
                                 class="nav-link {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-archive"></i>
-                                <p>Produk</p>
+                                <p>Product</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -110,25 +110,25 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">Laporan</li>
+                <li class="nav-header">Report</li>
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
-                        <p>Pembelian</p>
+                        <p>Purchase</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
-                        <p>Pengeluaran</p>
+                        <p>Expenditure</p>
                     </a>
                 </li>
-                <li class="nav-header">Administrasi</li>
+                <li class="nav-header">Administration</li>
                 <li class="nav-item">
                     <a href="{{ route('users.index') }}"
                         class="nav-link {{ Request::route()->getName() == 'users.index' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user"></i>
-                        <p>Pengguna</p>
+                        <p>User</p>
                     </a>
                 </li>
                 {{-- <li class="nav-item">
@@ -141,7 +141,7 @@
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-cog"></i>
-                        <p>Pengaturan</p>
+                        <p>Setting</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -149,7 +149,7 @@
                         onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
-                        <p>Keluar</p>
+                        <p>Logout</p>
                     </a>
                 </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
