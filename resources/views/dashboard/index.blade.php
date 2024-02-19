@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @push('styles')
-    <syu
+    <style>
+
+    </style>
 @endpush
 
 @section('content')
