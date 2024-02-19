@@ -21,7 +21,7 @@
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Unit</h3>
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#tambah-unit"
-                                class="btn btn-primary btn-sm">Tambah Unit</a>
+                                class="btn btn-primary btn-sm">Add Unit</a>
                         </div>
                     </div>
                     <!-- /.card-header -->

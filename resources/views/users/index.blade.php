@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Pengguna
+    User
 @endsection
 
 @section('content')
@@ -22,11 +22,11 @@
                         <table class="table table-bordered users-table">
                             <thead>
                                 <tr>
-                                    <th width="7%">No</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th width="10%">Sebagai</th>
-                                    <th width="15%">Aksi</th>
+                                    <th width="7%" Class="navbar-purple">No</th>
+                                    <th Class="navbar-purple">Name</th>
+                                    <th Class="navbar-purple">Email</th>
+                                    <th width="10%" Class="navbar-purple">Position</th>
+                                    <th width="15%" Class="navbar-purple">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

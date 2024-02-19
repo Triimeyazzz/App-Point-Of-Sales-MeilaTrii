@@ -8,7 +8,7 @@
 @endpush
 
 @section('title')
-    Produk
+    Product
 @endsection
 
 @section('content')
@@ -19,8 +19,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Produk</h3>
-                            <a href="{{ route('produk.create') }}" class="btn btn-primary btn-sm">Tambah Produk</a>
+                            <h3 class="card-title">Product Data</h3>
+                            <a href="{{ route('produk.create') }}" class="btn btn-primary btn-sm">Add Product</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -29,16 +29,16 @@
                             <table class="table table-bordered produk-table">
                                 <thead>
                                     <tr>
-                                        <th width="7%">No</th>
-                                        <th>Nama</th>
-                                        <th>SKU</th>
-                                        <th>Kategori</th>
-                                        <th>Brand</th>
-                                        <th>Unit</th>
-                                        <th>Stok</th>
-                                        <th>Harga Jual</th>
-                                        <th>Harga Beli</th>
-                                        <th width="10%">Aksi</th>
+                                        <th width="7%" class="navbar-purple">No.</th>
+                                        <th class="navbar-purple">Name</th>
+                                        <th class="navbar-purple">SKU</th>
+                                        <th class="navbar-purple">Category</th>
+                                        <th class="navbar-purple">Brand</th>
+                                        <th class="navbar-purple">Unit</th>
+                                        <th class="navbar-purple">Stock</th>
+                                        <th class="navbar-purple">Selling Price</th>
+                                        <th class="navbar-purple">Purchase Price</th>
+                                        <th width="10%" class="navbar-purple">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -68,7 +68,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Cari'
+                searchPlaceholder: 'Search'
             },
             ajax: {
                 url: '{{ route('produk.index') }}',

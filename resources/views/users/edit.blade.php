@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Ubah Pengguna
+    User
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Ubah Pengguna {{ $user->name }}</h3>
+                        <h3 class="card-title">Cange User {{ $user->name }}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -25,7 +25,7 @@
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Nama Lengkap</label>
+                                        <label for="name">Full Name</label>
                                         <input type="text" class="form-control" name="name" id="name"
                                             placeholder="Masukkan Nama" value="{{ $user->name }}" required>
                                     </div>
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputPassword2">Konfirmasi Password</label>
+                                        <label for="exampleInputPassword2">Confirmasion Password</label>
                                         <input type="password" class="form-control" name="confirm-password"
                                             id="exampleInputPassword2" placeholder="Password">
                                     </div>

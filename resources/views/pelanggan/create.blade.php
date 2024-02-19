@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <label for="nama">Name</label>
                                         <input type="text" class="form-control" name="nama" id="nama"
-                                            placeholder="Masukkan Nama" required>
+                                            placeholder="Enter Name" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
@@ -38,12 +38,12 @@
                                     <div class="form-group">
                                         <label for="no_hp">Phone Number</label>
                                         <input type="text" class="form-control" name="no_hp" id="no_hp"
-                                            placeholder="Masukkan Nomor" required>
+                                            placeholder="Enter Phone Number" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="alamat">Address</label>
                                         <input type="text" class="form-control" name="alamat" id="alamat"
-                                            placeholder="Masukkan Alamat" required>
+                                            placeholder="Enter Address" required>
                                     </div>
                                 </div>
                             </div>

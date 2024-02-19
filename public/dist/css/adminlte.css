@@ -12,9 +12,9 @@
  */
 :root {
   --blue: #007bff;
-  --indigo: #5406d0;
+  --indigo: #6610f2;
   --purple: #6f42c1;
-  --pink: #ff8c9f;
+  --pink: #e83e8c;
   --red: #dc3545;
   --orange: #fd7e14;
   --yellow: #ffc107;
@@ -17333,9 +17333,7 @@ body.text-sm .control-sidebar {
 .navbar-pink.navbar-dark .form-control-navbar:focus::-webkit-input-placeholder {
   color: #fff;
 }
-.navbar-pink.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40;
-  }
+
 .navbar-pink.navbar-dark .form-control-navbar:focus::-moz-placeholder {
   color: #fff;
 }
