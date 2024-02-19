@@ -215,6 +215,7 @@
                     </style>
                         <div class="card">
                             <div class="card-header">
+                                <div class="text-center font-bold"><strong>Calendar</strong></div>
                                 <div class="d-flex justify-content-between">
                                     <div class="kalender-dinamis-trimeyazzz">
                                         <div class="kotak">
