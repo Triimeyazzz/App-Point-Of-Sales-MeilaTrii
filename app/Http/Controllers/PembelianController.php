@@ -97,7 +97,7 @@ class PembelianController extends Controller
             ]);
         }
 
-        return redirect()->route('pembelian.index')->with('success', 'Data pembelian berhasil ditambahkan');   // Mengalihkan ke halaman indeks pembelian dengan pesan sukses
+        return redirect()->route('pembelian.index')->with('success', 'Purchase data added successfully.');   // Mengalihkan ke halaman indeks pembelian dengan pesan sukses
     }
 
     /**
@@ -145,6 +145,6 @@ class PembelianController extends Controller
         // Menghapus data pembelian tertentu dari database (jika diperlukan)
         $pembelian->delete();
 
-        return redirect()->route('pembelian.index')->with('success', 'Data pembelian berhasil dihapus');
+        return redirect()->route('pembelian.index')->with('success', 'Purchase data has been successfully deleted.');
     }
 }

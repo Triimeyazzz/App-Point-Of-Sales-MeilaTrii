@@ -10,6 +10,7 @@ use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\CpuTrafficController;
 // use itu artinya menggunakan,
 // jadi apapun isi di dalam folder itu,
 // bisa digunakan semuanya
@@ -44,6 +45,9 @@ Route::middleware('auth', 'role:Admin')->group(function () {
 
     //User
     Route::resource('/users', UserController::class);
+
+    //
+    Route::get('/cpu-traffic', [CpuTrafficController::class, 'getCpuTrafficData']);
 
     //Pelanggan
     Route::resource('/pelanggan', PelangganController::class);

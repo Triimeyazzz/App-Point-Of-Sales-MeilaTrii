@@ -22,7 +22,7 @@
                         <table class="table table-bordered users-table">
                             <thead>
                                 <tr>
-                                    <th width="7%" Class="navbar-purple">No</th>
+                                    <th width="7%" Class="navbar-purple">No.</th>
                                     <th Class="navbar-purple">Name</th>
                                     <th Class="navbar-purple">Email</th>
                                     <th width="10%" Class="navbar-purple">Position</th>
@@ -55,7 +55,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Cari'
+                searchPlaceholder: 'Search'
             },
             ajax: {
                 url: '{{ route('users.index') }}',

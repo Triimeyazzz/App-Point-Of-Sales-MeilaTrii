@@ -45,7 +45,7 @@ class PelangganController extends Controller
         //
         Pelanggan::create($request->all());
 
-        return redirect()->route('pelanggan.index')->with('success', 'Pelanggan Berhasil ditambahkan');
+        return redirect()->route('pelanggan.index')->with('success', 'Customer successfully added.');
     }
 
     /**
@@ -73,7 +73,7 @@ class PelangganController extends Controller
         //
         $pelanggan->update($request->all());
 
-        return redirect()->route('pelanggan.index')->with('success', 'Pelanggan Berhasil diedit');
+        return redirect()->route('pelanggan.index')->with('success', 'Customer detail updated successfully');
     }
 
     /**
@@ -84,6 +84,6 @@ class PelangganController extends Controller
         //
         $pelanggan->delete();
 
-        return redirect()->route('pelanggan.index')->with('success', 'Pelanggan Berhasil dihapus');
+        return redirect()->route('pelanggan.index')->with('success', 'Customer Successfully deleted.');
     }
 }

@@ -34955,6 +34955,10 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .dark-mode .lockscreen-image {
   background-color: #6c757d;
 }
+.indigo-mode{
+    background-color: #6610f2;
+}
+
 
 .login-logo,
 .register-logo {
@@ -34973,7 +34977,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .register-page {
   -ms-flex-align: center;
   align-items: center;
-  background-color: #e9ecef;
+  background-color: pink;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -35003,9 +35007,9 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .login-card-body,
 .register-card-body {
-  background-color: #fff;
+  background-color: indigo;
   border-top: 0;
-  color: #666;
+  color: pink;
   padding: 20px;
 }
 

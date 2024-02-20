@@ -46,7 +46,7 @@ class UnitController extends Controller
 
         Unit::create($input);
 
-        return redirect()->back()->with('success', 'Unit Berhasil disimpan');
+        return redirect()->back()->with('success', 'Unit successfully saved.');
     }
 
     /**
@@ -75,7 +75,7 @@ class UnitController extends Controller
 
         $unit->update($input);
 
-        return redirect()->back()->with('success', 'Unit Berhasil diupdate');
+        return redirect()->back()->with('success', 'Unit successfully updated.');
     }
 
     /**
@@ -86,6 +86,6 @@ class UnitController extends Controller
         //
         $unit->delete();
 
-        return redirect()->back()->with('success', 'Unit Berhasil dihapus');
+        return redirect()->back()->with('success', 'Unit successfully deleted.');
     }
 }

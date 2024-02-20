@@ -91,7 +91,7 @@ class UserController extends Controller
         }
         $user->update($input);
 
-        return redirect()->route('users.index')->with('success', 'Pengguna berhasil di ubah');
+        return redirect()->route('users.index')->with('success', 'User has been successfully changed.');
     }
 
     /**
@@ -104,6 +104,6 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect()->back()->with('success', 'Pengguna berhasil di hapus');
+        return redirect()->back()->with('success', 'User has been successfully deleted.');
     }
 }

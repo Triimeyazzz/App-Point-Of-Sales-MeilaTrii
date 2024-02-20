@@ -35,7 +35,7 @@ class BrandController extends Controller
 
         Brand::create($input);
 
-        return redirect()->back()->with('success', 'Brand berhasil ditambah.');
+        return redirect()->back()->with('success', 'Brand successfully added.');
     }
 
     public function show(Brand $brand)
@@ -54,13 +54,13 @@ class BrandController extends Controller
 
         $brand->update($input);
 
-        return redirect()->back()->with('success', 'Brand berhasil diubah.');
+        return redirect()->back()->with('success', 'Brand detail updated successfully.');
     }
 
     public function destroy(Brand $brand)
     {
         $brand->delete();
 
-        return redirect()->back()->with('success', 'Brand berhasil dihapus.');
+        return redirect()->back()->with('success', 'Brand successfully deleted.');
     }
 }

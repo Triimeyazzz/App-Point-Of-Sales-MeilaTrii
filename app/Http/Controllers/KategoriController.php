@@ -46,7 +46,7 @@ class KategoriController extends Controller
 
         Kategori::create($input);
 
-        return redirect()->back()->with('success', 'Kategori Berhasil ditambahkan');
+        return redirect()->back()->with('success', 'Category Successfully added.');
     }
 
     /**
@@ -75,7 +75,7 @@ class KategoriController extends Controller
 
         $kategori->update($input);
 
-        return redirect()->back()->with('success', 'Kategori Berhasil diedit');
+        return redirect()->back()->with('success', 'Category detail updated successfully.');
     }
 
     /**
@@ -86,6 +86,6 @@ class KategoriController extends Controller
         //
         $kategori->delete();
 
-        return redirect()->back()->with('success', 'Kategori Berhasil dihapus');
+        return redirect()->back()->with('success', 'Category Successfully deleted.');
     }
 }

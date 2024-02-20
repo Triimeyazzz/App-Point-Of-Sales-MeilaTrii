@@ -67,7 +67,7 @@ class ProdukController extends Controller
         //
         Produk::create($request->all());
 
-        return redirect()->route('produk.index')->with('success', 'Produk Berhasil ditambahkan');
+        return redirect()->route('produk.index')->with('success', 'Product added successfully.');
     }
 
     /**
@@ -81,9 +81,10 @@ class ProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Produk $produk)
+    public function edit(Produk $produk) //Produk adalah model
     {
         //
+
         return view('produk.edit', compact('produk'));
     }
 
@@ -93,6 +94,9 @@ class ProdukController extends Controller
     public function update(Request $request, Produk $produk)
     {
         //
+        $produk->update($request->all());
+
+        return redirect()->route('produk.index')->with('success', 'Product Edited successfully.');
     }
 
     /**
@@ -103,7 +107,7 @@ class ProdukController extends Controller
         //
         $produk->delete();
 
-        return redirect()->route('produk.index')->with('success', 'Produk Berhasil dihapus');
+        return redirect()->route('produk.index')->with('success', 'Product successfully deleted.');
     }
 
     //Custom
