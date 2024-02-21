@@ -27,7 +27,7 @@
                                     <div class="form-group">
                                         <label for="nama">Suppliers Name</label>
                                         <input type="text" class="form-control" name="nama" id="nama"
-                                            placeholder="Masukkan Nama" value="{{ $supplier->nama }}" required>
+                                            placeholder="Enter Name" value="{{ $supplier->nama }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
@@ -38,13 +38,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="no_hp">Phone Number</label>
-                                        <input type="text" class="form-control" name="no_hp" id="no_hp"
-                                            placeholder="Masukkan Nomor" value="{{ $supplier->no_hp }}" required>
+                                        <input type="number" class="form-control" name="no_hp" id="no_hp"
+                                            placeholder="Enter Phone Number" value="{{ $supplier->no_hp }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="alamat">Address</label>
                                         <input type="text" class="form-control" name="alamat" id="alamat"
-                                            placeholder="Masukkan Alamat" value="{{ $supplier->alamat }}" required>
+                                            placeholder="Enter Address" value="{{ $supplier->alamat }}" required>
                                     </div>
                                 </div>
                             </div>
