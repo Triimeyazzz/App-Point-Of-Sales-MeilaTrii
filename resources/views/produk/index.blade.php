@@ -29,7 +29,7 @@
                         <table class="table table-bordered produk-table">
                             <thead>
                                 <tr>
-                                    <th width="5%" class="navbar-purple">No.</th>
+                                    <th width="7%" class="navbar-purple">No.</th>
                                     <th width="3%" class="navbar-purple">Image</th>
                                     <th class="navbar-purple">Name</th>
                                     <th class="navbar-purple">Category</th>
