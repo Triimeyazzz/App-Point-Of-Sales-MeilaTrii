@@ -1,4 +1,4 @@
-<a href="{{ route('produk.edit', $data->id) }}" class="btn btn-sm btn-primary navbar-purple">Ubah</a>
+<a href="{{ route('produk.edit', $data->id) }}" class="btn btn-sm btn-primary navbar-purple">Edit</a>
 <button class="btn btn-sm navbar-maroon navbar-light"
     onclick="if(confirm('Are you sure you want to delete?')) document.getElementById('delete-form-{{ $data->id }}').submit()">Delete</button>
 
