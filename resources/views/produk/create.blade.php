@@ -81,12 +81,12 @@
                                             placeholder="Enter Price" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="image">Image</label>
+                                        <label for="gambar">Image</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" name="image"
-                                                    id="image">
-                                                <label class="custom-file-label" for="image">Choose Image</label>
+                                                <input type="file" class="custom-file-input" name="gambar"
+                                                    id="gambar">
+                                                <label class="custom-file-label" for="gambar">Choose Image</label>
                                             </div>
                                         </div>
                                     </div>

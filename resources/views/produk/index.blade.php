@@ -26,24 +26,24 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         {{-- <div class="table-responsive"> --}}
-                            <table class="table table-bordered produk-table">
-                                <thead>
-                                    <tr>
-                                        <th width="7%" class="navbar-purple">No.</th>
-                                        <th class="navbar-purple">Name</th>
-                                        <th class="navbar-purple">SKU</th>
-                                        <th class="navbar-purple">Category</th>
-                                        <th class="navbar-purple">Brand</th>
-                                        <th class="navbar-purple">Unit</th>
-                                        <th class="navbar-purple">Stock</th>
-                                        <th class="navbar-purple">Selling Price</th>
-                                        <th class="navbar-purple">Purchase Price</th>
-                                        <th width="10%" class="navbar-purple">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                        <table class="table table-bordered produk-table">
+                            <thead>
+                                <tr>
+                                    <th width="7%" class="navbar-purple">No.</th>
+                                    <th class="navbar-purple">Name</th>
+                                    <th class="navbar-purple">SKU</th>
+                                    <th class="navbar-purple">Category</th>
+                                    <th class="navbar-purple">Brand</th>
+                                    <th class="navbar-purple">Unit</th>
+                                    <th class="navbar-purple">Stock</th>
+                                    <th class="navbar-purple">Selling Price</th>
+                                    <th class="navbar-purple">Purchase Price</th>
+                                    <th width="10%" class="navbar-purple">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                         {{-- </div> --}}
                     </div>
                     <!-- /.card-body -->

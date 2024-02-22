@@ -21,6 +21,9 @@ class ProdukController extends Controller
         if (request()->ajax()) {
             return datatables()->of($datas)
                 ->addIndexColumn()
+                ->addColumn('nama', function ($data) {
+                    return view('produk._namefield', compact('data'));
+                })
                 ->addColumn('kategori', function ($data) {
                     return $data->kategori->nama;
                 })
@@ -65,7 +68,11 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         //
-        Produk::create($request->all());
+        $input = $request->all();
+
+        //upload gambar dan memasukkan gambar pada storage/app/public/produk
+        $input['gambar'] = $request->file('gambar')->store('produk', 'public');
+        Produk::create($input);
 
         return redirect()->route('produk.index')->with('success', 'Product added successfully.');
     }
@@ -94,7 +101,14 @@ class ProdukController extends Controller
     public function update(Request $request, Produk $produk)
     {
         //
-        $produk->update($request->all());
+        $input = $request->all();
+
+        //upload gambar dan memasukkan gambar pada storage/app/public/produk
+        if ($request->file('gambar')) {
+            $input['gambar'] = $request->file('gambar')->store('produk', 'public');
+        }
+
+        $produk->update($input);
 
         return redirect()->route('produk.index')->with('success', 'Product Edited successfully.');
     }
