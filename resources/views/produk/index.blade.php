@@ -29,13 +29,11 @@
                         <table class="table table-bordered produk-table">
                             <thead>
                                 <tr>
-                                    <th width="7%" class="navbar-purple">No.</th>
+                                    <th width="5%" class="navbar-purple">No.</th>
+                                    <th width="3%" class="navbar-purple">Image</th>
                                     <th class="navbar-purple">Name</th>
-                                    <th class="navbar-purple">SKU</th>
                                     <th class="navbar-purple">Category</th>
-                                    <th class="navbar-purple">Brand</th>
-                                    <th class="navbar-purple">Unit</th>
-                                    <th class="navbar-purple">Stock</th>
+                                    <th width="7%" class="navbar-purple">Stock</th>
                                     <th class="navbar-purple">Selling Price</th>
                                     <th class="navbar-purple">Purchase Price</th>
                                     <th width="15%"class="navbar-purple">Action</th>
@@ -81,24 +79,16 @@
                     searchable: false
                 },
                 {
+                    data: 'image',
+                    name: 'image'
+                },
+                {
                     data: 'nama',
                     name: 'nama'
                 },
                 {
-                    data: 'sku',
-                    name: 'sku'
-                },
-                {
                     data: 'kategori',
                     name: 'kategori'
-                },
-                {
-                    data: 'brand',
-                    name: 'brand'
-                },
-                {
-                    data: 'unit',
-                    name: 'unit'
                 },
                 {
                     data: 'stok',

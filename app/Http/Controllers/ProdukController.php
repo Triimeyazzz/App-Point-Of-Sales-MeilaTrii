@@ -21,17 +21,14 @@ class ProdukController extends Controller
         if (request()->ajax()) {
             return datatables()->of($datas)
                 ->addIndexColumn()
+                ->addColumn('image', function ($data) {
+                    return view('produk._imageview', compact('data'));
+                })
                 ->addColumn('nama', function ($data) {
                     return view('produk._namefield', compact('data'));
                 })
                 ->addColumn('kategori', function ($data) {
                     return $data->kategori->nama;
-                })
-                ->addColumn('brand', function ($data) {
-                    return $data->brand->nama;
-                })
-                ->addColumn('unit', function ($data) {
-                    return $data->unit->nama;
                 })
                 ->addColumn('harga_beli', function ($data) {
                     return 'Rp. ' . number_format($data->harga_beli, 0, ',', '.');
