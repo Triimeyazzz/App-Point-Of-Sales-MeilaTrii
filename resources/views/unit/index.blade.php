@@ -29,10 +29,10 @@
                         <table class="table table-bordered unit-table">
                             <thead>
                                 <tr>
-                                    <th width="7%">No</th>
-                                    <th>Nama</th>
-                                    <th>Singkatan</th>
-                                    <th width="15%">Aksi</th>
+                                    <th width="7%">No.</th>
+                                    <th>Name</th>
+                                    <th>Abbreviated</th>
+                                    <th width="15%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,7 +50,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Unit</h4>
+                    <h4 class="modal-title">Add Unit</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -59,19 +59,19 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="name">Nama Unit</label>
+                            <label for="name">Name Unit</label>
                             <input type="text" class="form-control" name="nama" id="name"
                                 placeholder="Masukkan Nama" required>
                         </div>
                         <div class="form-group">
-                            <label for="singkatan">Nama Singkatan</label>
+                            <label for="singkatan">Abbreviated</label>
                             <input type="text" class="form-control" name="singkatan" id="singkatan"
                                 placeholder="Masukkan Singkatan" required>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>

@@ -28,7 +28,7 @@
                         <input type="text" class="form-control" name="nama" id="name"
                             placeholder="Masukkan Nama" value="{{ $data->nama }}" required>
                     </div>
-                    <div class="form-group">Abbreviated </label>
+                    <div class="form-group">Abbreviated</label>
                         <input type="text" class="form-control" name="singkatan" id="singkatan"
                             placeholder="Masukkan Singkatan" value="{{ $data->singkatan }}" required>
                     </div>

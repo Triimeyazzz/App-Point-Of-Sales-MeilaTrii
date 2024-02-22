@@ -37,12 +37,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="no_hp">Phone Number</label>
-                                        <input type="text" class="form-control" name="no_hp" id="no_hp"
+                                        <input type="number" class="form-control" name="no_hp" id="no_hp"
                                             placeholder="Enter Phone Number" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="alamat">Address</label>
-                                        <input type="number" class="form-control" name="alamat" id="alamat"
+                                        <input type="text" class="form-control" name="alamat" id="alamat"
                                             placeholder="Enter Address" required>
                                     </div>
                                 </div>

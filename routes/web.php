@@ -39,15 +39,12 @@ Route::get('/', function () {
 Auth::routes();
 
 //Middleware
-Route::middleware('auth', 'role:Admin')->group(function () {
+Route::middleware('auth','role:Admin')->group(function () {
     //Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     //User
     Route::resource('/users', UserController::class);
-
-    //
-    Route::get('/cpu-traffic', [CpuTrafficController::class, 'getCpuTrafficData']);
 
     //Pelanggan
     Route::resource('/pelanggan', PelangganController::class);

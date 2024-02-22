@@ -46,7 +46,7 @@ class SupplierController extends Controller
         //
         Supplier::create($request->all());
 
-        return redirect()->route('supplier.index')->with('success', 'Member successfully added.');
+        return redirect()->route('supplier.index')->with('success', 'Supplier successfully added.');
     }
 
     /**
@@ -74,7 +74,7 @@ class SupplierController extends Controller
         //
         $supplier->update($request->all());
 
-        return redirect()->route('supplier.index')->with('success', 'Member has been successfully changed.');
+        return redirect()->route('supplier.index')->with('success', 'Supplier has been successfully changed.');
     }
 
     /**
@@ -85,6 +85,6 @@ class SupplierController extends Controller
         //
         $supplier->delete();
 
-        return redirect()->back()->with('success', 'Member successfully deleted.');
+        return redirect()->back()->with('success', 'Supplier successfully deleted.');
     }
 }
