@@ -25,7 +25,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        {{-- <div class="table-responsive"> --}}
+                        <div class="table-responsive">
                         <table class="table table-bordered produk-table">
                             <thead>
                                 <tr>
@@ -38,13 +38,13 @@
                                     <th class="navbar-purple">Stock</th>
                                     <th class="navbar-purple">Selling Price</th>
                                     <th class="navbar-purple">Purchase Price</th>
-                                    <th width="10%" class="navbar-purple">Action</th>
+                                    <th width="15%"class="navbar-purple">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
-                        {{-- </div> --}}
+                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>
