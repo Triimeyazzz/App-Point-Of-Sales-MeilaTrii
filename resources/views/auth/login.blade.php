@@ -18,6 +18,7 @@
 </head>
 
 <body class="hold-transition login-page">
+
     <div class="login-box dark-mode">
         <!-- /.login-logo -->
         <div class="card card-outline card-pink">
@@ -92,7 +93,6 @@
         <!-- /.card -->
     </div>
     <!-- /.login-box -->
-
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->

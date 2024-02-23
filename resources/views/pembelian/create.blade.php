@@ -68,7 +68,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="produk_id">Product</label>
-                                        <input type="text" class="form-control" id="search" placeholder="Cari Produk">
+                                        <input type="text" class="form-control" id="search" placeholder="Search Product">
                                         <ul id="product-list" class="list-group">
                                             {{-- Daftar produk akan ditampilkan di sini --}}
                                         </ul>
