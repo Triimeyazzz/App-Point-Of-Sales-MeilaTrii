@@ -46,7 +46,7 @@ Route::middleware('auth','role:Admin')->group(function () {
     //User
     Route::resource('/users', UserController::class);
 
-    //Pelanggan
+    //Pelanggan sss
     Route::resource('/pelanggan', PelangganController::class);
 
     //Supplier
