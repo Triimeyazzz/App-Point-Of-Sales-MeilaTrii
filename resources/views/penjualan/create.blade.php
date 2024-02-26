@@ -169,6 +169,12 @@
                 var productPrice = $(this).data('price');
                 var productStock = $(this).data('stock');
 
+                // Memeriksa apakah stok produk kosong
+                if (productStock <= 0) {
+                    alert('Stok produk kosong. Produk tidak dapat ditambahkan ke keranjang.');
+                    return;
+                }
+
                 // Memeriksa apakah produk sudah ada dalam tabel
                 var existingRow = $('.cart-table tbody tr[data-id="' + productId + '"]');
                 if (existingRow.length > 0) {
