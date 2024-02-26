@@ -33,11 +33,11 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No.</th>
-                                        <th>Product</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
-                                        <th>Total</th>
+                                        <th class="navbar-purple">No.</th>
+                                        <th class="navbar-purple">Product</th>
+                                        <th class="navbar-purple">Quantity</th>
+                                        <th class="navbar-purple">Subtotal</th>
+                                        <th class="navbar-purple">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -68,6 +68,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
+                            <!--Jumlah yang Harus Dibayar -->
                             <p class="lead">Amount Due {{ $penjualan->created_at->format('d-m-Y') }}</p>
 
                             <div class="table-responsive">
