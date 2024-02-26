@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Add Purchase
+    Add Sales
 @endsection
 
 @push('styles')
@@ -45,22 +45,22 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Add Purchase</h3>
+                        <h3 class="card-title">Add Sales</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{ route('pembelian.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('penjualan.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="row">
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="supplier_id">Supplier</label>
-                                        <select name="supplier_id" id="supplier_id" class="form-control" required>
-                                            <option value="">Select Supplier</option>
-                                            @foreach ($suppliers as $supplier)
-                                                <option value="{{ $supplier->id }}">{{ $supplier->nama }}</option>
+                                        <label for="pelanggan_id">Customer</label>
+                                        <select name="pelanggan_id" id="pelanggan_id" class="form-control" required>
+                                            <option value="">Select Customer</option>
+                                            @foreach ($customers as $customer)
+                                                <option value="{{ $customer->id }}">{{ $customer->nama }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -152,6 +152,13 @@
                     quantityInput.val(1);
                 }
 
+                // Memeriksa apakah kuantitas setelah perubahan masih kurang dari atau sama dengan stok
+                else if (currentQuantity > productStock) {
+                    alert('Stok produk tidak mencukupi untuk kuantitas yang dimasukkan.');
+                    // Setel nilai kuantitas ke stok maksimum yang tersedia
+                    quantityInput.val(productStock);
+                }
+
                 updateTotal();
             });
 
@@ -167,7 +174,17 @@
                 if (existingRow.length > 0) {
                     // Jika sudah ada, tambahkan hanya ke kuantitas
                     var quantityInput = existingRow.find('.quantity');
-                    quantityInput.val(parseInt(quantityInput.val()) + 1);
+                    var stockInput = existingRow.find('.stock');
+
+                    var currentQuantity = parseInt(quantityInput.val());
+                    var currentStock = parseInt(stockInput.text());
+
+                    // Memeriksa apakah kuantitas setelah penambahan masih kurang dari atau sama dengan stok
+                    if (currentQuantity + 1 <= currentStock) {
+                        quantityInput.val(currentQuantity + 1);
+                    } else {
+                        alert('Stok produk tidak mencukupi untuk penambahan kuantitas.');
+                    }
                 } else {
                     // Menambahkan produk ke tabel belanja secara dinamis
                     var newRow = $('<tr data-id="' + productId + '" data-price="' + productPrice +

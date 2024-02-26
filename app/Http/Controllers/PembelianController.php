@@ -30,7 +30,7 @@ class PembelianController extends Controller
                     return 'Rp. ' . number_format($data->harga, 0, ',', '.');
                 })
                 ->addColumn('tanggal', function ($data) {
-                    return Carbon::parse($data->created_at)->isoFormat('D MMMM Y');
+                    return Carbon::parse($data->created_at)->format('d-F-Y');
                 })
                 ->addColumn('actions', function ($data) {
                     return view('pembelian._actions', compact('data'));

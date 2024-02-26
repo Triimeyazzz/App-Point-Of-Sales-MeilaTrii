@@ -11,7 +11,12 @@ class BrandController extends Controller
     {
         $datas = Brand::orderBy('created_at', 'desc');
 
+        // Mengambil data dari model Brand dan mengurutkannya berdasarkan kolom 'created_at' secara descending
+        $datas = Brand::orderBy('created_at', 'desc');
+
+        // Memeriksa apakah permintaan adalah permintaan AJAX
         if (request()->ajax()) {
+            // Jika itu permintaan AJAX, gunakan DataTables untuk memformat data dan mengembalikannya sebagai JSON
             return datatables()->of($datas)
                 ->addIndexColumn()
                 ->addColumn('actions', function ($data) {

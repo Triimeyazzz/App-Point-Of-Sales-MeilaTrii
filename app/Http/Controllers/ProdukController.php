@@ -88,8 +88,11 @@ class ProdukController extends Controller
     public function edit(Produk $produk) //Produk adalah model
     {
         //
+        $kategoris = Kategori::all();
+        $brands = Brand::all();
+        $units = Unit::all();
 
-        return view('produk.edit', compact('produk'));
+        return view('produk.edit', compact('produk', 'kategoris', 'brands', 'units'));
     }
 
     /**

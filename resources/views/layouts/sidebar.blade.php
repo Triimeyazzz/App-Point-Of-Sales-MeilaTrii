@@ -21,19 +21,6 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        {{-- <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                    aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div> --}}
-
         <!-- Sidebar Menu -->
         <nav class="mt-2 navbar-primary navbar-light">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -60,6 +47,13 @@
                         class="nav-link {{ Request::route()->getName() == 'supplier.index' || Request::route()->getName() == 'supplier.edit' || Request::route()->getName() == 'supplier.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Supplier</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('penjualan.index') }}"
+                        class="nav-link {{ Request::route()->getName() == 'penjualan.index' || Request::route()->getName() == 'penjualan.edit' || Request::route()->getName() == 'penjualan.create' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cart-plus"></i>
+                        <p>Sales</p>
                     </a>
                 </li>
                 <li class="nav-item">

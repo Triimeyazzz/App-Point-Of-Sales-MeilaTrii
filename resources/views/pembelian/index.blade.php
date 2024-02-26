@@ -32,7 +32,7 @@
                                         <th width="7%" class="navbar-purple">No.</th>
                                         <th class="navbar-purple">Suppliers</th>
                                         <th class="navbar-purple">Quantity</th>
-                                        <th class="navbar-purple">Price</th>
+                                        <th class="navbar-purple">Total</th>
                                         <th class="navbar-purple">Purchase Date</th>
                                         <th width="10%" class="navbar-purple">Action</th>
                                     </tr>

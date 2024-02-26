@@ -30,8 +30,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="kategori_id">Category</label>
-                                        <select name="kategori_id" id="kategori_id" class="form-control"
-                                            required>
+                                        <select name="kategori_id" id="kategori_id" class="form-control" required>
                                             <option value="">Choose Category</option>
                                             @foreach ($kategoris as $kategori)
                                                 <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
@@ -40,8 +39,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="brand_id">Brand</label>
-                                        <select name="brand_id" id="brand_id" class="form-control"
-                                            required>
+                                        <select name="brand_id" id="brand_id" class="form-control" required>
                                             <option value="">Choose Brand</option>
                                             @foreach ($brands as $brand)
                                                 <option value="{{ $brand->id }}">{{ $brand->nama }}</option>
@@ -50,18 +48,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="unit_id">Unit</label>
-                                        <select name="unit_id" id="unit_id" class="form-control"
-                                            required>
+                                        <select name="unit_id" id="unit_id" class="form-control" required>
                                             <option value="">Choose Unit</option>
                                             @foreach ($units as $unit)
                                                 <option value="{{ $unit->id }}">{{ $unit->nama }}</option>
                                             @endforeach
                                         </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="deskripsi">Description</label>
-                                        <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi"
-                                            placeholder="Enter Descripption" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -89,6 +81,12 @@
                                                 <label class="custom-file-label" for="gambar">Choose Image</label>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="deskripsi">Description</label>
+                                        <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Enter Descripption"></textarea>
                                     </div>
                                 </div>
                             </div>
