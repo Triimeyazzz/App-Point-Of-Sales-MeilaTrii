@@ -45,7 +45,7 @@
                 <li class="nav-item">
                     <a href="{{ route('supplier.index') }}"
                         class="nav-link {{ Request::route()->getName() == 'supplier.index' || Request::route()->getName() == 'supplier.edit' || Request::route()->getName() == 'supplier.create' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-truck-moving"></i>
                         <p>Supplier</p>
                     </a>
                 </li>
@@ -69,7 +69,7 @@
                         class="nav-link {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'kategori.index' || Request::route()->getName() == 'brand.index' || Request::route()->getName() == 'unit.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-archive"></i>
                         <p>
-                            Navigation
+                            Products
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -85,7 +85,7 @@
                             <a href="{{ route('produk.index') }}"
                                 class="nav-link {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-archive"></i>
-                                <p>Product</p>
+                                <p>Product List</p>
                             </a>
                         </li>
                         <li class="nav-item">
