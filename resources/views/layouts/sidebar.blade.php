@@ -120,12 +120,6 @@
                             <p>Purchase Report</p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link">
-                        <i class="nav-icon fas fa-list-alt"></i>
-                        <p>Expenditure</p>
-                    </a>
-                </li> --}}
                     <li class="nav-header">Administration</li>
                     <li class="nav-item">
                         <a href="{{ route('users.index') }}"
@@ -134,13 +128,6 @@
                             <p>User</p>
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
-                    <a href="{{ route('roles.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Role</p>
-                    </a>
-                </li> --}}
-                    {{-- <li class="nav-header">Misc</li> --}}
                     <li class="nav-item">
                         <a href="{{ route('pengaturan.index') }}"
                             class="nav-link {{ Request::route()->getName() == 'pengaturan.index' ? 'active' : '' }}">
