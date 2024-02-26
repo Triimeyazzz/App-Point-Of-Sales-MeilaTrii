@@ -38,7 +38,7 @@ Route::get('/', function () {
 //Laravel/UI auth
 Auth::routes();
 
-//Middleware
+//Middleware untuk admin
 Route::middleware('auth','role:Admin')->group(function () {
     //Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

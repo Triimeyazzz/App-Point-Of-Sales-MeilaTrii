@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('pembelian_detail', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pembelian_id');
-            $table->unsignedBigInteger('produk_id');
+            $table->foreignId('pembelian_id')->constrained()->references('id')->on('pembelian');
+            $table->foreignId('produk_id')->constrained()->references('id')->on('produk');
             $table->integer('kuantitas');
             $table->integer('harga');
             $table->timestamps();
