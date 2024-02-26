@@ -68,7 +68,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <p class="lead">Amount Due {{ $penjualan->created_at }}</p>
+                            <p class="lead">Amount Due {{ $penjualan->created_at->format('d-m-Y') }}</p>
 
                             <div class="table-responsive">
                                 <table class="table">
