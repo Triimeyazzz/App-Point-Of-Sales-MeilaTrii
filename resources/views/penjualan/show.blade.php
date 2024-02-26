@@ -73,7 +73,7 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
-                                        <th style="width:50%">Total:</th>
+                                        <th style="width:50%">Grand Total:</th>
                                         <td>Rp. {{ number_format($penjualan->harga) }}</td>
                                     </tr>
                                 </table>
@@ -86,7 +86,7 @@
                     <!-- this row will not appear when printing -->
                     <div class="row no-print">
                         <div class="col-12">
-                            <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i
+                            <a href="javascript:void(0)" rel="noopener" target="_blank" class="btn btn-default"><i
                                     class="fas fa-print"></i> Print</a>
                         </div>
                     </div>
