@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('produk', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('kategori_id');
-            $table->unsignedBigInteger('brand_id');
-            $table->unsignedBigInteger('unit_id');
+            $table->foreignId('kategori_id')->constrained()->references('id')->on('kategori');
+            $table->foreignId('brand_id')->constrained()->references('id')->on('brand');
+            $table->foreignId('unit_id')->constrained()->references('id')->on('unit');
             $table->string('nama');
             $table->string('sku');
             $table->text('deskripsi')->nullable();

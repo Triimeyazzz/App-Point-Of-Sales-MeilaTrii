@@ -84,12 +84,12 @@
                     <!-- /.row -->
 
                     <!-- this row will not appear when printing -->
-                    <div class="row no-print">
+                    {{-- <div class="row no-print">
                         <div class="col-12">
                             <a href="javascript:void(0)" rel="noopener" target="_blank" class="btn btn-default"><i
                                     class="fas fa-print"></i> Print</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- /.invoice -->
             </div><!-- /.col -->

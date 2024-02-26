@@ -51,7 +51,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('penjualan.index') }}"
-                        class="nav-link {{ Request::route()->getName() == 'penjualan.index' || Request::route()->getName() == 'penjualan.edit' || Request::route()->getName() == 'penjualan.create' ? 'active' : '' }}">
+                        class="nav-link {{ Request::route()->getName() == 'penjualan.index' || Request::route()->getName() == 'penjualan.edit' || Request::route()->getName() == 'penjualan.create' || Request::route()->getName() == 'penjualan.show' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-cart-plus"></i>
                         <p>Sales</p>
                     </a>
