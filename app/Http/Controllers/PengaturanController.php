@@ -7,60 +7,47 @@ use Illuminate\Http\Request;
 
 class PengaturanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //
     public function index()
     {
-        //
-        return view('content.pengaturan');
+        $init_pengaturan = Pengaturan::all();
+        $data['pengatuan'] = [];
+        foreach ($init_pengaturan as $value) {
+            $data['pengaturan'][$value->key] = $value->value;
+        }
+
+
+        return view('pengaturan.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(Request $request)
     {
-        //
-    }
+        Pengaturan::where('key', 'nama_perusahaan')->update([
+            'value' => $request->nama_perusahaan,
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        Pengaturan::where('key', 'alamat')->update([
+            'value' => $request->alamat,
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Pengaturan $pengaturan)
-    {
-        //
-    }
+        Pengaturan::where('key', 'telepon')->update([
+            'value' => $request->telepon,
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Pengaturan $pengaturan)
-    {
-        //
-    }
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo')->store('web', 'public');
+            Pengaturan::where('key', 'logo')->update([
+                'value' => $logo,
+            ]);
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Pengaturan $pengaturan)
-    {
-        //
-    }
+        if ($request->hasFile('favicon')) {
+            $favicon = $request->file('favicon')->store('web', 'public');
+            Pengaturan::where('key', 'favicon')->update([
+                'value' => $favicon,
+            ]);
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Pengaturan $pengaturan)
-    {
-        //
+        return redirect()->back()->with('success', 'Setting has been updated');
     }
 }

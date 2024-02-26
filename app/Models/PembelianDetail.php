@@ -11,4 +11,9 @@ class PembelianDetail extends Model
 
     protected $table = 'pembelian_detail';
     protected $guarded = ['id'];
+
+    public function pembelian()
+    {
+        return $this->belongsTo(Pembelian::class, 'pembelian_id');
+    }
 }

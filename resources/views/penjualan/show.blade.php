@@ -8,21 +8,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="callout callout-info">
-                    <h5><i class="fas fa-info"></i> Note:</h5>
-                    This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
-                </div>
-
-
                 <!-- Main content -->
                 <div class="invoice p-3 mb-3">
                     <!-- title row -->
                     <div class="row">
                         <div class="col-12">
-                            <h4>
-                                <i class="fas fa-globe"></i> Sales
+                            <h5>
+                                Customer: {{ $penjualan->pelanggan->nama }}
                                 <small class="float-right">Date: {{ now()->format('d-m-Y') }}</small>
-                            </h4>
+                            </h5>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -49,8 +43,8 @@
                                             <td>{{ $i++ }}</td>
                                             <td>{{ $detail->produk->nama }}</td>
                                             <td>{{ $detail->kuantitas }}</td>
-                                            <td>Rp. {{ number_format($detail->harga) }}</td>
-                                            <td>Rp. {{ number_format($detail->harga * $detail->kuantitas) }}</td>
+                                            <td>Rp. {{ number_format($detail->harga, 0, ',', '.') }}</td>
+                                            <td>Rp. {{ number_format($detail->harga * $detail->kuantitas, 0, ',', '.') }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -75,7 +69,7 @@
                                 <table class="table">
                                     <tr>
                                         <th style="width:50%">Grand Total:</th>
-                                        <td>Rp. {{ number_format($penjualan->harga) }}</td>
+                                        <td>Rp. {{ number_format($penjualan->harga, 0, ',', '.') }}</td>
                                     </tr>
                                 </table>
                             </div>

@@ -8,6 +8,68 @@
 
 @section('content')
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-box-open"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Products</span>
+                        <span class="info-box-number">{{ $product_count }}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Categories</span>
+                        <span class="info-box-number">{{ $kategori_count }}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Brands</span>
+                        <span class="info-box-number">{{ $brand_count }}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                    @role('Admin')
+                        <span class="info-box-icon bg-danger"><i class="far fa-money-bill-alt"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Profit</span>
+                            <span class="info-box-number">Rp. {{ $profit }}</span>
+                        </div>
+                    @else
+                        <span class="info-box-icon bg-danger"><i class="fa fa-box"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Unit</span>
+                            <span class="info-box-number">{{ $unit_count }}</span>
+                        </div>
+                    @endrole
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <!-- small box -->
@@ -21,14 +83,15 @@
                 <div class="warnabox1">
                     <div class="small-box">
                         <div class="inner">
-                            <h3>{{ $product_count }}</h3>
+                            <h3>{{ $pelanggan_count }}</h3>
 
-                            <p>Product</p>
+                            <p>Customers</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-box-open"></i>
                         </div>
-                        <a href="{{ route('produk.index') }}" class="small-box-footer">More Info<i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('pelanggan.index') }}" class="small-box-footer">More Info<i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -45,12 +108,13 @@
                         <div class="inner">
                             <h3>{{ $supplier_count }}</h3>
 
-                            <p>Supplier</p>
+                            <p>Suppliers</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-truck"></i>
                         </div>
-                        <a href="{{ route('supplier.index') }}" class="small-box-footer">More Info<i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('supplier.index') }}" class="small-box-footer">More Info<i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -65,14 +129,15 @@
                 <div class="warnabox3">
                     <div class="small-box">
                         <div class="inner">
-                            <h3>{{ $users_count }}</h3>
+                            <h3>{{ $pembelian_count }}</h3>
 
-                            <p>User</p>
+                            <p>Purchases</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="fa fa-cart-arrow-down"></i>
                         </div>
-                        <a href="{{ route('users.index') }}" class="small-box-footer">More Info<i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('pembelian.index') }}" class="small-box-footer">More Info<i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -87,23 +152,140 @@
                 <div class="warnabox4">
                     <div class="small-box">
                         <div class="inner">
-                            <h3>{{ $pelanggan_count }}</h3>
+                            <h3>{{ $penjualan_count }}</h3>
 
-                            <p>Customer</p>
+                            <p>Sales</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-users"></i>
+                            <i class="fa fa-shopping-cart"></i>
                         </div>
-                        <a href="{{ route('pelanggan.index') }}" class="small-box-footer">More Info<i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('penjualan.index') }}" class="small-box-footer">More Info<i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <!-- /.col (LEFT) -->
+            <div class="col-md-8">
+                <!-- LINE CHART -->
+                <!-- BAR CHART -->
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">PURCHASE & SALES BAR CHART</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart">
+                            <canvas id="barChart"
+                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <div class="col-md-4">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">RECENTLY ADDED ITEMS</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>Name</th>
+                                    <th>Sales Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                    $i = 1;
+                                @endphp
+                                @foreach ($recentProducts as $recentProduct)
+                                    <tr>
+                                        <td>{{ $i++ }}</td>
+                                        <td>{{ $recentProduct->nama }}</td>
+                                        <td>Rp. {{ number_format($recentProduct->harga_jual, 0, ',', '.') }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.col (RIGHT) -->
+            </div>
+        </div>
     </div>
 @endsection
 
 @push('scripts')
+    <script src="../../../plugins/chart.js/Chart.min.js"></script>
+    <script src="../../../dist/js/pages/dashboard2.js"></script>
 
-<script src="../../../plugins/chart.js/Chart.min.js"></script>
-<script src="../../../dist/js/pages/dashboard2.js"></script>
-    
+    <script>
+        var totalPenjualanPerBulan = @json($totalPenjualanPerBulan);
+        var totalPembelianPerBulan = @json($totalPembelianPerBulan);
+
+        var areaChartData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                'November', 'December'
+            ],
+            datasets: [{
+                    label: 'Sales',
+                    backgroundColor: 'rgba(60,141,188,0.9)',
+                    borderColor: 'rgba(60,141,188,0.8)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: totalPenjualanPerBulan
+                },
+                {
+                    label: 'Purchase',
+                    backgroundColor: 'rgba(210, 214, 222, 1)',
+                    borderColor: 'rgba(210, 214, 222, 1)',
+                    pointRadius: false,
+                    pointColor: 'rgba(210, 214, 222, 1)',
+                    pointStrokeColor: '#c1c7d1',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(220,220,220,1)',
+                    data: totalPembelianPerBulan
+                },
+            ]
+        }
+        //-------------
+        //- BAR CHART -
+        //-------------
+        var barChartCanvas = $('#barChart').get(0).getContext('2d')
+        var barChartData = $.extend(true, {}, areaChartData)
+        var temp0 = areaChartData.datasets[0]
+        var temp1 = areaChartData.datasets[1]
+        barChartData.datasets[0] = temp1
+        barChartData.datasets[1] = temp0
+
+        var barChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            datasetFill: false
+        }
+
+        new Chart(barChartCanvas, {
+            type: 'bar',
+            data: barChartData,
+            options: barChartOptions
+        })
+    </script>
 @endpush

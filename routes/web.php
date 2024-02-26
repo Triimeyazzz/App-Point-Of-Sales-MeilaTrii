@@ -11,6 +11,8 @@ use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\CpuTrafficController;
+use App\Http\Controllers\PengaturanController;
+use App\Http\Controllers\ReportController;
 // use itu artinya menggunakan,
 // jadi apapun isi di dalam folder itu,
 // bisa digunakan semuanya
@@ -39,12 +41,12 @@ Route::get('/', function () {
 Auth::routes();
 
 //Middleware untuk admin
-Route::middleware('auth','role:Admin')->group(function () {
+Route::middleware('auth')->group(function () {
     //Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     //User
-    Route::resource('/users', UserController::class);
+    Route::resource('/users', UserController::class)->middleware('role:Admin');
 
     //Pelanggan
     Route::resource('/pelanggan', PelangganController::class);
@@ -70,4 +72,12 @@ Route::middleware('auth','role:Admin')->group(function () {
 
     //Penjualan
     Route::resource('/penjualan', PenjualanController::class);
+
+    //Report
+    Route::get('/laporan-penjualan', [ReportController::class, 'sales'])->name('sales.report')->middleware('role:Admin');
+    Route::get('/laporan-pembelian', [ReportController::class, 'purchase'])->name('purchase.report')->middleware('role:Admin');
+
+    //Settings
+    Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index')->middleware('role:Admin');
+    Route::put('/pengaturan-update', [PengaturanController::class, 'update'])->name('pengaturan.update')->middleware('role:Admin');
 });

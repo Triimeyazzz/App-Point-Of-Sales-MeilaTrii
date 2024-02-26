@@ -70,12 +70,12 @@
                                             placeholder="Enter SKU" value="{{ $produk->sku }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="harga_beli">Selling Price</label>
+                                        <label for="harga_beli">Purchase Price</label>
                                         <input type="number" class="form-control" name="harga_beli" id="harga_beli"
                                             placeholder="Enter Price" value="{{ $produk->harga_beli }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="harga_jual">Purchase Price</label>
+                                        <label for="harga_jual">Selling Price</label>
                                         <input type="number" class="form-control" name="harga_jual" id="harga_jual"
                                             placeholder="Enter Price" value="{{ $produk->harga_jual }}" required>
                                     </div>

@@ -128,7 +128,7 @@
                         $.each(data, function(index, product) {
                             $('#product-list').append('<li data-id="' + product.id +
                                 '" data-name="' + product.nama + '" data-price="' +
-                                product.harga_beli + '" data-stock="' + product
+                                product.harga_jual + '" data-stock="' + product
                                 .stok + '">' + product.nama + '</li>');
                         });
 

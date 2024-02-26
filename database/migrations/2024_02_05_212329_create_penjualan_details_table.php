@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('produk_id')->constrained()->references('id')->on('produk');
             $table->integer('kuantitas');
             $table->integer('harga');
+            $table->integer('keuntungan');
             $table->timestamps();
         });
     }

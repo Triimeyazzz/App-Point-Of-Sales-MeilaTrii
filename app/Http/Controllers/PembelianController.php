@@ -143,6 +143,8 @@ class PembelianController extends Controller
     public function destroy(Pembelian $pembelian)
     {
         // Menghapus data pembelian tertentu dari database (jika diperlukan)
+        $pembelianDetails = PembelianDetail::where('pembelian_id', $pembelian->id);
+        $pembelianDetails->delete();
         $pembelian->delete();
 
         return redirect()->route('pembelian.index')->with('success', 'Purchase data has been successfully deleted.');

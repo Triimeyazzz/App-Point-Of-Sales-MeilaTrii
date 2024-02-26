@@ -30,22 +30,12 @@ class PengaturanSeeder extends Seeder
         ]);
 
         Pengaturan::create([
-            'key' => 'tipe_nota',
-            'value' => 'faktur',
-        ]);
-
-        Pengaturan::create([
-            'key' => 'diskon',
-            'value' => 0,
-        ]);
-
-        Pengaturan::create([
             'key' => 'logo',
             'value' => null,
         ]);
 
         Pengaturan::create([
-            'key' => 'kartu_member',
+            'key' => 'favicon',
             'value' => null,
         ]);
     }

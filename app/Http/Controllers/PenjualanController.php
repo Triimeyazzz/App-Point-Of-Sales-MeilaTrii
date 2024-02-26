@@ -77,11 +77,14 @@ class PenjualanController extends Controller
 
         foreach ($request->input('items') as $itemJson) {
             $item = json_decode($itemJson, true);   // Mendekode string JSON menjadi array asosiatif
+            $produk = Produk::find($item['product_id']);   // Mencari produk berdasarkan ID
+            $purchase_price = $produk->harga_beli * $item['quantity'];
             PenjualanDetail::create([   // Membuat entri detail pembelian baru dalam database
                 'penjualan_id' => $penjualan->id,
                 'produk_id' => $item['product_id'],
                 'kuantitas' => $item['quantity'],
                 'harga' => $item['price'],
+                'keuntungan' => $item['quantity'] * $item['price'] - $purchase_price,
             ]);
 
             $stok_produk = Produk::find($item['product_id']);   // Mencari produk berdasarkan ID
@@ -125,5 +128,9 @@ class PenjualanController extends Controller
     public function destroy(Penjualan $penjualan)
     {
         //
+        $penjualanDetails = PenjualanDetail::where('penjualan_id', $penjualan->id);
+        $penjualanDetails->delete();
+        $penjualan->delete();
+        return redirect()->route('penjualan.index')->with('success', 'Sales data deleted successfully.');
     }
 }

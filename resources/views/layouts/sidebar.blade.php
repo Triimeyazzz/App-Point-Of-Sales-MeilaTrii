@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-cyan elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link navbar-indigo">
-        <img src="{{ asset('dist/img/4a.jpeg') }}" alt="4a" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
+        <img src="{{ Storage::url($pengaturan->where('key', 'logo')->first()->value) }}" alt="4a"
+            class="brand-image img-circle elevation-3" style="opacity: .8">
         <span
             class="brand-text font-weight-light">{{ $pengaturan->where('key', 'nama_perusahaan')->first()->value }}</span>
     </a>
@@ -52,7 +52,7 @@
                 <li class="nav-item">
                     <a href="{{ route('penjualan.index') }}"
                         class="nav-link {{ Request::route()->getName() == 'penjualan.index' || Request::route()->getName() == 'penjualan.edit' || Request::route()->getName() == 'penjualan.create' || Request::route()->getName() == 'penjualan.show' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-cart-plus"></i>
+                        <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>Sales</p>
                     </a>
                 </li>
@@ -104,40 +104,52 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">Report</li>
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link">
-                        <i class="nav-icon fas fa-list-alt"></i>
-                        <p>Purchase</p>
-                    </a>
-                </li>
-                <li class="nav-item">
+                @role('Admin')
+                    <li class="nav-header">Report</li>
+                    <li class="nav-item">
+                        <a href="{{ route('sales.report') }}"
+                            class="nav-link {{ Request::route()->getName() == 'sales.report' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-list-alt"></i>
+                            <p>Sales Report</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('purchase.report') }}"
+                            class="nav-link {{ Request::route()->getName() == 'purchase.report' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-list-alt"></i>
+                            <p>Purchase Report</p>
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>Expenditure</p>
                     </a>
-                </li>
-                <li class="nav-header">Administration</li>
-                <li class="nav-item">
-                    <a href="{{ route('users.index') }}"
-                        class="nav-link {{ Request::route()->getName() == 'users.index' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>User</p>
-                    </a>
-                </li>
-                {{-- <li class="nav-item">
+                </li> --}}
+                    <li class="nav-header">Administration</li>
+                    <li class="nav-item">
+                        <a href="{{ route('users.index') }}"
+                            class="nav-link {{ Request::route()->getName() == 'users.index' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>User</p>
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
                     <a href="{{ route('roles.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Role</p>
                     </a>
                 </li> --}}
-                {{-- <li class="nav-header">Misc</li> --}}
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link">
-                        <i class="nav-icon fas fa-cog"></i>
-                        <p>Setting</p>
-                    </a>
-                </li>
+                    {{-- <li class="nav-header">Misc</li> --}}
+                    <li class="nav-item">
+                        <a href="{{ route('pengaturan.index') }}"
+                            class="nav-link {{ Request::route()->getName() == 'pengaturan.index' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <p>Settings</p>
+                        </a>
+                    </li>
+                @endrole
+                <br>
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link"
                         onclick="event.preventDefault();

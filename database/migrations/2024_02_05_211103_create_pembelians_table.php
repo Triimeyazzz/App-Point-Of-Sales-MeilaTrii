@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pembelian', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pelanggan_id')->constrained()->references('id')->on('pelanggan');
+            $table->foreignId('supplier_id')->constrained()->references('id')->on('supplier');
             $table->integer('kuantitas');
             $table->integer('harga');
             $table->timestamps();
