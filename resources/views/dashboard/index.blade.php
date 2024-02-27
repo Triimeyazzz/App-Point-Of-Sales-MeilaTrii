@@ -2,11 +2,15 @@
 
 @push('styles')
     <style>
-
+.body {
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
+}
     </style>
 @endpush
 
 @section('content')
+<div class="body">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-sm-6 col-12">
@@ -24,7 +28,7 @@
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+                    <span class="info-box-icon bg-lightblue"><i class="far fa-flag"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Categories</span>
@@ -37,7 +41,7 @@
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+                    <span class="info-box-icon bg-purple"><i class="far fa-copy"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Brands</span>
@@ -51,7 +55,7 @@
             <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
                     @role('Admin')
-                        <span class="info-box-icon bg-danger"><i class="far fa-money-bill-alt"></i></span>
+                        <span class="info-box-icon bg-indigo"><i class="far fa-money-bill-alt"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Profit</span>
                             <span class="info-box-number">Rp. {{ $profit }}</span>
@@ -88,7 +92,7 @@
                             <p>Customers</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-box-open"></i>
+                            <i class="fas fa-users"></i>
                         </div>
                         <a href="{{ route('pelanggan.index') }}" class="small-box-footer">More Info<i
                                 class="fas fa-arrow-circle-right"></i></a>
@@ -122,7 +126,7 @@
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox3 {
-                        background: #ff8c9f;
+                        background: hsl(350, 100%, 77%);
                     }
                 </style>
                 <!-- small box -->
@@ -170,7 +174,7 @@
             <div class="col-md-8">
                 <!-- LINE CHART -->
                 <!-- BAR CHART -->
-                <div class="card card-success">
+                <div class="card card-indigo">
                     <div class="card-header">
                         <h3 class="card-title">PURCHASE & SALES BAR CHART</h3>
 
@@ -194,7 +198,7 @@
                 <!-- /.card -->
             </div>
             <div class="col-md-4">
-                <div class="card card-primary">
+                <div class="card card-lightblue">
                     <div class="card-header">
                         <h3 class="card-title">RECENTLY ADDED ITEMS</h3>
                     </div>
@@ -228,6 +232,7 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @push('scripts')
@@ -244,7 +249,7 @@
             ],
             datasets: [{
                     label: 'Sales',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
+                    backgroundColor: 'rgb(255, 213, 220)',
                     borderColor: 'rgba(60,141,188,0.8)',
                     pointRadius: false,
                     pointColor: '#3b8bba',
@@ -255,7 +260,7 @@
                 },
                 {
                     label: 'Purchase',
-                    backgroundColor: 'rgba(210, 214, 222, 1)',
+                    backgroundColor: 'hsl(350, 100%, 77%)',
                     borderColor: 'rgba(210, 214, 222, 1)',
                     pointRadius: false,
                     pointColor: 'rgba(210, 214, 222, 1)',
