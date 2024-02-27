@@ -109,6 +109,8 @@ class PembelianController extends Controller
     public function show(Pembelian $pembelian)
     {
         // Menampilkan detail pembelian tertentu (jika diperlukan)
+        $details = PembelianDetail::where('pembelian_id', $pembelian->id)->get();
+        return view('pembelian.show', compact('pembelian', 'details'));
     }
 
     /**
