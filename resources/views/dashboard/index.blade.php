@@ -8,9 +8,9 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
 }
     </style>
 @endpush
-
-@section('content')
 <div class="body">
+@section('content')
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-sm-6 col-12">
@@ -61,7 +61,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
                             <span class="info-box-number">Rp. {{ $profit }}</span>
                         </div>
                     @else
-                        <span class="info-box-icon bg-danger"><i class="fa fa-box"></i></span>
+                        <span class="info-box-icon bg-navy"><i class="fa fa-box"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Unit</span>
                             <span class="info-box-number">{{ $unit_count }}</span>
@@ -232,9 +232,9 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             </div>
         </div>
     </div>
-</div>
-@endsection
 
+@endsection
+</div>
 @push('scripts')
     <script src="../../../plugins/chart.js/Chart.min.js"></script>
     <script src="../../../dist/js/pages/dashboard2.js"></script>
