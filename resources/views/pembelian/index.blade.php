@@ -34,7 +34,7 @@
                                         <th class="navbar-purple">Quantity</th>
                                         <th class="navbar-purple">Total</th>
                                         <th class="navbar-purple">Purchase Date</th>
-                                        <th width="10%" class="navbar-purple">Action</th>
+                                        <th width="15%" class="navbar-purple">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -16,4 +16,9 @@ class PembelianDetail extends Model
     {
         return $this->belongsTo(Pembelian::class, 'pembelian_id');
     }
+
+    public function produk()
+    {
+        return $this->belongsTo(Produk::class, 'produk_id');
+    }
 }

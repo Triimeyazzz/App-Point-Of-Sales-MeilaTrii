@@ -58,7 +58,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('pembelian.index') }}"
-                        class="nav-link {{ Request::route()->getName() == 'pembelian.index' || Request::route()->getName() == 'pembelian.edit' || Request::route()->getName() == 'pembelian.create' ? 'active' : '' }}">
+                        class="nav-link {{ Request::route()->getName() == 'pembelian.index' || Request::route()->getName() == 'pembelian.edit' || Request::route()->getName() == 'pembelian.create' || Request::route()->getName() == 'pembelian.show' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-cart-plus"></i>
                         <p>Purchase</p>
                     </a>
