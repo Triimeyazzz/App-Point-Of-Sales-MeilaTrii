@@ -57,7 +57,7 @@
                 </div>
                 <form action="{{ route('unit.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="modal-body">                
+                    <div class="modal-body">
                         <div class="form-group">
                             <label for="name">Name Unit</label>
                             <input type="text" class="form-control" name="nama" id="name"
@@ -72,7 +72,7 @@
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary">Save</button>
-              c                      </div>
+                                   </div>
                 </form>
             </div>
             <!-- /.modal-content -->
