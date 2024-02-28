@@ -1,252 +1,97 @@
+commands laravel yang Trimey pakai
+1. pembuatan project: "composer create-project laravel/laravel nama-project" (source: https://laravel.com/docs/10.x)
+harusnya seperti ituuu, karena saya tidak sengaja menginstall laravel global, jadii saya menggunakan=
+"laravel new nama-project" begituu yakk
+cara install laravel global bagaimana ni guys?
+beginii "composer global require laravel installer" gitu yakk
+
+2. pembuatan autentikasi pengguna menggunakan package laravel/ui: "composer require laravel/ui"
+(source: https://github.com/laravel/ui)
+
+3. membuat scaffold autentikasi pengguna termasuk fitur login dengan laravel/ui: "php artisan ui bootstrap --auth"
+(source: https://github.com/laravel/ui)
+
+4. pembuatan role permission menggunakan package spatie laravel permission: "composer require spatie/laravel-permission"
+(source: https://spatie.be/index.php/docs/laravel-permission/v6/installation-laravel)
+
+5. publish migrasi spatie permission: "php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+(source: https://spatie.be/index.php/docs/laravel-permission/v6/installation-laravel)
+
+6. pembuatan datatables dengan menggunakan package yajrabox datatables: "composer require yajra/laravel-datatables-oracle:"^10.3.1""
+(source: https://yajrabox.com/docs/laravel-datatables/10.0)
+
+"^10.3.1" -> versi dari package yajrabox datatables
+tahukah kamu package/librari?
+package itu semisal kita mau buat autentikasi user login, register, dll. dari awal? pasti lamaaa... makanya kita butuh untuk
+mempercepat dengan bantuan package/librari biar langsung jadii, dan ga usah bikin dari awall.
+misalnya kita bikin datatables, apa iya kita susah payah masukkin requirement untuk pembuatan datatables dari awal?
+pasti sminggu gajadi tuh... makanya butuh bantuan package, yang saya gunakan yaitu punyanya yajrabox.
+package" memudahkan untuk pengembangan, yang ga harus membuat dari awal... package apapun ada gaiss, tergantung ang mau dipke apaa.
+misal untuk atentikasi user, laravel aada banyak package yang sering dipake, yaitu laravel breeze, laravel jetstream,
+laravel ui, dll.
+yang aku pake ituu yang ini=
+        "laravel/ui": "^4.4",
+        "spatie/laravel-permission": "^6.3",
+        "yajra/laravel-datatables-oracle": "10.3.1"
+ya pokoknya itu lah yaaa.
+
+7. membuat model produk(contoh) termasuk migrasi dan controller resource: "php artisan make:model Produk -mcr"
+(source: https://morioh.com/a/45050e9816b4/laravel-create-model-migration-and-controller-in-a-single-command)
+	- m: membuat migrasi otomatis
+	- c: membuat controller otomatis
+	- r: membuat controller dengan resource (index, create, store, show, edit, update, destroy) langsung dalam satu controller
+
+8. membuat migrasi pengaturan(contoh): "php artisan make:migration create_pengaturan_table"
+
+9. membuat model pengaturan(contoh): "php artisan make:model Pengaturan"
+
+10. membuat contoller pengaturan(contoh): "php artisan make:controller Pengaturan"
+
+11. membuat seeder untuk data awal Admin(contoh): "php artisan make:seeder AdminSeeder"
+
+12. migrasi ke database dengan menggunakan "seeder: php artisan migrate --seeder"
+
+13. membuat symlink untuk storage file yang disimpan pada folder storage: "php artisan storage:link"
+
+software yang dipakai=
+xampp -> server php dan MySQL
+VS Code -> untuk ide
+Composer -> package
+
+Bahasa pemrograman=
+HTML, JS, CSS, PHP (Frameworknya pake laravel)
+
+Framework PHP itu sebenarnya ada banyak gaiss
+contoh= laravel, codeigniter, yii, cakephp, dll.
+
+Fungsi seeder di laravel?
+untuk menguji aplikasi atau mengisi database dengan data awal untuk pengembangan.(soure; dari google)
+jadiii seeder itu untuk data awal..., apa yang kita masukkan ke seeder ya itu yang masuk di awal.
+jadii ini adalah data awal, DATA AWAL.
+
+"php artisan migrate:fresh --seed"
+kalau kita migrate tanpa seed, maka datanyaa akan hilang semuaa, gunanya menggunakan seed itu buat masukin data awal.
+ntah itu data user, product, category, pelanggan, dll.
+
+cara membuat seeder, contohnya= "php artisan make:seeder CategorySeeder"
+setelah itu buatlah codenyaaa
+
+rencananya mau pakai tailwind, tapi gajadi gaiss, yaa namanya juga pengembangan aplikasi, apapun bisa dilakukan termasuk mencoba"
+
+git itu sudah ada dari laravelnyaa
+
 @csrf itu fungsi yang digunakan untuk mengaktifkan fitur Cross Site Request Forgery (klo gasalah -_-)
-gunanya untuk mengamankan form ketika ingin mengirim data ke server (intinya biar ga ke hek -_-)
+gunanya untuk mengamankan form ketika ingin mengirim data ke server (intinya biar ga ke hack -_-)
 
 ada banyak hal yang bisa digunakan untuk menulis @ di file blablabla.blade.php
 
 simbol @ disebut dengan directive .. kamu bisa baca2 ada apa aja fiturnya di web laravel bagian
 blade directive
 
-yang nanti bakal kepakai tuh
+yang saya nanti bakal pakai tuh
 
 @php @endphp
 @extend()
 @section() @endsection
 @yield
 @if @elseif @endelse @else @endif
-
-itu...
-
-(NGARUH KE PROJECT, KALO GAK DI BACA BAKAL ERROR)
-KALO DIBACA YA BIKIN GA ERROR -_-
-
-
-Naya cantik naya pinter kaya kakaknyaaaaaaa
-fiks no	 debat
-
-<style>
-#idx-calendar {
-    margin: 0 auto;
-    max-width: 500px;
-    text-align: center;
-    width: 100%;
-}
-#idx-calendar div > ul {
-    list-style: none ;
-    background-color: #333333;
-    margin: 0;
-    padding: 0 10px;
-}
-#idx-calendar #dayNames > ul {
-    background-color: #232323;
-}
-#idx-calendar ul li {
-    color: #FFFFFF;
-    float: left;
-    font-family: Tahoma;
-    font-weight: inherit;
-}
-#dayNames ul li {
-    font-weight: bold;
-    margin: 2% 0;
-    padding: 3% 0;
-    width: 14.2857%;
-}
-#daysNum ul li:hover {
-    background-color: #232323;
-}
-#daysNum ul li {
-    padding: 2.5% 0;
-    width: 14.2857%;
-}
-#dayNames,#daysNum {
-    clear: both;
-    width: 100%;
-}
-#dayNames:after,#daysNum:after,#idx-calendar div > ul:after  {
-    content: "";
-    display: table;
-    clear: both;
-}
-#idx-calendar div > ul li:first-child {
-    color: #F05558;
-    font-weight: bold;
-}
-#idx-calendar li.dayNow {
-    color: #0084B4 !important;
-    font-weight: bold;
-    background-color: #232323;
-    position: relative;
-    z-index: 2;
-}
-.monthNow {
-    color: #0084B4;
-    font-family: arial;
-    font-size: 40px;
-    text-align: left;
-}
-#monthNow {
-    background-color:#4188D0;
-    font-family: verdana;
-    font-weight: bold;
-    color: #FFFFFF;
-    padding: 20px;
-    text-transform: uppercase;
-}
-#calendar-control {
-    position: relative;
-}
-#nextMonth, #prevMonth {
-    transition:0.5s;
-    background-color: #232323;
-    color: #FFFFFF;
-    font-family: verdana;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    text-transform: uppercase;
-    top: 0;
-    width: 60px;
-}
-#prevMonth{
-    left: 0;
-}
-#prevMonth:before, #nextMonth:before {
-    background-color: #4188D0;
-    border-radius: 50%;
-    transition:0.5s;
-    border-right: 1px solid #FFFFFF;
-    border-top: 1px solid #FFFFFF;
-    content: "";
-    display: block;
-    height: 20px;
-    left: 20px;
-    position: relative;
-    top: 18px;
-    transform: rotate(45deg);
-    width: 20px;
-}
-#prevMonth:before{
-    transform: rotate(-135deg);
-}
-#nextMonth:hover, #prevMonth:hover{
-    background-color: transparent;
-}
-#nextMonth:hover:before, #prevMonth:hover:before{
-    border-radius: 0%;
-}
-    </style>
-
-   <style>
-    function displayCalendar(month, year){
-
-        var monthNow = new Date().getMonth();
-        var yearNow = new Date().getFullYear();;
-        var nextMonth = month+1;
-        var prevMonth = month-1;
-        var day = 0;
-
-        if((month == monthNow)&&(year == yearNow)){
-            var day = new Date().getDate();
-        }
-
-        var htmlContent ="";
-        var FebNumberOfDays ="";
-        var counter = 1;
-        var Nameday = 1;
-
-        if (month == 1){
-            if ( (year%100!=0) && (year%4==0) || (year%400==0)){
-                FebNumberOfDays = 29;
-                }else{
-                FebNumberOfDays = 28;
-            }
-        }
-
-        var monthNames = ["January","February","March","April","May","June","July","August","September","October","November", "December"];
-        var monthNum = ["1","2","3","4","5","6","7","8","9","10","11", "12"];
-        var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thrusday","Friday", "Saturday"];
-        var dayPerMonth = ["31", ""+FebNumberOfDays+"","31","30","31","30","31","31","30","31","30","31"]
-        var nextDate = new Date(nextMonth +' 1 ,'+year);
-        var weekdays = nextDate.getDay();
-        var weekdays2 = weekdays
-        var numOfDays = dayPerMonth[month];
-
-        while (weekdays>0){
-        htmlContent += "<li style='padding:1 0 0;'></li>";
-            weekdays--;
-        }
-
-        while (counter <= numOfDays){
-
-            if (weekdays2 > 6){
-                weekdays2 = 0;
-                htmlContent += "</ul><ul>";
-            }
-            if (counter == day){
-                htmlContent +="<li class='dayNow'>"+counter+"</li>";
-                Nameday = counter;
-                }else{
-                htmlContent +="<li>"+counter+"</li>";
-            }
-            weekdays2++;
-            counter++;
-        }
-
-        document.getElementById("monthNow").innerHTML= monthNames[month]+" "+ year ;
-        document.getElementById("daysNum").innerHTML= "<ul id="+monthNum[month]+" class="+year+">"+htmlContent+"</ul>";
-    }
-
-
-    (function() {
-        var dateNow = new Date();
-        var month = dateNow.getMonth();
-        var year = dateNow.getFullYear();
-        displayCalendar(month,year)
-    })(window);
-
-
-    document.getElementById("nextMonth").onclick = function(){
-        var idmonth = document.getElementById("daysNum");
-        var month = idmonth.getElementsByTagName("ul")[0].id;
-        var nextYear = idmonth.getElementsByTagName("ul")[0].className;
-        var nextMonth = Number(month);
-        if(nextMonth == 12){
-            nextMonth = 0;
-            nextYear = Number(nextYear) + 1
-        }
-        displayCalendar(nextMonth,nextYear);
-    }
-
-
-    document.getElementById("prevMonth").onclick = function(){
-        var idmonth = document.getElementById("daysNum");
-        var month = idmonth.getElementsByTagName("ul")[0].id;
-        var prevYear = idmonth.getElementsByTagName("ul")[0].className;
-        var prevMonth = Number(month) - 2;
-        if(prevMonth < 0 ){
-            prevMonth = 11;
-            prevYear = Number(prevYear) - 1
-        }
-        displayCalendar(prevMonth,prevYear);
-    }
-        </style>
-<div id="idx-calendar">
-    <div id="calendar-control">
-     <div id="monthNow">Januari 2014</div>
-     <div id="nextMonth"></div>
-     <div id="prevMonth"></div>
-    </div>
-    <div id="dayNames">
-     <ul>
-      <li>Minggu</li>
-      <li>Senin</li>
-      <li>Selasa</li>
-      <li>Rabu</li>
-      <li>Kamis</li>
-      <li>Jum'at</li>
-      <li>Sabtu</li>
-     </ul>
-    </div>
-    <div id="daysNum">
-    </div>
-   </div>

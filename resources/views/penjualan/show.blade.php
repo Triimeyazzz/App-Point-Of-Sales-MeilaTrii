@@ -27,11 +27,11 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th class="navbar-purple">No.</th>
-                                        <th class="navbar-purple">Product</th>
-                                        <th class="navbar-purple">Quantity</th>
-                                        <th class="navbar-purple">Subtotal</th>
-                                        <th class="navbar-purple">Total</th>
+                                        <th class="navbar-indigo">No.</th>
+                                        <th class="navbar-indigo">Product</th>
+                                        <th class="navbar-indigo">Quantity</th>
+                                        <th class="navbar-indigo">Subtotal</th>
+                                        <th class="navbar-indigo">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>

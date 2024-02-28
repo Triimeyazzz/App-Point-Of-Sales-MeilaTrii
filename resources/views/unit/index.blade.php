@@ -61,18 +61,18 @@
                         <div class="form-group">
                             <label for="name">Name Unit</label>
                             <input type="text" class="form-control" name="nama" id="name"
-                                placeholder="Masukkan Nama" required>
+                                placeholder="Enter Name" required>
                         </div>
                         <div class="form-group">
                             <label for="singkatan">Abbreviated</label>
                             <input type="text" class="form-control" name="singkatan" id="singkatan"
-                                placeholder="Masukkan Singkatan" required>
+                                placeholder="Enter Abbreviation" required>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
+                                   </div>
                 </form>
             </div>
             <!-- /.modal-content -->
@@ -96,7 +96,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Cari'
+                searchPlaceholder: 'Search'
             },
             ajax: {
                 url: '{{ route('unit.index') }}',

@@ -21,7 +21,7 @@
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Brand</h3>
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#tambah-brand"
-                                class="btn btn-primary btn-sm">Tambah Brand</a>
+                                class="btn btn-primary btn-sm">Brand Data</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -30,10 +30,10 @@
                             <table class="table table-bordered brand-table">
                                 <thead>
                                     <tr>
-                                        <th width="7%">No</th>
-                                        <th width="20%">Nama</th>
-                                        <th>Deskripsi</th>
-                                        <th width="15%">Aksi</th>
+                                        <th width="7%" class="navbar-indigo">No.</th>
+                                        <th width="20%" class="navbar-indigo">Name</th>
+                                        <th class="navbar-indigo">Description</th>
+                                        <th width="15%" class="navbar-indigo">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

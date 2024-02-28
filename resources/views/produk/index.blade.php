@@ -29,14 +29,14 @@
                         <table class="table table-bordered produk-table">
                             <thead>
                                 <tr>
-                                    <th width="7%" class="navbar-purple">No.</th>
-                                    <th width="3%" class="navbar-purple">Image</th>
-                                    <th class="navbar-purple">Name</th>
-                                    <th class="navbar-purple">Category</th>
-                                    <th width="7%" class="navbar-purple">Stock</th>
-                                    <th class="navbar-purple">Selling Price</th>
-                                    <th class="navbar-purple">Purchase Price</th>
-                                    <th width="15%"class="navbar-purple">Action</th>
+                                    <th width="7%" class="navbar-indigo">No.</th>
+                                    <th width="3%" class="navbar-indigo">Image</th>
+                                    <th class="navbar-indigo">Name</th>
+                                    <th class="navbar-indigo">Category</th>
+                                    <th width="7%" class="navbar-indigo">Stock</th>
+                                    <th class="navbar-indigo">Selling Price</th>
+                                    <th class="navbar-indigo">Purchase Price</th>
+                                    <th width="15%"class="navbar-indigo">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

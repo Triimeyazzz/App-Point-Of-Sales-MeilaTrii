@@ -80,12 +80,12 @@
                             <table class="table table-bordered cart-table">
                                 <thead>
                                     <tr>
-                                        <th class="navbar-purple">Product Name</th>
-                                        <th width="10%" class="navbar-purple">Stock</th>
-                                        <th width="10%" class="navbar-purple">Quantity</th>
-                                        <th class="navbar-purple">Price</th>
-                                        <th class="navbar-purple">Total</th>
-                                        <th width="10%" class="navbar-purple">Action</th>
+                                        <th class="navbar-indigo">Product Name</th>
+                                        <th width="10%" class="navbar-indigo">Stock</th>
+                                        <th width="10%" class="navbar-indigo">Quantity</th>
+                                        <th class="navbar-indigo">Price</th>
+                                        <th class="navbar-indigo">Total</th>
+                                        <th width="10%" class="navbar-indigo">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

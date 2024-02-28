@@ -28,12 +28,12 @@
                         <table class="table table-bordered pelanggan-table">
                             <thead>
                                 <tr>
-                                    <th width="7%" class="navbar-purple">No.</th>
-                                    <th class="navbar-purple">Name</th>
-                                    <th class="navbar-purple">Email</th>
-                                    <th width="20%" class="navbar-purple">Phone Number</th>
-                                    <th class="navbar-purple">Address</th>
-                                    <th width="15%" class="navbar-purple">Action</th>
+                                    <th width="7%" class="navbar-indigo">No.</th>
+                                    <th class="navbar-indigo">Name</th>
+                                    <th class="navbar-indigo">Email</th>
+                                    <th width="20%" class="navbar-indigo">Phone Number</th>
+                                    <th class="navbar-indigo">Address</th>
+                                    <th width="15%" class="navbar-indigo">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
