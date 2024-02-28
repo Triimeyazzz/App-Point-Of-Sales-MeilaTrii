@@ -29,12 +29,12 @@
                             <table class="table table-bordered pembelian-table">
                                 <thead>
                                     <tr>
-                                        <th width="7%" class="navbar-purple">No.</th>
-                                        <th class="navbar-purple">Suppliers</th>
-                                        <th class="navbar-purple">Quantity</th>
-                                        <th class="navbar-purple">Total</th>
-                                        <th class="navbar-purple">Purchase Date</th>
-                                        <th width="15%" class="navbar-purple">Action</th>
+                                        <th width="7%" class="navbar-indigo">No.</th>
+                                        <th class="navbar-indigo">Suppliers</th>
+                                        <th class="navbar-indigo">Quantity</th>
+                                        <th class="navbar-indigo">Total</th>
+                                        <th class="navbar-indigo">Purchase Date</th>
+                                        <th width="15%" class="navbar-indigo">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

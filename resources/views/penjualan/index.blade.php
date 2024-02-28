@@ -29,12 +29,12 @@
                             <table class="table table-bordered penjualan-table">
                                 <thead>
                                     <tr>
-                                        <th width="7%" class="navbar-purple">No.</th>
-                                        <th class="navbar-purple">Customer</th>
-                                        <th class="navbar-purple">Quantity</th>
-                                        <th class="navbar-purple">Total</th>
-                                        <th class="navbar-purple">Sales Date</th>
-                                        <th width="15%" class="navbar-purple">Action</th>
+                                        <th width="7%" class="navbar-indigo">No.</th>
+                                        <th class="navbar-indigo">Customer</th>
+                                        <th class="navbar-indigo">Quantity</th>
+                                        <th class="navbar-indigo">Total</th>
+                                        <th class="navbar-indigo">Sales Date</th>
+                                        <th width="15%" class="navbar-indigo">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

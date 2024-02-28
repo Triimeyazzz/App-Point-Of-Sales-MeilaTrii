@@ -80,7 +80,8 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox1 {
-                        background: rgb(255, 47, 82);
+background: rgb(0,212,255);
+background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
                     }
                 </style>
                 <!-- small box -->
@@ -103,7 +104,8 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox2 {
-                        background: rgb(255, 103, 129);
+                        background: rgb(0,212,255);
+background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
                     }
                 </style>
                 <!-- small box -->
@@ -126,7 +128,8 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox3 {
-                        background: hsl(350, 100%, 77%);
+                        background: rgb(0,212,255);
+background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
                     }
                 </style>
                 <!-- small box -->
@@ -149,7 +152,8 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox4 {
-                        background: rgb(255, 213, 220);
+                        background: rgb(0,212,255);
+background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
                     }
                 </style>
                 <!-- small box -->
@@ -198,7 +202,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
                 <!-- /.card -->
             </div>
             <div class="col-md-4">
-                <div class="card card-lightblue">
+                <div class="card card-indigo">
                     <div class="card-header">
                         <h3 class="card-title">RECENTLY ADDED ITEMS</h3>
                     </div>
@@ -249,7 +253,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             ],
             datasets: [{
                     label: 'Sales',
-                    backgroundColor: 'rgb(255, 213, 220)',
+                    backgroundColor: 'rgba(82,82,255,1)',
                     borderColor: 'rgba(60,141,188,0.8)',
                     pointRadius: false,
                     pointColor: '#3b8bba',
@@ -260,7 +264,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
                 },
                 {
                     label: 'Purchase',
-                    backgroundColor: 'hsl(350, 100%, 77%)',
+                    backgroundColor: 'rgb(0,212,255)',
                     borderColor: 'rgba(210, 214, 222, 1)',
                     pointRadius: false,
                     pointColor: 'rgba(210, 214, 222, 1)',

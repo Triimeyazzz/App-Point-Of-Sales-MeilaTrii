@@ -22,11 +22,11 @@
                         <table class="table table-bordered users-table">
                             <thead>
                                 <tr>
-                                    <th width="7%" Class="navbar-purple">No.</th>
-                                    <th Class="navbar-purple">Name</th>
-                                    <th Class="navbar-purple">Email</th>
-                                    <th width="10%" Class="navbar-purple">Position</th>
-                                    <th width="15%" Class="navbar-purple">Action</th>
+                                    <th width="7%" class="navbar-indigo">No.</th>
+                                    <th class="navbar-indigo">Name</th>
+                                    <th class="navbar-indigo">Email</th>
+                                    <th width="10%" class="navbar-indigo">Position</th>
+                                    <th width="15%" class="navbar-indigo">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

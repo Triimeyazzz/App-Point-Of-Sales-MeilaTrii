@@ -23,7 +23,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-pink">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h2"><b>Login<br>MeilaaTrimeyy<br></b>Point Of Sales</a>
+                <a href="../../index2.html" class="h2"><b>Login<br></b>Point Of Sales</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg dark-mode">Sign in to start your session</p>

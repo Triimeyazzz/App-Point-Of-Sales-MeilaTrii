@@ -30,10 +30,10 @@
                             <table class="table table-bordered kategori-table">
                                 <thead>
                                     <tr>
-                                        <th width="7%" class="navbar-purple">No.</th>
-                                        <th width="20%" class="navbar-purple">Category Name</th>
-                                        <th class="navbar-purple">Description</th>
-                                        <th width="15%" class="navbar-purple">Action</th>
+                                        <th width="7%" class="navbar-indigo">No.</th>
+                                        <th width="20%" class="navbar-indigo">Category Name</th>
+                                        <th class="navbar-indigo">Description</th>
+                                        <th width="15%" class="navbar-indigo">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
