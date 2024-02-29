@@ -73,10 +73,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('/penjualan', PenjualanController::class);
 
     //Report
-    Route::get('/laporan-penjualan', [ReportController::class, 'sales'])->name('sales.report')->middleware('role:Admin');
-    Route::get('/laporan-pembelian', [ReportController::class, 'purchase'])->name('purchase.report')->middleware('role:Admin');
+    Route::get('/laporan-penjualan', [ReportController::class, 'sales'])->name('sales.report');
+    Route::get('/laporan-pembelian', [ReportController::class, 'purchase'])->name('purchase.report');
 
     //Settings
-    Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index')->middleware('role:Admin');
-    Route::put('/pengaturan-update', [PengaturanController::class, 'update'])->name('pengaturan.update')->middleware('role:Admin');
+    Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
+    Route::put('/pengaturan-update', [PengaturanController::class, 'update'])->name('pengaturan.update');
+
+    //print
+
 });

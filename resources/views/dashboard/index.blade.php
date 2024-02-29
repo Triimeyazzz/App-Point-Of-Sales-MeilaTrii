@@ -2,13 +2,9 @@
 
 @push('styles')
     <style>
-        .body {
-            background: rgb(238, 174, 202);
-            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, #94bbe9 100%);
-        }
     </style>
 @endpush
-<div class="body">
+
     @section('content')
         <div class="container-fluid">
             <div class="row">
@@ -53,7 +49,7 @@
                 <!-- /.col -->
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box">
-                        @role('Admin')
+
                             <span class="info-box-icon bg-indigo"><i class="far fa-money-bill-alt"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Profit</span>
@@ -65,7 +61,6 @@
                                 <span class="info-box-text">Unit</span>
                                 <span class="info-box-number">{{ $unit_count }}</span>
                             </div>
-                        @endrole
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
@@ -236,7 +231,7 @@
             </div>
         </div>
     @endsection
-</div>
+
 @push('scripts')
     <script src="../../../plugins/chart.js/Chart.min.js"></script>
     <script src="../../../dist/js/pages/dashboard2.js"></script>

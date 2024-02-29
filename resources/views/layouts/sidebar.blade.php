@@ -104,7 +104,6 @@
                         </li>
                     </ul>
                 </li>
-                @role('Admin')
                     <li class="nav-header">Report</li>
                     <li class="nav-item">
                         <a href="{{ route('sales.report') }}"
@@ -120,6 +119,7 @@
                             <p>Purchase Report</p>
                         </a>
                     </li>
+                    @role('Admin')
                     <li class="nav-header">Administration</li>
                     <li class="nav-item">
                         <a href="{{ route('users.index') }}"
