@@ -41,7 +41,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-purple"><i class="far fa-copy"></i></span>
+                    <span class="info-box-icon bg-purple"><i class="fa fa-medal"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Brands</span>
@@ -80,9 +80,8 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, #94bbe9 100%);
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox1 {
-background: rgb(0,212,255);
-background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
-                    }
+                        background: rgb(138,244,203);
+background: linear-gradient(90deg, rgba(138,244,203,1) 9%, rgba(125,184,255,1) 32%, rgba(255,177,227,1) 62%, rgba(255,105,105,1) 94%);                    }
                 </style>
                 <!-- small box -->
                 <div class="warnabox1">
@@ -104,8 +103,8 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, 
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox2 {
-                        background: rgb(0,212,255);
-background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
+background: rgb(158,245,255);
+background: linear-gradient(90deg, rgba(158,245,255,1) 9%, rgba(147,125,255,1) 32%, rgba(247,177,255,1) 62%, rgba(191,101,255,1) 94%);
                     }
                 </style>
                 <!-- small box -->
@@ -128,9 +127,8 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, 
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox3 {
-                        background: rgb(0,212,255);
-background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
-                    }
+                        background: rgb(138,222,244);
+background: linear-gradient(90deg, rgba(138,222,244,1) 9%, rgba(125,255,210,1) 32%, rgba(228,177,255,1) 62%, rgba(255,225,141,1) 94%);                   }
                 </style>
                 <!-- small box -->
                 <div class="warnabox3">
@@ -152,9 +150,8 @@ background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, 
             <div class="col-lg-3 col-6">
                 <style>
                     .warnabox4 {
-                        background: rgb(0,212,255);
-background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(82,82,255,1) 35%, rgba(13,0,255,1) 100%);
-                    }
+                        background: rgb(255,176,227);
+background: linear-gradient(90deg, rgba(255,176,227,1) 9%, rgba(173,125,255,1) 32%, rgba(177,255,216,1) 62%, rgba(255,141,141,1) 94%);                   }
                 </style>
                 <!-- small box -->
                 <div class="warnabox4">

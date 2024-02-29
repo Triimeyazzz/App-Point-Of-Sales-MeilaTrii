@@ -92,7 +92,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="3" align="right">Total Amount:</td>
+                                        <td colspan="4" align="right">Total Amount:</td>
                                         <td class="total-amount">0.00</td>
                                         <td></td>
                                     </tr>

@@ -1,5 +1,5 @@
 <a href="javascript:void(0)" data-toggle="modal" data-target="#ubah-brand{{ $data->id }}"
-    class="btn btn-sm btn-purple">Change</a>
+    class="btn btn-sm navbar-purple">Update</a>
 
 <button class="btn btn-sm btn-danger"
     onclick="if(confirm('Are you sure you want to delete?')) document.getElementById('delete-form-{{ $data->id }}').submit()">Hapus</button>
