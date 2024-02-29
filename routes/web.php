@@ -10,7 +10,6 @@ use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UnitController;
-use App\Http\Controllers\CpuTrafficController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ReportController;
 // use itu artinya menggunakan,
