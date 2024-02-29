@@ -49,7 +49,7 @@
                 <!-- /.col -->
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box">
-
+                        @role('Admin')
                             <span class="info-box-icon bg-indigo"><i class="far fa-money-bill-alt"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Profit</span>
@@ -61,6 +61,7 @@
                                 <span class="info-box-text">Unit</span>
                                 <span class="info-box-number">{{ $unit_count }}</span>
                             </div>
+                        @endrole
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
