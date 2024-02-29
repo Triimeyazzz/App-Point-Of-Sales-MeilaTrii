@@ -19,14 +19,14 @@
 
 <body class="hold-transition login-page">
 
-    <div class="login-box dark-mode">
+    <div class="login-box">
         <!-- /.login-logo -->
         <div class="card card-outline card-pink">
             <div class="card-header text-center">
                 <a href="../../index2.html" class="h2"><b>Login<br></b>Point Of Sales</a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg dark-mode">Sign in to start your session</p>
+                <p class="login-box-msg">Sign in to start your session</p>
 
                 <form action="{{ route('login') }}" method="post">
                     @csrf
