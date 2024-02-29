@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $pengaturan->where('key', 'nama_perusahaan')->first()->value }}</title>
 
-    <link rel="icon" href="{{ Storage::url($pengaturan->where('key', 'favicon')->first()->value) }}" type="image/x-icon" />
+    <link rel="icon" href="{{ Storage::url($pengaturan->where('key', 'favicon')->first()->value) }}"
+        type="image/x-icon" />
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

@@ -45,7 +45,7 @@
                 <li class="nav-item">
                     <a href="{{ route('supplier.index') }}"
                         class="nav-link {{ Request::route()->getName() == 'supplier.index' || Request::route()->getName() == 'supplier.edit' || Request::route()->getName() == 'supplier.create' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-truck-moving"></i>
+                        <i class="nav-icon fas fa-truck"></i>
                         <p>Supplier</p>
                     </a>
                 </li>
@@ -59,7 +59,7 @@
                 <li class="nav-item">
                     <a href="{{ route('pembelian.index') }}"
                         class="nav-link {{ Request::route()->getName() == 'pembelian.index' || Request::route()->getName() == 'pembelian.edit' || Request::route()->getName() == 'pembelian.create' || Request::route()->getName() == 'pembelian.show' ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-cart-plus"></i>
+                        <i class="nav-icon fa fa-cart-plus"></i>
                         <p>Purchase</p>
                     </a>
                 </li>
@@ -77,21 +77,21 @@
                         <li class="nav-item">
                             <a href="{{ route('kategori.index') }}"
                                 class="nav-link {{ Request::route()->getName() == 'kategori.index' ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-list-ul"></i>
+                                <i class="nav-icon fa fa-th"></i>
                                 <p>Category</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('produk.index') }}"
                                 class="nav-link {{ Request::route()->getName() == 'produk.index' || Request::route()->getName() == 'produk.edit' || Request::route()->getName() == 'produk.create' ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-archive"></i>
+                                <i class="nav-icon fa fa-list-alt"></i>
                                 <p>Product List</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('brand.index') }}"
                                 class="nav-link {{ Request::route()->getName() == 'brand.index' ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-suitcase"></i>
+                                <i class="nav-icon fas fa-medal"></i>
                                 <p>Brand</p>
                             </a>
                         </li>
