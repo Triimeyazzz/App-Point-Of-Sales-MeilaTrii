@@ -56,7 +56,7 @@
                                 <span class="info-box-number">Rp. {{ $profit }}</span>
                             </div>
                         @else
-                            <span class="info-box-icon bg-navy"><i class="fa fa-box"></i></span>
+                            <span class="info-box-icon bg-navy"><i class="fas fa-cubes"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Unit</span>
                                 <span class="info-box-number">{{ $unit_count }}</span>

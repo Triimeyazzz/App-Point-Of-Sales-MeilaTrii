@@ -90,6 +90,8 @@ class PembelianController extends Controller
                 'harga' => $item['price'],
             ]);
 
+            //agar dapat mengambil id maka buatkan variable $pembelian pada create pembelian
+
             $stok_produk = Produk::find($item['product_id']);   // Mencari produk berdasarkan ID
             $stok_produk->update([   // Memperbarui stok produk dan harga beli
                 'stok' => $stok_produk->stok + $item['quantity'],
@@ -97,7 +99,15 @@ class PembelianController extends Controller
             ]);
         }
 
-        return redirect()->route('pembelian.index')->with('success', 'Purchase data added successfully.');   // Mengalihkan ke halaman indeks pembelian dengan pesan sukses
+        //passing data pembelian yang baru saja dibuat, variablenya $pembelian
+        //return view('pembelian.show', compact('pembelian')); //ini kalo pake view
+        //return view('pembelian.print', ['pembelian' => $pembelian]); // ini pake variable bukan compact
+        //untuk parameter kita membutuhkan ID dari transaksi atau dari data yang baru dibuat, yaitu id pembelian
+        $parameter = $pembelian;
+        //passing data pembelian ke show, catat...............
+        return redirect()->route('pembelian.show', $parameter); //ini pake route
+
+        //return redirect()->route('pembelian.index')->with('success', 'Purchase data added successfully.');   // Mengalihkan ke halaman indeks pembelian dengan pesan sukses
     }
 
     /**
@@ -111,6 +121,11 @@ class PembelianController extends Controller
         // Menampilkan detail pembelian tertentu (jika diperlukan)
         $details = PembelianDetail::where('pembelian_id', $pembelian->id)->get();
         return view('pembelian.show', compact('pembelian', 'details'));
+
+        //passing data pembelian yang baru saja dibuat, variablenya $pembelian
+        return view('pembelian.print', compact('pembelian')); //ini kalo pake view
+        //return view('pembelian.print', ['pembelian' => $pembelian]); // ini pake variable bukan compact
+        //return redirect()->route('pembelian.print'); //ini pake route
     }
 
     /**

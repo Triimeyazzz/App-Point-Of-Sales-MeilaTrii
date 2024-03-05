@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login POS MeilaaTrimeyy</title>
+    <title>Login | Aplikasi POS</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -21,9 +21,9 @@
 
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-pink">
+        <div class="card card-outline card-indigo">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h2"><b>Login<br></b>Point Of Sales</a>
+                <a href="javascript:void(0);"><a href="../../index2.html" class="h2"> <b>Login</b></a><br>Point Of Sales</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>

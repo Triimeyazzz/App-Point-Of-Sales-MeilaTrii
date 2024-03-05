@@ -1,9 +1,41 @@
+disini aja catatannyaaa
+route parameter, misal ada url
+apa itu kak? list route , kamu bisa liat parameter yg dibutuhkan disini
+itu ada pembelian yang nama routenya show utuh parameter {pembelian}, route pembelian.show butuh parameter {pembelian}
+jadi url nya biasanya kalo show itu jadi pembelian/show/{parameter}, parameter ini bisa id dll.
+nah karena yang kamu buat tidak ada parameter, maka butuh parameter, ini disesuaikan sbntr sy ngetik dulu, nanti lamaaa
+iyaaa
+sy coba dulu pake route
+
+ada beberapa koreksi tadii, yang dikoreksi=
+1. icon disesuaikan
+2. email supplier dan customer gak boleh sama, harus ada identifikasi agar jika emailnya sama maka tidak bisa masuk, harus email yang berbeda (pengguna tidak boleh sama), harus ada satu data untuk mengidentifikasi apakah pengguna itu adalah orang yang sama atau bukan
+3. untuk form customer dan supplier itu harus bisa diketik juga dan dibawahnya muncul rekoomendasi sesuai huruf pertama yang kita ketik, seperti yang di form search product
+4. total keseluruhan harus disebelah kanan ujung banget
+5. butuh nota bukti, setelah save keluar validasi mau dicetak atau di simpan aja gitu
+6. kalo bisa data transaksi harus ada backup nya, karena kalo pake mysql kan gabisa banyak banyak datanya
+7. petugas harus ada form laporan, transaksi, dan itu bisa dicetak
+8. katanya yang laporan itu mah bukan laporan, tapi lebih ke data pembelian katanya kak
+9. pas kita klik save setelah transaksi nanti keluar valdasi mau dicetak atau disimpan itu bukti transaksinya
+
+solusi=
+1. sesuaikan aja, itu pakai fontawesome, cek iconnya di fontawesome (sudah)
+2. tinggal kasih validasi misalnya kalau email udah ada, di return ke halaman create dengan message (sedang dicoba)
+3. tinggal copas aja alurnya yang punya product, kalau mau kayak gitu  (sudah nyoba beberapa kali, error)
+3. tinggal ubah posisi kan?(sudah)
+5. tinggal buat tombol print, di adminlte udah ada contoh invoice print (masih agak bingung)
+6. kata siapa g bisa banyak data.? aturan darimana g bisa banyak data.? saya berjuta-juta data bisa" aja, ini g ada validasinya soal mysql g bisa banyak data, yang namanya database berapapun bisa
+kalau mau bisa backup bisa pake package spatie/laravel-backup docs: https://spatie.be/docs/laravel-backup/v8/installation-and-setup (blm tk pelajari)
+7. tinggal remove @role agar petugas bisa ke menu laporan (sudah)
+8. tanya atau cari aja referensi, setau saya laporan ya itu, kan emang di database ya cuman itu table yang tersedia (sudah)
+9. setelah save bisa di return redirect ke halaman cetak (belum)
+
 commands laravel yang Trimey pakai
 1. pembuatan project: "composer create-project laravel/laravel nama-project" (source: https://laravel.com/docs/10.x)
 harusnya seperti ituuu, karena saya tidak sengaja menginstall laravel global, jadii saya menggunakan=
 "laravel new nama-project" begituu yakk
 cara install laravel global bagaimana ni guys?
-beginii "composer global require laravel installer" gitu yakk
+beginii "composer global require laravel\installer" gitu yakk
 
 2. pembuatan autentikasi pengguna menggunakan package laravel/ui: "composer require laravel/ui"
 (source: https://github.com/laravel/ui)
@@ -26,8 +58,8 @@ package itu semisal kita mau buat autentikasi user login, register, dll. dari aw
 mempercepat dengan bantuan package/librari biar langsung jadii, dan ga usah bikin dari awall.
 misalnya kita bikin datatables, apa iya kita susah payah masukkin requirement untuk pembuatan datatables dari awal?
 pasti sminggu gajadi tuh... makanya butuh bantuan package, yang saya gunakan yaitu punyanya yajrabox.
-package" memudahkan untuk pengembangan, yang ga harus membuat dari awal... package apapun ada gaiss, tergantung ang mau dipke apaa.
-misal untuk atentikasi user, laravel aada banyak package yang sering dipake, yaitu laravel breeze, laravel jetstream,
+package" memudahkan untuk pengembangan, yang ga harus membuat dari awal... package apapun ada gaiss, tergantung yang mau dipke apaa.
+misal untuk atentikasi user, laravel ada banyak package yang sering dipake, yaitu laravel breeze, laravel jetstream,
 laravel ui, dll.
 yang aku pake ituu yang ini=
         "laravel/ui": "^4.4",
