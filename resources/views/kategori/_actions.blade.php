@@ -26,11 +26,11 @@
                     <div class="form-group">
                         <label for="name">Category Name</label>
                         <input type="text" class="form-control" name="nama" id="name"
-                            placeholder="Masukkan Nama" value="{{ $data->nama }}" required>
+                            placeholder="Enter Name" value="{{ $data->nama }}" required>
                     </div>
                     <div class="form-group">
                         <label for="deskripsi">Description</label>
-                        <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Masukkan Deskripsi">{{ $data->deskripsi }}</textarea>
+                        <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Enter Description">{{ $data->deskripsi }}</textarea>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">

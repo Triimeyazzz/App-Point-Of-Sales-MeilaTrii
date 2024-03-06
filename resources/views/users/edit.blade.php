@@ -13,7 +13,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Cange User {{ $user->name }}</h3>
+                        <h3 class="card-title">Update User {{ $user->name }}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -27,12 +27,12 @@
                                     <div class="form-group">
                                         <label for="name">Full Name</label>
                                         <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Masukkan Nama" value="{{ $user->name }}" required>
+                                            placeholder="Enter Name" value="{{ $user->name }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
                                         <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                            placeholder="Enter email" value="{{ $user->email }}" required>
+                                            placeholder="Enter Email" value="{{ $user->email }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="userphoto">Photo</label>
@@ -40,7 +40,7 @@
                                             <div class="custom-file">
                                                 <input type="file" name="photo" class="custom-file-input"
                                                     id="userphoto" accept="image/*">
-                                                <label class="custom-file-label" for="exampleInputFile">Pilih photo</label>
+                                                <label class="custom-file-label" for="exampleInputFile">Select photo</label>
                                             </div>
                                         </div>
                                     </div>

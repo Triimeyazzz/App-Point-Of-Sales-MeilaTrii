@@ -52,7 +52,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Brand</h4>
+                    <h4 class="modal-title">Add Brand</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -61,18 +61,18 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="name">Nama Brand</label>
+                            <label for="name">Brand Name</label>
                             <input type="text" class="form-control" name="nama" id="name"
-                                placeholder="Masukkan Nama" required>
+                                placeholder="Enter Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="deskripsi">Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Masukkan Deskripsi"></textarea>
+                            <label for="deskripsi">Description</label>
+                            <textarea class="form-control" name="deskripsi" rows="3" id="deskripsi" placeholder="Enter Description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>

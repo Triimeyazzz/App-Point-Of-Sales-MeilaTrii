@@ -7,6 +7,9 @@ nah karena yang kamu buat tidak ada parameter, maka butuh parameter, ini disesua
 iyaaa
 sy coba dulu pake route
 
+RestuTrimey123
+trimei123
+
 ada beberapa koreksi tadii, yang dikoreksi=
 1. icon disesuaikan
 2. email supplier dan customer gak boleh sama, harus ada identifikasi agar jika emailnya sama maka tidak bisa masuk, harus email yang berbeda (pengguna tidak boleh sama), harus ada satu data untuk mengidentifikasi apakah pengguna itu adalah orang yang sama atau bukan
