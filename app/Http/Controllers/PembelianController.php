@@ -123,9 +123,21 @@ class PembelianController extends Controller
         return view('pembelian.show', compact('pembelian', 'details'));
 
         //passing data pembelian yang baru saja dibuat, variablenya $pembelian
-        return view('pembelian.print', compact('pembelian')); //ini kalo pake view
+        return view('pembelian.print', compact('pembelian', 'details')); //ini kalo pake view
         //return view('pembelian.print', ['pembelian' => $pembelian]); // ini pake variable bukan compact
         //return redirect()->route('pembelian.print'); //ini pake route
+    }
+
+    //tangkap parameter id ke fungsi print
+    public function print($id)
+    {
+        //cari data pembelian dengan id yang dikirim dari tombol print ke page print
+        $pembelian = Pembelian::find($id);
+
+        //kita ambil pembelian detailnya dari table pembelian, sesuai id pembelian
+        $details =  PembelianDetail::where('pembelian_id', $id)->get();
+        // dd($pembelian);
+        return view('pembelian.print', compact('pembelian', 'details'));
     }
 
     /**

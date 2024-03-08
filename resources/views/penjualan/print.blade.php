@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="page-header">
-                        <img src="../../dist/img/credit/5a.jpeg"
+                        <img src="../../dist/img/credit/5a.jpeg" width="3%"
                             class="brand-image img-circle elevation-3" style="opacity: .8"> Point Of Sales
                         <small class="float-right">Date: {{ now()->format('d-m-Y') }}</small>
                     </h2>
@@ -34,11 +34,11 @@
             <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
                     <address>
-                        {{-- kita ambil datanya dari pembelian --}}
-                        <strong>Purchase Invoice</strong><br><br>
-                        <b>Payment Due:</b> {{ $pembelian->created_at->format('d-m-Y') }}<br>
-                        <b>Supplier:</b> {{ $pembelian->supplier->nama }}<br>
-                        <b>Account:</b> {{ $pembelian->supplier->no_hp }}<br>
+                        {{-- kita ambil datanya dari penjualan --}}
+                        <strong>Sales Invoice</strong><br><br>
+                        <b>Payment Due:</b> {{ $penjualan->created_at->format('d-m-Y') }}<br>
+                        <b>Customer:</b> {{ $penjualan->pelanggan->nama }}<br>
+                        <b>Account:</b> {{ $penjualan->pelanggan->no_hp }}<br>
                     </address>
                 </div>
                 <!-- /.col -->
@@ -55,9 +55,11 @@
                         <thead>
                             <tr>
                                 <th class="navbar-indigo">No.</th>
-                                <th class="navbar-indigo">Product</th>
+                                <th class="navbar-indigo">Customer</th>
                                 <th class="navbar-indigo">Quantity</th>
-                                <th class="navbar-indigo">Subtotal</th>
+                                <th class="navbar-indigo">Total</th>
+                                <th class="navbar-indigo">Sales Date</th>
+                                <th class="navbar-indigo">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,9 +72,10 @@
                                     <td>{{ $detail->produk->nama }}</td>
                                     <td>{{ $detail->kuantitas }}</td>
                                     <td>Rp. {{ number_format($detail->harga, 0, ',', '.') }}</td>
-                                    </td>
+                                    <td>Rp. {{ number_format($detail->harga * $detail->kuantitas, 0, ',', '.') }}</td>
                                 </tr>
                             @endforeach
+                        </tbody>
                         </tbody>
                     </table>
                 </div>
@@ -103,7 +106,7 @@
                         <table class="table">
                             <tr>
                                 <th style="width:50%">Total:</th>
-                                <td>Rp. {{ number_format($pembelian->harga, 0, ',', '.') }}</td>
+                                <td>Rp. {{ number_format($penjualan->harga, 0, ',', '.') }}</td>
                             </tr>
                         </table>
                     </div>

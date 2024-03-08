@@ -104,22 +104,22 @@
                         </li>
                     </ul>
                 </li>
-                    <li class="nav-header">Report</li>
-                    <li class="nav-item">
-                        <a href="{{ route('sales.report') }}"
-                            class="nav-link {{ Request::route()->getName() == 'sales.report' ? 'active' : '' }}">
-                            <i class="ion ion-ios-paper-outline"></i>
-                            <p>Sales Report</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('purchase.report') }}"
-                            class="nav-link {{ Request::route()->getName() == 'purchase.report' ? 'active' : '' }}">
-                            <i class="ion ion-ios-paper-outline"></i>
-                            <p>Purchase Report</p>
-                        </a>
-                    </li>
-                    @role('Admin')
+                <li class="nav-header">Report</li>
+                <li class="nav-item">
+                    <a href="{{ route('sales.report') }}"
+                        class="nav-link {{ Request::route()->getName() == 'sales.report' ? 'active' : '' }}">
+                        <i class="ion ion-ios-paper-outline"></i>
+                        <p>Sales Report</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('purchase.report') }}"
+                        class="nav-link {{ Request::route()->getName() == 'purchase.report' ? 'active' : '' }}">
+                        <i class="ion ion-ios-paper-outline"></i>
+                        <p>Purchase Report</p>
+                    </a>
+                </li>
+                @role('Admin')
                     <li class="nav-header">Administration</li>
                     <li class="nav-item">
                         <a href="{{ route('users.index') }}"

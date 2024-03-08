@@ -104,8 +104,23 @@ class PenjualanController extends Controller
         //
         $details = PenjualanDetail::where('penjualan_id', $penjualan->id)->get();
         return view('penjualan.show', compact('penjualan', 'details'));
+        //passing data penjualan yang baru saja dibuat, variablenya $penjualan
+        return view('penjualan.print', compact('penjualan', 'details')); //ini kalo pake view
+        //return view('penjualan.print', ['penjualan' => $penjualan]); // ini pake variable bukan compact
+        //return redirect()->route('penjualan.print'); //ini pake route
     }
 
+    //tangkap parameter id ke fungsi print
+    public function print($id)
+    {
+        //cari data penjualan dengan id yang dikirim dari tombol print ke page print
+        $penjualan = Penjualan::find($id);
+
+        //kita ambil penjualan detailnya dari table penjualan, sesuai id penjualan
+        $details =  PenjualanDetail::where('penjualan_id', $id)->get();
+        // dd($penjualan);
+        return view('penjualan.print', compact('penjualan', 'details'));
+    }
     /**
      * Show the form for editing the specified resource.
      */

@@ -26,20 +26,20 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         {{-- <div class="table-responsive"> --}}
-                            <table class="table table-bordered pembelian-table">
-                                <thead>
-                                    <tr>
-                                        <th width="7%" class="navbar-indigo">No.</th>
-                                        <th class="navbar-indigo">Suppliers</th>
-                                        <th class="navbar-indigo">Quantity</th>
-                                        <th class="navbar-indigo">Total</th>
-                                        <th class="navbar-indigo">Purchase Date</th>
-                                        <th width="15%" class="navbar-indigo">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                        <table class="table table-bordered pembelian-table">
+                            <thead>
+                                <tr>
+                                    <th width="7%" class="navbar-indigo">No.</th>
+                                    <th class="navbar-indigo">Suppliers</th>
+                                    <th class="navbar-indigo">Quantity</th>
+                                    <th class="navbar-indigo">Total</th>
+                                    <th class="navbar-indigo">Purchase Date</th>
+                                    <th width="15%" class="navbar-indigo">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                         {{-- </div> --}}
                     </div>
                     <!-- /.card-body -->

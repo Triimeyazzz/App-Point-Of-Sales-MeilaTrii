@@ -44,7 +44,8 @@
                                             <td>{{ $detail->produk->nama }}</td>
                                             <td>{{ $detail->kuantitas }}</td>
                                             <td>Rp. {{ number_format($detail->harga, 0, ',', '.') }}</td>
-                                            <td>Rp. {{ number_format($detail->harga * $detail->kuantitas, 0, ',', '.') }}</td>
+                                            <td>Rp. {{ number_format($detail->harga * $detail->kuantitas, 0, ',', '.') }}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -79,9 +80,11 @@
                     <!-- /.row -->
 
                     <!-- this row will not appear when printing -->
-<div class="row no-print">
+                    <div class="row no-print">
                         <div class="col-12">
-                            <a href="print" rel="noopener" target="_blank" class="btn btn-default">
+                            {{-- route dikasih parameter id pembelian, ini supaya data pembelian bisa masuk ke page print,
+                            istilahnya kita mengirim data pembelian di page ini ke page print. --}}
+                            <a href="{{ route('pembelian.print', $pembelian->id) }}" rel="noopener" target="_blank" class="btn btn-default">
                                 <i class="fas fa-print"></i> Print</a>
                         </div>
                     </div>
