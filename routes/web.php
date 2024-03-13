@@ -70,13 +70,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('/pembelian', PembelianController::class);
 
     //lalu tambah parameter untuk mengambil id pembelian tersebut, supaya bisa terkirim ke controller
-    Route::get('/print/{id}', [PembelianController::class, 'print'])->name('pembelian.print');
+    Route::get('/pembelian/print/{id}', [PembelianController::class, 'print'])->name('pembelian.print');
 
     //Penjualan
     Route::resource('/penjualan', PenjualanController::class);
 
     //lalu tambah parameter untuk mengambil id penjualan tersebut, supaya bisa terkirim ke controller
-    Route::get('/print/{id}', [PenjualanController::class, 'print'])->name('penjualan.print');
+    Route::get('/penjualan/print/{id}', [PenjualanController::class, 'print'])->name('penjualan.print');
 
     //Report
     Route::get('/laporan-penjualan', [ReportController::class, 'sales'])->name('sales.report');

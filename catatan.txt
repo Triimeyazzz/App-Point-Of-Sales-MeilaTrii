@@ -26,9 +26,11 @@ solusi=
 2. tinggal kasih validasi misalnya kalau email udah ada, di return ke halaman create dengan message (sedang dicoba)
 3. tinggal copas aja alurnya yang punya product, kalau mau kayak gitu  (sudah nyoba beberapa kali, error)
 3. tinggal ubah posisi kan?(sudah)
-5. tinggal buat tombol print, di adminlte udah ada contoh invoice print (masih agak bingung)
-6. kata siapa g bisa banyak data.? aturan darimana g bisa banyak data.? saya berjuta-juta data bisa" aja, ini g ada validasinya soal mysql g bisa banyak data, yang namanya database berapapun bisa
-kalau mau bisa backup bisa pake package spatie/laravel-backup docs: https://spatie.be/docs/laravel-backup/v8/installation-and-setup (blm tk pelajari)
+5. tinggal buat tombol print, di adminlte udah ada contoh invoice print (sudah)
+6. kata siapa g bisa banyak data.? aturan darimana g bisa banyak data.?
+saya berjuta-juta data bisa" aja, ini g ada validasinya soal mysql g bisa banyak data,
+yang namanya database berapapun bisa kalau mau bisa backup bisa pake package spatie/laravel-backup
+docs: https://spatie.be/docs/laravel-backup/v8/installation-and-setup (blm tk pelajari)
 7. tinggal remove @role agar petugas bisa ke menu laporan (sudah)
 8. tanya atau cari aja referensi, setau saya laporan ya itu, kan emang di database ya cuman itu table yang tersedia (sudah)
 9. setelah save bisa di return redirect ke halaman cetak (belum)

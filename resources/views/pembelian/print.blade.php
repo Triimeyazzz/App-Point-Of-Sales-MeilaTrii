@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="page-header">
-                        <img src="../../dist/img/credit/5a.jpeg"
+                        <img src="../../dist/img/credit/5a.jpeg" width="3%"
                             class="brand-image img-circle elevation-3" style="opacity: .8"> Point Of Sales
                         <small class="float-right">Date: {{ now()->format('d-m-Y') }}</small>
                     </h2>
@@ -90,9 +90,11 @@
                     <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
 
                     <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango
-                        imeem plugg dopplr
-                        jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                        We accept various payment methods, including Visa, Mastercard, American Express, and Paypal.
+                        By using a convenient payment method for you, we hope to provide a better shopping experience for you.
+                        {{-- Kami menerima berbagai metode pembayaran, termasuk Visa, Mastercard, American Express, dan Paypal.
+                        Dengan menggunakan metode pembayaran yang nyaman bagi Anda,
+                        kami berharap dapat memberikan pengalaman berbelanja yang lebih baik untuk Anda. --}}
                     </p>
                 </div>
                 <!-- /.col -->

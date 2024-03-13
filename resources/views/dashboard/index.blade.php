@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @push('styles')
-    <style>
-    </style>
+<style>
+    .background
+          background-image: url(../../dist/img/default-150x150.png);
+</style>
 @endpush
 
     @section('content')

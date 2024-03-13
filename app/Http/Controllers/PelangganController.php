@@ -13,7 +13,7 @@ class PelangganController extends Controller
     public function index()
     {
         //
-        $datas = Pelanggan::orderBy('id', 'desc');
+        $datas = Pelanggan::orderBy('nama', 'asc');
 
         if (request()->ajax()) {
             return datatables()->of($datas)

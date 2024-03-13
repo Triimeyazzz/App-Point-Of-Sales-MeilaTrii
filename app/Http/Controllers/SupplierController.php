@@ -14,7 +14,7 @@ class SupplierController extends Controller
     public function index()
     {
         //
-        $suppliers = Supplier::orderBy('id', 'desc');
+        $suppliers = Supplier::orderBy('nama', 'asc');
 
         if (request()->ajax()) {
             return datatables()->of($suppliers)

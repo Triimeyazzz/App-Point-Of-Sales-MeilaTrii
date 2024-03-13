@@ -102,6 +102,7 @@
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Save</button>
+
                         </div>
                     </form>
                 </div>
@@ -157,7 +158,7 @@
 
             // Fungsi untuk menambahkan produk ke keranjang
             $(document).on('click', '#product-list li', function() {
-                var productId = $(this).data('id');
+                var productId = $(((this).data('id');))
                 var productName = $(this).data('name');
                 var productPrice = $(this).data('price');
                 var productStock = $(this).data('stock');
