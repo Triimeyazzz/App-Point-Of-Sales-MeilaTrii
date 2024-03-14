@@ -57,12 +57,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="pelanggan_id">Customer</label>
-                                        <select name="pelanggan_id" id="pelanggan_id" class="form-control" required>
-                                            <option value="">Select Customer</option>
-                                            @foreach ($customers as $customer)
-                                                <option value="{{ $customer->id }}">{{ $customer->nama }}</option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" class="form-control" id="pelanggan_id"
+                                        placeholder="Search Customer">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

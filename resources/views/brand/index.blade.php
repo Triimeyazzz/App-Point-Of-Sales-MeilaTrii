@@ -21,7 +21,7 @@
                         <div class="d-flex justify-content-between">
                             <h3 class="card-title">Brand</h3>
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#tambah-brand"
-                                class="btn btn-primary btn-sm">Brand Data</a>
+                                class="btn btn-primary btn-sm">Add Brand</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -97,7 +97,7 @@
             language: {
                 sLengthMenu: 'Show _MENU_',
                 search: '',
-                searchPlaceholder: 'Cari'
+                searchPlaceholder: 'Search'
             },
             ajax: {
                 url: '{{ route('brand.index') }}',
