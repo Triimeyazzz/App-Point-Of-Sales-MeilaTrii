@@ -87,4 +87,12 @@ class SupplierController extends Controller
 
         return redirect()->back()->with('success', 'Supplier successfully deleted.');
     }
+
+    public function cari(Request $request)
+    {
+        $query = $request->get('query');
+        $supplier = Supplier::where('nama', 'like', '%' . $query . '%')->take(10)->get();
+
+        return response()->json($supplier);
+    }
 }

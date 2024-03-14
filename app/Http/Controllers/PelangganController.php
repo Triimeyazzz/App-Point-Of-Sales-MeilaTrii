@@ -86,4 +86,12 @@ class PelangganController extends Controller
 
         return redirect()->route('pelanggan.index')->with('success', 'Customer Successfully deleted.');
     }
+
+    public function cari(Request $request)
+    {
+        $query = $request->get('query');
+        $pelanggan = Pelanggan::where('nama', 'like', '%' . $query . '%')->take(10)->get();
+
+        return response()->json($pelanggan);
+    }
 }

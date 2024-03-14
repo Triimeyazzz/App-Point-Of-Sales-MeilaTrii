@@ -128,8 +128,14 @@ class ProdukController extends Controller
     public function cari(Request $request)
     {
         $query = $request->get('query');
-        $produk = Produk::where('nama', 'like', '%' . $query . '%')->get();
+        $produk = Produk::where('nama', 'like', '%' . $query . '%')->take(10)->get();
 
         return response()->json($produk);
+    }
+
+    public function detail(Request $request)
+    {
+        $product = Produk::find($request->id);
+        return response()->json($product);
     }
 }

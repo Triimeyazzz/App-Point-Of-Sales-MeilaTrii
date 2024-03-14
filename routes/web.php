@@ -49,9 +49,11 @@ Route::middleware('auth')->group(function () {
 
     //Pelanggan
     Route::resource('/pelanggan', PelangganController::class);
+    Route::get('cari-pelanggan', [PelangganController::class, 'cari'])->name('cari.pelanggan');
 
     //Supplier
     Route::resource('/supplier', SupplierController::class);
+    Route::get('cari-supplier', [SupplierController::class, 'cari'])->name('cari.supplier');
 
     //Kategori
     Route::resource('/kategori', KategoriController::class);
@@ -65,6 +67,7 @@ Route::middleware('auth')->group(function () {
     //Produk
     Route::resource('/produk', ProdukController::class);
     Route::get('cari-produk', [ProdukController::class, 'cari'])->name('cari.produk');
+    Route::get('produk-detail', [ProdukController::class, 'detail'])->name('produk.detail');
 
     //Pembelian
     Route::resource('/pembelian', PembelianController::class);

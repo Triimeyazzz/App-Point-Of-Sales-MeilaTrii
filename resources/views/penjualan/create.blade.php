@@ -4,6 +4,10 @@
     Add Sales
 @endsection
 
+@push('select2')
+    <link rel="stylesheet" href="../../../plugins/select2/css/select2.min.css">
+@endpush
+
 @push('styles')
     <style>
         #product-list {
@@ -56,19 +60,18 @@
                                 <!-- left column -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="pelanggan_id">Customer</label>
-                                        <input type="text" class="form-control" id="pelanggan_id"
-                                        placeholder="Search Customer">
+                                        <label for="cari">Customer</label>
+                                        <select class="form-control select2" id="cari" name="pelanggan_id"
+                                            style="width: 100%;" data-placeholder="Search Customer...">
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="produk_id">Product</label>
-                                        <input type="text" class="form-control" id="search"
-                                            placeholder="Search Product">
-                                        <ul id="product-list" class="list-group">
-                                            {{-- Daftar produk akan ditampilkan di sini --}}
-                                        </ul>
+                                        <label for="search">Product</label>
+                                        <select class="form-control select2" id="search" style="width: 100%;"
+                                            data-placeholder="Search Product...">
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -108,30 +111,54 @@
 @endsection
 
 @push('scripts')
+    <!-- Select2 -->
+    <script src="../../../plugins/select2/js/select2.full.min.js"></script>
+
     <script>
         $(document).ready(function() {
-            $('#search').on('input', function() {
-                var query = $(this).val();
-
-                $.ajax({
-                    url: '{{ route('cari.produk') }}',
-                    type: 'GET',
-                    data: {
-                        query: query
+            //Cari Pelanggan
+            $(document).ready(function() {
+                $('#cari').select2({
+                    placeholder: $(this).data('placeholder'),
+                    ajax: {
+                        url: '{{ route('cari.pelanggan') }}',
+                        dataType: 'json',
+                        delay: 250,
+                        processResults: function(data) {
+                            return {
+                                results: $.map(data, function(item) {
+                                    return {
+                                        id: item.id,
+                                        text: item.nama
+                                    }
+                                })
+                            };
+                        },
+                        cache: true
                     },
-                    success: function(data) {
-                        $('#product-list').empty();
-                        $.each(data, function(index, product) {
-                            $('#product-list').append('<li data-id="' + product.id +
-                                '" data-name="' + product.nama + '" data-price="' +
-                                product.harga_jual + '" data-stock="' + product
-                                .stok + '">' + product.nama + '</li>');
-                        });
-
-                        // Menampilkan daftar produk mengambang
-                        $('#product-list').show();
-                    }
+                    minimumInputLength: 1
                 });
+            });
+
+            $('#search').select2({
+                placeholder: $(this).data('placeholder'),
+                ajax: {
+                    url: '{{ route('cari.produk') }}',
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function(data) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                    id: item.id,
+                                    text: item.nama
+                                }
+                            })
+                        };
+                    },
+                    cache: true
+                },
+                minimumInputLength: 1
             });
 
             // Fungsi untuk menangani perubahan nilai pada input quantity
@@ -141,17 +168,11 @@
                 var currentQuantity = parseInt(quantityInput.val());
                 var productStock = parseInt(newRow.find('.stock').text());
 
-                // Memeriksa apakah kuantitas kurang dari atau sama dengan 0 atau kosong
                 if (currentQuantity <= 0 || isNaN(currentQuantity)) {
                     alert('Kuantitas harus lebih besar dari 0.');
-                    // Setel nilai kuantitas ke 1
                     quantityInput.val(1);
-                }
-
-                // Memeriksa apakah kuantitas setelah perubahan masih kurang dari atau sama dengan stok
-                else if (currentQuantity > productStock) {
+                } else if (currentQuantity > productStock) {
                     alert('Stok produk tidak mencukupi untuk kuantitas yang dimasukkan.');
-                    // Setel nilai kuantitas ke stok maksimum yang tersedia
                     quantityInput.val(productStock);
                 }
 
@@ -159,56 +180,74 @@
             });
 
             // Fungsi untuk menambahkan produk ke keranjang
-            $(document).on('click', '#product-list li', function() {
-                var productId = $(this).data('id');
-                var productName = $(this).data('name');
-                var productPrice = $(this).data('price');
-                var productStock = $(this).data('stock');
+            $('#search').on('select2:select', function(e) {
+                var productId = e.params.data.id;
+                var productName = e.params.data.text;
 
-                // Memeriksa apakah stok produk kosong
-                if (productStock <= 0) {
-                    alert('Stok produk kosong. Produk tidak dapat ditambahkan ke keranjang.');
-                    return;
-                }
+                $.ajax({
+                    url: '{{ route('produk.detail') }}', // Ganti dengan route yang tepat untuk mendapatkan detail produk
+                    type: 'GET',
+                    data: {
+                        id: productId
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        var productPrice = response.harga_jual;
+                        var productStock = response.stok;
 
-                // Memeriksa apakah produk sudah ada dalam tabel
-                var existingRow = $('.cart-table tbody tr[data-id="' + productId + '"]');
-                if (existingRow.length > 0) {
-                    // Jika sudah ada, tambahkan hanya ke kuantitas
-                    var quantityInput = existingRow.find('.quantity');
-                    var stockInput = existingRow.find('.stock');
+                        // Memeriksa apakah stok produk kosong
+                        if (productStock <= 0) {
+                            alert(
+                                'Stok produk kosong. Produk tidak dapat ditambahkan ke keranjang.'
+                                );
+                            return;
+                        }
 
-                    var currentQuantity = parseInt(quantityInput.val());
-                    var currentStock = parseInt(stockInput.text());
+                        // Memeriksa apakah produk sudah ada dalam tabel
+                        var existingRow = $('.cart-table tbody tr[data-id="' + productId +
+                            '"]');
+                        if (existingRow.length > 0) {
+                            var quantityInput = existingRow.find('.quantity');
+                            var currentQuantity = parseInt(quantityInput.val());
+                            var currentStock = parseInt(existingRow.find('.stock').text());
 
-                    // Memeriksa apakah kuantitas setelah penambahan masih kurang dari atau sama dengan stok
-                    if (currentQuantity + 1 <= currentStock) {
-                        quantityInput.val(currentQuantity + 1);
-                    } else {
-                        alert('Stok produk tidak mencukupi untuk penambahan kuantitas.');
+                            if (currentQuantity + 1 <= currentStock) {
+                                quantityInput.val(currentQuantity + 1);
+                            } else {
+                                alert(
+                                    'Stok produk tidak mencukupi untuk penambahan kuantitas.'
+                                    );
+                            }
+                        } else {
+                            // Menambahkan produk ke tabel belanja secara dinamis
+                            var newRow = $('<tr data-id="' + productId + '" data-price="' +
+                                productPrice + '"><td>' +
+                                productName + '<td class="stock">' + productStock +
+                                '</td>' +
+                                '</td><td><input type="number" class="form-control quantity" value="1" min="1"></td><td>' +
+                                productPrice + '</td><td class="total-price">' +
+                                productPrice +
+                                '</td><td><span class="btn btn-sm btn-danger remove-from-cart">Hapus</span></td></tr>'
+                            );
+
+                            var hiddenInput = $(
+                                '<input type="hidden" name="items[]" value="">');
+                            hiddenInput.val(JSON.stringify({
+                                'product_id': productId,
+                                'quantity': 1,
+                                'price': productPrice
+                            }));
+                            newRow.append(hiddenInput);
+
+                            $('.cart-table tbody').append(newRow);
+                        }
+                        updateTotal();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan. Mohon coba lagi.');
                     }
-                } else {
-                    // Menambahkan produk ke tabel belanja secara dinamis
-                    var newRow = $('<tr data-id="' + productId + '" data-price="' + productPrice +
-                        '"><td>' +
-                        productName + '<td class="stock">' + productStock + '</td>' +
-                        '</td><td><input type="number" class="form-control quantity" value="1" min="1"></td><td>' +
-                        productPrice + '</td><td class="total-price">' + productPrice +
-                        '</td><td><span class="btn btn-sm btn-danger remove-from-cart">Hapus</span></td></tr>'
-                    );
-
-                    // Menyimpan data produk dalam hidden input
-                    var hiddenInput = $('<input type="hidden" name="items[]" value="">');
-                    hiddenInput.val(JSON.stringify({
-                        'product_id': productId,
-                        'quantity': 1, // default quantity, bisa diubah sesuai kebutuhan
-                        'price': productPrice
-                    }));
-                    newRow.append(hiddenInput);
-
-                    $('.cart-table tbody').append(newRow);
-                }
-                updateTotal();
+                });
             });
 
             // Fungsi untuk menghapus produk dari tabel belanja
@@ -228,10 +267,9 @@
             });
 
             // Menyembunyikan daftar produk dan tabel belanja ketika mengklik di luar daftar
-            $(document).on('click', function(e) {
-                if (!$(e.target).closest('#product-list, #search, #cart-table').length) {
-                    $('#product-list').hide();
-                }
+            $('#search').on('select2:select', function(e) {
+                $(this).select2('close'); // Menutup dropdown Select2
+                $(this).val(null).trigger('change'); // Mengosongkan hasil pencarian
             });
 
             // Fungsi untuk mengupdate total harga seluruh belanjaan
@@ -243,7 +281,6 @@
                     var subtotal = quantity * price;
                     total += subtotal;
 
-                    // Update quantity di hidden input
                     var hiddenInput = $(this).find('input[name="items[]"]');
                     var itemData = JSON.parse(hiddenInput.val());
                     itemData.quantity = quantity;
