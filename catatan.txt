@@ -1,3 +1,7 @@
+tlp 0896-6897-3752
+cabang 0858-4609-7828
+
+
 disini aja catatannyaaa
 route parameter, misal ada url
 apa itu kak? list route , kamu bisa liat parameter yg dibutuhkan disini
@@ -6,9 +10,6 @@ jadi url nya biasanya kalo show itu jadi pembelian/show/{parameter}, parameter i
 nah karena yang kamu buat tidak ada parameter, maka butuh parameter, ini disesuaikan sbntr sy ngetik dulu, nanti lamaaa
 iyaaa
 sy coba dulu pake route
-
-RestuTrimey123
-trimei123
 
 ada beberapa koreksi tadii, yang dikoreksi=
 1. icon disesuaikan
@@ -82,7 +83,7 @@ ya pokoknya itu lah yaaa.
 
 9. membuat model pengaturan(contoh): "php artisan make:model Pengaturan"
 
-10. membuat contoller pengaturan(contoh): "php artisan make:controller Pengaturan"
+10. membuat controller pengaturan(contoh): "php artisan make:controller Pengaturan"
 
 11. membuat seeder untuk data awal Admin(contoh): "php artisan make:seeder AdminSeeder"
 
